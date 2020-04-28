@@ -1832,21 +1832,12 @@
                                               <span>Nom d'épouse</span><br>
                                               <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vNomEpouse",this.value);'>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 champParcours">
-                                              <p>Quel nom voulez-vous que les parents voient ?</p>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-4 champParcoursCUT">
-                                              <div class>
-                                                <input type="radio" id="vNaissance" name="quel_nom" onchange='localStorage.setItem("vNaissance","1")'>
-                                                <label for="vNaissance">Nom de naissance</label>
-                                              </div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 champParcoursCUT">
-                                              <div>
-                                                <input type="radio" id="vEpouse" name="quel_nom" onchange='localStorage.setItem("vNaissance","0")'>
-                                                <label for="vEpouse">Nom d'épouse</label>
-                                              </div>
+                                            <div class="col-lg-12 col-md-12 champParcoursCUT">
+                                              <p>Quel nom voulez-vous que les parents voient sur Monenfant.fr ?</p>
+                                              <input type="radio" id="vNaissance" name="quel_nom" onchange='localStorage.setItem("vNaissance","1")'>
+                                              <label for="vNaissance">Nom de naissance</label>
+                                              <input type="radio" id="vEpouse" name="quel_nom" style="margin-left:20px" onchange='localStorage.setItem("vNaissance","0")'>
+                                              <label for="vEpouse">Nom d'épouse</label>
                                             </div>
                                           </div>
 
@@ -1884,28 +1875,17 @@
                                               </select>
                                             </div>
 
-
-
-                                            <div class="col-lg-12 col-md-12 champParcours">
-                                              <p>Quels sont vos modes de prise de contact préférentiels ?</p>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-4 champParcoursCUT">
-                                              <div>
-                                                <input type="radio" id="both" name="quel_contact" onchange='localStorage.setItem("vContact","1")'>
-                                                <label for="both">Tous</label>
-                                              </div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 champParcoursCUT">
-                                              <input type="radio" id="e_mail" name="quel_contact" onchange='localStorage.setItem("vContact","2")'>
-                                              <label for="e_mail">E-mail</label>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-4 champParcoursCUT">
-                                              <div>
-                                                <input type="radio" id="tel" name="quel_contact" onchange='localStorage.setItem("vContact","3")'>
+                                            <div class="col-lg-12 col-md-12 champParcoursCUT">
+                                              <p>Comment souhaitez vous être contacté par les parents ?</p>
+                                              <span> <input type="radio" id="both" name="quel_contact" onchange='localStorage.setItem("vContact","1")'>
+                                                <label for="both">E-mail & Téléphone</label>
+                                              </span>
+                                              <span  style="margin-left:20px"> <input type="radio" id="e_mail" name="quel_contact" onchange='localStorage.setItem("vContact","2")'>
+                                                <label for="e_mail">E-mail</label>
+                                              </span>
+                                              <span  style="margin-left:20px"> <input type="radio" id="tel" name="quel_contact" onchange='localStorage.setItem("vContact","3")'>
                                                 <label for="tel">Téléphone</label>
-                                              </div>
+                                              </span>
                                             </div>
 
                                             <div class="col-lg-12 col-md-12 champParcours" style="font-style: oblique;">
@@ -1973,15 +1953,16 @@
                                             </div>
                                             <div class="champParcoursCUT">
                                               <div class="col-lg-12 col-md-12 ">
-                                                <p>Quelle préférence pour l'adresse postale ?</p>
+                                                <p>Quelle est votre préférence d'affichage sur Monenfant.fr ?</p>
                                               </div>
                                               <div class="col-lg-12 col-md-12 ">
-                                                <input type="radio" id="visible" name="Postal" onchange='localStorage.setItem("vChoix_Postal","1")'>
+                                                <input type="radio" id="visible" name="Postal" onchange='localStorage.setItem("vChoix_Postal","1"); document.getElementById("alertCarte").style.display ="none"'>
                                                 <label for="visible">Je souhaite afficher mon adresse postale (hors code postal)</label>
                                               </div>
-                                              <div class="col-lg-12 col-md-12">
-                                                <input type="radio" id="masquer" name="Postal" onchange='localStorage.setItem("vChoix_Postal","0")'>
+                                              <div class="col-lg-12 col-md-12 champParcoursCUT">
+                                                <input type="radio" id="masquer" name="Postal" onchange='localStorage.setItem("vChoix_Postal","0"); document.getElementById("alertCarte").style.display =""'>
                                                 <label for="masquer">Je souhaite masquer mon adresse postale (hors code postal)</label>
+                                                <br><span id="alertCarte" style="display:none; position:absolute; color:#ff9a35">⚠ Votre profil n'apparaîtra pas sur la carte.</span>
                                               </div>
                                             </div>
                                           </div>
