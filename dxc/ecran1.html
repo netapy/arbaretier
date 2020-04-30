@@ -1817,12 +1817,13 @@
                                               <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vPrenom",this.value);'>
                                             </div>
                                             <div id="prenomSupbtn" class="col-lg-6 col-md-6 champParcours">
-                                              <span>Autre prénom</span><br>
+                                              <span>Autres prénoms</span><br>
                                               <button id="autre_prenom" onclick="document.getElementById('prenomSup').style.display='';document.getElementById('prenomSupbtn').style.display='none'">Ajouter</button>
                                             </div>
                                             <div id="prenomSup" class="col-lg-6 col-md-6 champParcours" style="display: none;">
-                                              <span>Autre prénom</span><br>
-                                              <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vAutrePrenom",this.value);'>
+                                              <span>Autres prénoms</span><br>
+                                              <input type="text" id="DeuxiemePrnm" name="fname" onchange='localStorage.setItem("vAutrePrenom",this.value);'>
+                                              <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vAutrePrenom",String(document.getElementById("DeuxiemePrnm").value) + " " + this.value);'>
                                             </div>
                                             <div class="col-lg-6 col-md-6 champParcours">
                                               <span>Nom de naissance *</span><br>
@@ -1833,7 +1834,7 @@
                                               <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vNomEpouse",this.value);'>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                              <p>Quel nom voulez-vous que les parents voient sur Monenfant.fr ?</p>
+                                              <p>Quel nom voulez-vous que les parents voient sur Monenfant.fr ? *</p>
                                               <input type="radio" id="vNaissance" name="quel_nom" onchange='localStorage.setItem("vNaissance","1")'>
                                               <label for="vNaissance">Nom de naissance</label>
                                               <input type="radio" id="vEpouse" name="quel_nom" style="margin-left:20px" onchange='localStorage.setItem("vNaissance","0")'>
@@ -1845,46 +1846,32 @@
                                             <h5>Mes coordonnées de contact</h5><br>
                                           </div>
                                           <div class="text-left">
-                                            <div class="col-lg-8 col-md-8 champParcours">
-                                              <span>N° de téléphone</span>
+                                            <div class="col-lg-6 col-md-6 champParcours">
+                                              <span>N° de Téléphone Portable</span>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 champParcours text-left" style="margin-bottom: 20px;">
                                               <input type="tel" id="fname" name="fname" width="100%" onchange='localStorage.setItem("vNTelephone",this.value);'>
                                             </div>
-                                            <div class="col-lg-4 col-md-4 champParcours text-left" style="margin-bottom: 20px;">
-                                              <select name="bad_day" style="padding:3px 20px;" onchange="localStorage.setItem('vTyTelephone',this.value);">
-                                                <option disabled selected value> -- Type de numéro -- </option>
-                                                <option value="Portable">Portable</option>
-                                                <option value="Fixe">Fixe</option>
-                                              </select>
+                                            <div class="col-lg-6 col-md-6 champParcours">
+                                              <span>N° de Téléphone Fixe</span>
                                             </div>
-
-
-                                            <div id="numSupbtn" class="col-lg-8 col-md-8 champParcours text-left">
-                                              <span>Autre numéro</span>
-                                              <button id="autre_num"
-                                                onclick="document.getElementById('numSup').style.display='';document.getElementById('numSupbtn').style.display='none';document.getElementById('typeSup').style.display=''">Ajouter</button>
-                                            </div>
-                                            <div id="numSup" class="col-lg-8 col-md-8 champParcours" style="display: none;">
-                                              <span>Autre numéro</span>
-                                              <input type="text" id="secnum" name="fname" onchange='localStorage.setItem("vAutreNum",this.value);'>
-                                            </div>
-                                            <div id="typeSup" class="col-lg-4 col-md-4 champParcours" style="margin-bottom: 20px;display:none">
-                                              <select name="bad_day" style="padding:3px 20px" onchange="localStorage.setItem('vAutreTypTel',this.value);">
-                                                <option disabled selected value> -- Type de numéro -- </option>
-                                                <option value="Portable">Portable</option>
-                                                <option value="Fixe">Fixe</option>
-                                              </select>
+                                            <div class="col-lg-6 col-md-6 champParcours text-left" style="margin-bottom: 20px;">
+                                              <input type="tel" id="fname" name="fname" width="100%" onchange='localStorage.setItem("vAutreNum",this.value);'>
                                             </div>
 
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                              <p>Comment souhaitez vous être contacté par les parents ?</p>
+                                              <p>Comment souhaitez vous être contacté par les parents ? *</p>
                                               <span> <input type="radio" id="both" name="quel_contact" onchange='localStorage.setItem("vContact","1")'>
-                                                <label for="both">E-mail & Téléphone</label>
+                                                <label for="both">Tous</label>
                                               </span>
                                               <span  style="margin-left:20px"> <input type="radio" id="e_mail" name="quel_contact" onchange='localStorage.setItem("vContact","2")'>
                                                 <label for="e_mail">E-mail</label>
                                               </span>
                                               <span  style="margin-left:20px"> <input type="radio" id="tel" name="quel_contact" onchange='localStorage.setItem("vContact","3")'>
-                                                <label for="tel">Téléphone</label>
+                                                <label for="tel">Portable</label>
+                                              </span>
+                                              <span  style="margin-left:20px"> <input type="radio" id="tel" name="quel_contact" onchange='localStorage.setItem("vContact","4")'>
+                                                <label for="tel">Fixe</label>
                                               </span>
                                             </div>
 
@@ -1892,26 +1879,22 @@
                                               <span>Adresse postale du lieu d'exercice :</span><br>
                                             </div>
                                             <div class="col-lg-3 col-md-3 champParcours">
-                                              <span>N° de voie *</span><br>
+                                              <span>N° de voie</span><br>
                                               <input type="text" id="fname" name="fname" maxlength="10" style="width: 100%;" onchange='localStorage.setItem("vNumVoie",this.value);'>
                                             </div>
                                             <div class="col-lg-3 col-md-3 champParcours">
-                                              <span>Type de voie *</span><br>
+                                              <span>Type de voie</span><br>
                                               <select name="type_voie" style="padding:3px 20px;" onchange='localStorage.setItem("vTypeVoie",this.value);'>
                                                 <option disabled selected value> -- </option>
-                                                <option>av.</option>
-                                                <option>bd.</option>
-                                                <option>cite.</option>
-                                                <option>dom.</option>
-                                                <option>esp.</option>
-                                                <option>imp.</option>
-                                                <option>ld.</option>
-                                                <option>pl.</option>
-                                                <option>quai.</option>
-                                                <option>res.</option>
-                                                <option>rte.</option>
-                                                <option>rue.</option>
-                                                <option>vla.</option>
+                                                <option>avenue</option>
+                                                <option>boulevard</option>
+                                                <option>cité</option>
+                                                <option>domaine</option>
+                                                <option>esplanade</option>
+                                                <option>impasse</option>
+                                                <option>quai</option>
+                                                <option>rue</option>
+                                                <option>villa</option>
                                               </select>
                                             </div>
                                             <div class="col-lg-6 col-md-6 champParcours">
@@ -1924,44 +1907,25 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6 champParcours text-left">
                                               <span>Code Postale *</span><br>
-                                              <input type="text" name="codepostal" onchange='localStorage.setItem("vCodePost",this.value);
-                      if(this.value=="75020"){document.getElementById("ombrelle").value="Paris"}'>
+                                              <input type="text" name="codepostal" onchange='localStorage.setItem("vCodePost",this.value);if(this.value.includes("75")){document.getElementById("ombrelle").value="Paris"}else if(this.value.includes("13007")){document.getElementById("ombrelle").value="Marseille"}'>
                                               </input>
-
                                             </div>
-
-                                            <!--DXC FIN <select name="bad_day" style="padding:3px 20px;" onchange='localStorage.setItem("vDepHab",this.value);'>
-                        <option disabled selected value> -- Département -- </option>
-                        <option>01 - Ain</option>
-                        <option>02 - Aisne</option>
-                        <option>24 - Dordogne</option>
-                        <option>33 - Gironde</option>
-                        <option>75 - Paris</option>
-                        <option>91 - Essone</option>
-                        <option>972 - Martinique</option>
-                      </select> -->
-                                            <!--
-                    <div class="col-lg-4 col-md-4 champParcours">
-                      <span>Code Postale *</span><br>
-                      <input type="text" name="codepostal" onchange='localStorage.setItem("vCodePost",this.value);'>
-                    </div>
-                  -->
 
                                             <div class="col-lg-6 col-md-6 champParcours">
                                               <span>Commune *</span><br>
-                                              <input type="text" id="ombrelle" name="co" style="width:100%;" onchange='localStorage.setItem("vCommune",this.value);'>
+                                              <input type="text" id="ombrelle" name="co" style="width:100%;" onchange='localStorage.setItem("vCommune",this.value);' disabled>
                                             </div>
                                             <div class="champParcoursCUT">
                                               <div class="col-lg-12 col-md-12 ">
-                                                <p>Quelle est votre préférence d'affichage sur Monenfant.fr ?</p>
+                                                <p>Quelle est votre préférence d'affichage sur Monenfant.fr ? *</p>
                                               </div>
                                               <div class="col-lg-12 col-md-12 ">
                                                 <input type="radio" id="visible" name="Postal" onchange='localStorage.setItem("vChoix_Postal","1"); document.getElementById("alertCarte").style.display ="none"'>
-                                                <label for="visible">Je souhaite afficher mon adresse postale (hors code postal)</label>
+                                                <label for="visible">Je souhaite afficher mon adresse postale.</label>
                                               </div>
                                               <div class="col-lg-12 col-md-12 champParcoursCUT">
                                                 <input type="radio" id="masquer" name="Postal" onchange='localStorage.setItem("vChoix_Postal","0"); document.getElementById("alertCarte").style.display =""'>
-                                                <label for="masquer">Je souhaite masquer mon adresse postale (hors code postal)</label>
+                                                <label for="masquer">Je souhaite masquer mon adresse postale.</label>
                                                 <br><span id="alertCarte" style="display:none; position:absolute; color:#ff9a35">⚠ Votre profil n'apparaîtra pas sur la carte.</span>
                                               </div>
                                             </div>
@@ -2002,7 +1966,9 @@
                                             <span id="champ-titre-sejour" style="display: none;">
                                               <div class="col-lg-12 col-md-12 champParcours">
                                                 <span>Copie Titre de séjour *</span><br>
-                                                <input type="file" id="fname" name="fname">
+                                                <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
+                                                <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
+                                                <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
                                               </div>
                                             </span>
 
@@ -2039,9 +2005,11 @@
                                                 </div>
                                               </span>
                                               <span id="champ-titre-sejour2" style="display: none;">
-                                                <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                                  <span>Copie Titre de séjour</span><br>
-                                                  <input type="file" id="fname" name="fname">
+                                                <div class="col-lg-12 col-md-12 champParcours">
+                                                  <span>Copie Titre de séjour *</span><br>
+                                                  <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
+                                                  <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
+                                                  <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
                                                 </div>
                                               </span>
 
