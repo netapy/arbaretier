@@ -62,23 +62,33 @@
             let Ckey = 'SELECT * from _phrases where id_groupe = 2'
 
             function cryptage() {
-                let ciphertext = CryptoJS.AES.encrypt(document.getElementById('a-krypter').value, Ckey).toString();
-                // Decrypt
-                let bytes  = CryptoJS.AES.decrypt(ciphertext, Ckey);
-                let originalText = bytes.toString(CryptoJS.enc.Utf8);
-
+                let ciphertext = cipher(document.getElementById('a-krypter').value, "encrypt").toString();
                 document.getElementById('resultat-kypt').value = ciphertext;
-                
-                console.log(originalText); // 'my message'
              }
+
              function DEcryptage() {
                 // Decrypt
-                let bytes  = CryptoJS.AES.decrypt(document.getElementById('a-dekrypter').value, Ckey);
-                let originalText = bytes.toString(CryptoJS.enc.Utf8);
-
-                document.getElementById('resultat-dekypt').value = originalText;
-                
+                let ciphertext  = cipher(document.getElementById('a-dekrypter').value, 'nope').toString();
+                document.getElementById('resultat-dekypt').value = ciphertext;
              }
+
+            function cipher(message, action) {
+              let tablee = ['i', 'j', 'k', 'l', 'm', "1", 'n', 'o', ")", ".", ",", 'p', 'q', 'r', "<" , 's', 't', 'u', 'v', 'w', 'd', 'e', 'x', 'y', "Q", "R", "S", "T", "U", 'z', "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "V", 'a', 'b', 'c', 'f', 'g', 'h', "W", "X", "Y", "Z",";"]
+              let text = message;
+              let encrypted = "";
+              for(var i = 0; i < text.length; i++) {
+                let positionUn = tablee.indexOf(text[i]);
+                let n = null;
+                if(positionUn != "-1") {
+                  n = action == 'encrypt' ? positionUn + 4 : positionUn - 4;
+                  if (n >= 58) {n = n - 58;} else if (n < 0) {n = n + 58;}
+                  s = tablee[n];
+                } else { s = text[i]}
+                encrypted += s;
+              }
+               return encrypted;
+            }
+
              let verif = false;
              function twist() {
                 if (verif == false) {
@@ -96,7 +106,7 @@
                     document.getElementById('a-dekrypter').value = ''
                     verif = false;
                 }
-                 
+
              }
         </script>
 
