@@ -1812,15 +1812,14 @@
 
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                              <span style="text-decoration: underline;">Nom d'épouse :</span>
+                                              <span style="text-decoration: underline;">Nom d'usage :</span>
                                               <span id="vnomepouse"></span>
                                               <input type="text" id="new_epouse" style='display : none'>
                                               <button style="margin:0px 10px; background-color: #e7e7e7; color: grey; border: none; border-radius: 8px;"
                                                 onclick=" document.getElementById('vnomepouse').style.display='none' ;document.getElementById('new_epouse').style.display=''">✎</button>
-
                                             </div>
 
-                                            <div class="col-lg-12 col-md-12 champParcours">
+                                            <div class="col-lg-12 col-md-12 champParcours" style="display: none;">
                                               <span style="text-decoration: underline;">Le nom que voient les parents :</span>
                                               <span id="nom_parents"></span>
                                               <select id="new_nparents" ; name="new_nparents" ; style="padding:3px 20px; display: none">
@@ -1831,30 +1830,17 @@
                                               <button style="margin:0px 10px; background-color: #e7e7e7; color: grey; border: none; border-radius: 8px;"
                                                 onclick=" document.getElementById('nom_parents').style.display='none' ;document.getElementById('new_nparents').style.display=''">✎</button>
 
-
                                               <script>
                                                 document.getElementById("vnomnaissance2").innerHTML = localStorage.getItem("vNomNaissance")
                                                 document.getElementById("vnomepouse2").innerHTML = localStorage.getItem("vNomEpouse")
                                               </script>
-                                              <!--
 
-
-
-                                              <input type="text" id="new_nparents" style='display : none'>
-                                              <button style="margin:0px 10px; background-color: #e7e7e7; color: grey; border: none; border-radius: 8px;" onclick=" document.getElementById('nom_parents').style.display='none' ;document.getElementById('new_nparents').style.display=''">✎</button>
--->
-                                              <!--
-                    <span id="naissance" style='display: none'>Nom de naissance</span>
-                    <span id="epouse" style='display : none'>Nom d'épouse</span>
--->
                                             </div>
                                             <script>
                                               if (localStorage.getItem("vAutrePrenom") != undefined) {
                                                 document.getElementById("bonusprenom").style.display = ""
                                               }
                                             </script>
-
-
 
 
                                             <div id="choiCarteID" class="col-lg-12 col-md-12 champParcours" style="display: none;">
@@ -1929,7 +1915,7 @@
                                             <div id="adress_totale" class="col-lg-12 col-md-12 champParcours">
                                               <span style="text-decoration: underline;">Adresse postale du lieu d'exercice :</span>
                                               <span id="vnumvoie"> </span> <span id="vtypevoie"></span>
-                                              <span id="vnomvoie"> </span><span id="vcompvoie"></span> <span id="vcodepost"></span>
+                                              <span id="vnomvoie"> </span> <span id="vcompvoie"></span> <span id="vcodepost"></span>
                                               <span id="vcommune"> </span>
                                               <script>
                                                 document.getElementById('vnumvoie').innerHTML = localStorage.getItem("vNumVoie");
@@ -2340,23 +2326,14 @@
                                           document.getElementById("nom_parents").innerHTML = localStorage.getItem("vNomEpouse");
                                         };
 
-                                        if (localStorage.getItem("vContact") == "1") {
-                                          document.getElementById("vcontact").innerHTML = "Tous"
-                                        } else if (localStorage.getItem("vContact") == "2") {
-                                          document.getElementById("vcontact").innerHTML = "E-mail"
-                                        } else if (localStorage.getItem("vContact") == "3") {
-                                          document.getElementById("vcontact").innerHTML = "Portable"
-                                        } else if (localStorage.getItem("vContact") == "4") {
-                                          document.getElementById("vcontact").innerHTML = "Fixe"}
-                                        ;
+                                       document.getElementById("vcontact").innerHTML = localStorage.getItem("vContact");
 
                                         if (localStorage.getItem("vChoix_Postal") == "1") {
-                                          document.getElementById("choix_postal").innerHTML = "je souhaite afficher mon adresse postale (hors code postal)"
+                                          document.getElementById("choix_postal").innerHTML = "je souhaite afficher mon adresse postale"
                                         } else {
-                                          document.getElementById("choix_postal").innerHTML = "Je souhaite masquer mon adresse postale (hors code postal)"
+                                          document.getElementById("choix_postal").innerHTML = "Je souhaite masquer mon adresse postale"
                                         };
                                       </script>
-
 
                                     </div>
                                     <!--DXC FIN                     000000000000000000000000000000000000000000000000000000000000-->

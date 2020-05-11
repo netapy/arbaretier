@@ -1894,25 +1894,11 @@
                                                 <span class="circleDXCategories col-xs-4" style="background-color: rgb(135, 190, 241);">Activités artistiques<span class="ptitcercle">✎</span></span>
                                               </div>
                                             </div>
-                                            <script>
-                                              let jourchoisiP = "";
-                                              let moischoisiP = "";
-                                              let anneechoisiP = ""
-                                            </script>
+                                           
                                             <h5>Tableau des disponibilités</h5><br>
                                             <div id="content-desktop" class="col-lg-12 col-md-12 text-left" style="padding:30px 20px; background-color: rgb(250, 250, 250);">
   
-                                              <h5>Je suis disponible</h5><br>
-                                              <div class="custom-control custom-radio">
-                                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
-                                                <label class="custom-control-label" for="customRadio1">Dès
-                                                  maintenant</label>
-                                              </div>
-                                              <div class="custom-control custom-radio">
-                                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                                <label class="custom-control-label" for="customRadio2">A partir du <select class="selectjour" id="selectjour" onchange="getElementById(&quot;customRadio1&quot;).checked=false;getElementById(&quot;customRadio2&quot;).checked=true;jourchoisiP=this.value"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option></select><select class="selectmois" id="selectmois" onchange="getElementById(&quot;customRadio1&quot;).checked=false;getElementById(&quot;customRadio2&quot;).checked=true;moischoisiP=this.value"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select><select class="selectannée" id="selectannée" onchange="getElementById(&quot;customRadio1&quot;).checked=false;getElementById(&quot;customRadio2&quot;).checked=true;anneechoisiP=this.value"><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option></select>
-                                                </label>
-                                              </div><br><br>
+                                              
                                               <h5>Ma semaine type</h5><br>
   
                                               <script>
@@ -1976,7 +1962,11 @@
                                                   place</button> </div>
   
                                               <script>
-                                                let indicename = 0
+                                                let indicename = 0;
+                                                let jourchoisiP = "";
+                                                let moischoisiP = "";
+                                                let anneechoisiP="";
+                                                
   
                                                 function newPlace(elt) {
                                                   indicename = indicename + 1
@@ -2011,44 +2001,39 @@
                                                     ageP = ageP + "<option>" + String(l) + " ans </option>"
                                                   }
                                                   let agemoisP = ""
-                                                  for (let m = 0; m < 13; m++){
+                                                  for (let m = 0; m < 12; m++){
                                                       agemoisP = agemoisP + "<option>" + String(m) + " mois </option>"
                                                   }
-                                                  let choixunocoche = ""
-                                                  if (document.getElementById("customRadio1").checked) {
-                                                    choixunocoche = "checked"
-                                                  }
-                                                  let choixdoscoche = ""
-                                                  if (document.getElementById("customRadio2").checked) {
-                                                    choixdoscoche = "checked"
-                                                  }
-                                                
-  
+
                                                   eltsupP =
                                                     ' <div class="col-lg-12 col-md-12 text-left" id="panneauPlacesbis' +
                                                     indiceN + '" style="border-width: 2px; border-color: #dbdbdb; border-style: double; border-radius:15px; margin: 20px 0px; padding: 15px"> <strong>Place disponible</strong><br><br><input type="radio" id="Maintenantbis" name="dispoQuandbis' +
-                                                    indiceN + '" class="custom-control-input" ' + choixunocoche +
-                                                    ' ><label class="custom-control-label" for="Maintenantbis">Dès maintenant</label><br><input type="radio" id="aPartirDubis" name="dispoQuandbis' +
-                                                    indiceN + '" class="custom-control-input" ' + choixdoscoche +
-                                                    '><label class="custom-control-label" for="aPartirDubis">A partir du <select >' +
+                                                    indiceN + '" class="custom-control-input" selected  ><label class="custom-control-label" for="Maintenantbis">Dès maintenant</label><br><input type="radio" id="aPartirDubis" name="dispoQuandbis' +
+                                                    indiceN + '" class="custom-control-input" ><label class="custom-control-label" for="aPartirDubis">A partir du <select >' +
                                                     jourP + '</select><select>' + moisP + '</select><select >' + anneeP +
                                                     '</select> </label><br><br><span style="padding-right: 15px">Pour un enfant âgé de:</span> <select >' + ageP +
                                                     '</select><select>'+agemoisP+'</select>  <span style="padding: 0px 15px">à</span>  <select>' + ageP +
                                                     '</select><select>'+agemoisP+'</select> <br><br>Pour une garde de type:<br><br><input type="checkbox" id="tempspleinbis"><label for="tempspleinbis" style="padding-right: 15px">Temps plein</label><input type="checkbox" id="mitempsbis"> <label for="mitempsbis" style="padding-right: 15px">Mi-temps</label> <input type="checkbox" id="péribis" ><label for="péribis" style="padding-right: 15px">Périscolaire</label> <input type="checkbox" id="occabis"> <label for="occabis" style="padding-right: 15px">Occasionnel</label>  <br><br> <span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="document.getElementById(\'panneauPlacesbis' +
-                                                    indiceN + '\').style.display=\'none\'"> &#10007;</span></div> ';
+                                                    indiceN + '\').style.display=\'none\'"> &#10007;</span><div class="row"><span class="col-lg-3 col-md-3">Séléctionnez les jours concernés :</span><span  class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">L</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">M</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">M</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">J</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">V</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">S</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">D</span></div></div></div>';
                                                   elt.insertAdjacentHTML("beforebegin", eltsupP);
                                                 }
                                               </script>
-  
+                                              <script>
+                                                function jourAppuye(element) {
+                                                  if(element.classList == "circleJOUR col-md-1 col-lg-1") {
+                                                    element.classList = "circleJOUR_ACT col-md-1 col-lg-1";
+                                                  } else { element.classList = "circleJOUR col-md-1 col-lg-1"; }
+                                                }
+                                              </script>
   
                                               <script>
                                                 function remplirlescases() {
                                                   if (document.getElementById("customRadio1").checked == true) {
                                                     document.getElementById("Maintenant").checked = true;
-                                                    document.getElementById("aPartirDu").checked = false
+                                                    document.getElementById("aPartirDu").checked = false;
                                                   } else {
                                                     document.getElementById("aPartirDu").checked = true;
-                                                    document.getElementById("Maintenant").checked = false
+                                                    document.getElementById("Maintenant").checked = false;
                                                   }
                                                 }
   
@@ -2116,16 +2101,16 @@
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 champParcours" style="padding: 10px 80px;padding-top: 30px;">
                                                   <script src="nouislider.min.js"></script>
-                                                  <div id="sliderrr" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(20%, 0px) scale(0.6, 1);"></div></div><div class="noUi-origin" style="transform: translate(-800%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="4.0" aria-valuenow="1.0" aria-valuetext="1.00"><div class="noUi-touch-area"></div><div class="noUi-tooltip">1.00 €</div></div></div><div class="noUi-origin" style="transform: translate(-200%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="1.0" aria-valuemax="5.0" aria-valuenow="4.0" aria-valuetext="4.00"><div class="noUi-touch-area"></div><div class="noUi-tooltip">4.00 €</div></div></div></div></div>
+                                                  <div id="sliderrr" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"></div>
                                                   <script>
                                                     var slider = document.getElementById('sliderrr');
                                                     noUiSlider.create(slider, {
-                                                      start: [1, 4],
+                                                      start: [1.5, 4.5],
                                                       tooltips: [true, true],
                                                       connect: true,
                                                       range: {
                                                         'min': 0,
-                                                        'max': 5
+                                                        'max': 6
                                                       }
                                                     });
                                                   </script>
@@ -2139,20 +2124,8 @@
                                               <div class="col-lg-6 col-md-6 champParcours text-center">
                                                 <button class="btn btn-primary" onclick="localStorage.setItem('vTarifMin',slider.noUiSlider.get()[0]);localStorage.setItem('vTarifMax',slider.noUiSlider.get()[1]);window.location.href = 'ecran3.html';">Valider
                                                   l'étape 2</button>
-                                              </div>
-                                              <!-- The Modal -->
-                                              <div id="myModal" class="modal">
-                                                <!-- Modal content -->
-                                                <div class="modal-content">
-                                                  <h3>Vérification CAPTCHA</h3>
-                                                  <button onclick="document.getElementById('myModal').style.display = ''; document.getElementById('liste-des-modesaccueil').style.display='';">Valider</button>
-                                                </div>
-                                              </div>
-                                              <!-- end Modal -->
-                                          
+                                              </div>                                          
                                         </div>
-  
-  
   
                                         <script>
                                           let heure = ""
@@ -2163,7 +2136,7 @@
                                           for (omb in ombrelle) {
                                             ombrelle[omb].innerHTML = heure
                                           }
-                                          //newPlace(document.getElementById('AjoutBGR'));
+                                          newPlace(document.getElementById('AjoutBGR'));
                                         </script>
                                       </row></div>
                                       <!--DXC FIN                     000000000000000000000000000000000000000000000000000000000000-->
@@ -2729,6 +2702,42 @@
         font-weight: bold;
         margin: auto;
         margin-bottom: 20px;
+      }
+      .circleJOUR {
+        background: rgb(235, 235, 235);
+        color: rgb(51, 51, 51);
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border-width: 3px;
+        border-color: rgb(216, 216, 216);
+        border-style: solid;
+        text-align: center;
+        font-size: 15px;
+        display: flex;
+        height: 40px;
+        width: 40px;
+        font-weight: bold;
+        margin: 0px 6px;
+        cursor: pointer;
+      }
+      .circleJOUR_ACT {
+        background: rgb(0, 216, 191);
+        color: rgb(255, 255, 255);
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border-width: 3px;
+        border-color: rgb(0, 192, 170);
+        border-style: solid;
+        text-align: center;
+        font-size: 15px;
+        display: flex;
+        height: 40px;
+        width: 40px;
+        font-weight: bold;
+        margin: 0px 6px;
+        cursor: pointer;
       }
   
       .circleDXCategories {

@@ -1812,10 +1812,11 @@
                                               <span id="bon_doublon" style='color: green; display: none;'>&#10004;</span>
                                               <span id="faux_doublon" style='color: red; display: none;'>&#10007;</span>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 champParcours">
+                                            <div class="col-lg-12 col-md-12 champParcours">
                                               <span>Prénom *</span><br>
                                               <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vPrenom",this.value);'>
                                             </div>
+                                            <!--
                                             <div id="prenomSupbtn" class="col-lg-6 col-md-6 champParcours">
                                               <span>Autres prénoms</span><br>
                                               <button id="autre_prenom" onclick="document.getElementById('prenomSup').style.display='';document.getElementById('prenomSupbtn').style.display='none'">Ajouter</button>
@@ -1825,53 +1826,55 @@
                                               <input type="text" id="DeuxiemePrnm" name="fname" onchange='localStorage.setItem("vAutrePrenom",this.value);'>
                                               <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vAutrePrenom",String(document.getElementById("DeuxiemePrnm").value) + " " + this.value);'>
                                             </div>
+                                            -->
                                             <div class="col-lg-6 col-md-6 champParcours">
                                               <span>Nom de naissance *</span><br>
                                               <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vNomNaissance",this.value);'>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 champParcours">
-                                              <span>Nom d'épouse</span><br>
-                                              <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vNomEpouse",this.value);'>
+                                            <div class="col-lg-6 col-md-6 champParcoursCUT">
+                                              <span>Nom d'usage</span><br>
+                                            <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vNomEpouse",this.value); if(this.value != ""){document.getElementById("prefNomFam").style.display=""}else{document.getElementById("prefNomFam").style.display="none"}'>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 champParcoursCUT">
+                                            <!--
+                                            <div id='prefNomFam' class="col-lg-12 col-md-12 champParcoursCUT" style="display: none;">
                                               <p>Quel nom voulez-vous que les parents voient sur Monenfant.fr ? *</p>
                                               <input type="radio" id="vNaissance" name="quel_nom" onchange='localStorage.setItem("vNaissance","1")'>
                                               <label for="vNaissance">Nom de naissance</label>
                                               <input type="radio" id="vEpouse" name="quel_nom" style="margin-left:20px" onchange='localStorage.setItem("vNaissance","0")'>
-                                              <label for="vEpouse">Nom d'épouse</label>
+                                              <label for="vEpouse">Nom d'usage</label>
                                             </div>
+                                            -->
                                           </div>
 
                                           <div class="text-center col-md-12 col-lg-12">
                                             <h5>Mes coordonnées de contact</h5><br>
                                           </div>
                                           <div class="text-left">
-                                            <div class="col-lg-6 col-md-6 champParcours">
-                                              <span>N° de Téléphone Portable</span>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <u>N° de Téléphone* :</u>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 champParcours text-left" style="margin-bottom: 20px;">
+                                            <div class="col-lg-4 col-md-4 champParcours">
+                                              <span>- Portable</span>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 champParcours text-left" style="margin-bottom: 20px;">
                                               <input type="tel" id="fname" name="fname" width="100%" onchange='localStorage.setItem("vNTelephone",this.value);'>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 champParcours">
-                                              <span>N° de Téléphone Fixe</span>
+                                            <div class="col-lg-4 col-md-4 champParcours">
+                                              <span>- Fixe</span>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 champParcours text-left" style="margin-bottom: 20px;">
+                                            <div class="col-lg-8 col-md-8 champParcours text-left" style="margin-bottom: 20px;">
                                               <input type="tel" id="fname" name="fname" width="100%" onchange='localStorage.setItem("vAutreNum",this.value);'>
                                             </div>
-
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
                                               <p>Comment souhaitez vous être contacté par les parents ? *</p>
-                                              <span> <input type="radio" id="both" name="quel_contact" onchange='localStorage.setItem("vContact","1")'>
-                                                <label for="both">Tous</label>
-                                              </span>
-                                              <span  style="margin-left:20px"> <input type="radio" id="e_mail" name="quel_contact" onchange='localStorage.setItem("vContact","2")'>
+                                              <span  style="margin-left:20px"> <input type="checkbox" id="e_mail" name="quel_contact" >
                                                 <label for="e_mail">E-mail</label>
                                               </span>
-                                              <span  style="margin-left:20px"> <input type="radio" id="tel" name="quel_contact" onchange='localStorage.setItem("vContact","3")'>
+                                              <span  style="margin-left:20px"> <input type="checkbox" id="tel" name="quel_contact">
                                                 <label for="tel">Portable</label>
                                               </span>
-                                              <span  style="margin-left:20px"> <input type="radio" id="tel" name="quel_contact" onchange='localStorage.setItem("vContact","4")'>
-                                                <label for="tel">Fixe</label>
+                                              <span  style="margin-left:20px"> <input type="checkbox" id="tell" name="quel_contact">
+                                                <label for="tell">Fixe</label>
                                               </span>
                                             </div>
 
@@ -2132,6 +2135,11 @@
                                           <div class="col-lg-6 col-md-6 champParcours">
                                             <button class="btn">Annuler</button>
                                           </div>
+                                          <script>
+                                            let CHECKBOXemail = '';
+                                            let CHECKBOXtel = '';
+                                            let CHECKBOXtelFixe = '';
+                                          </script>
                                           <div class="col-lg-6 col-md-6 champParcours">
                                             <button class="btn btn-primary" onclick="localStorage.setItem('vCommune', document.getElementById('ombrelle').value);
                                             localStorage.setItem('vDateDebut', String(document.getElementById('joursMois').value)
@@ -2140,6 +2148,12 @@
                                             localStorage.setItem('vDateFinn',String(document.getElementById('joursMois2').value)
                                             + '/' + String(document.getElementById('moisAnnee2').value)
                                             + '/' + String(document.getElementById('anneeAnnee2').value));
+                                            if (document.getElementById('e_mail').checked == true){CHECKBOXemail = ' Email  /'}
+                                            if (document.getElementById('tel').checked == true){CHECKBOXtel = ' Portable /'}
+                                            if (document.getElementById('tell').checked == true){CHECKBOXtelFixe = ' Fixe /'}
+                                            let stringPrefCont = String(CHECKBOXemail + CHECKBOXtel + CHECKBOXtelFixe)
+                                            localStorage.setItem('vContact',stringPrefCont.substring(0, stringPrefCont.length - 2))
+                                            console.log(localStorage.getItem('vContact'))
                                             window.location.href='ecran2.html';">Valider l'étape 1</button>
 
                                           </div>
