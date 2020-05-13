@@ -1656,27 +1656,27 @@ AUI().use('liferay-navigation-interaction', function(A) {(function() {var $ = AU
 											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/picto-localisation-rouge.png" style="padding: 5px 10px;">à 120 m</div></div>
 											<div class="col-lg-12 col-md-12" style="margin:12px 0px"><span>4 rue Leriche, 75015 Paris</span></div>
 											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/phone.png" style="padding: 5px 10px;">01 01 01 01 01</div></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/calendar.png" style="padding: 5px 10px;">Indisponible</div></div>
+											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto">- CESU accepté</div></div>
 											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/mail.png" style="padding: 5px 10px;">testtst@test.fr</div></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><img src="images/pictos/id-card.png" style="padding: 5px 10px;">Présentation</div>
+											<div class="col-lg-4 col-md-4" style="margin:5px 0px">Prestataire</div>
 										</row>
 									</div>
 								</div>
 							</div>
-						</div>
+            </div>
 
 						<div id='CENTRE-LOISIR' style="display: none;">
 							<div style='padding-top: 10px; padding-bottom: 10px;'>
 								<h2 style="color: grey;">Accueils de loisir</h2>
 								<hr size=”10″>
 							</div>
-							<div class="row justify-content-center" style="padding-bottom: 20px;"> 
-								<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 text-center"> 
+							<div class="row justify-content-center" style="padding-bottom: 20px;">
+								<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 text-center">
 									<div class="me-multi-select" id="accueil-loisir-sansheberg">
 										<div style="text-align: center; word-wrap:normal; font-weight: bold;"><input style="position: absolute; left: 30px;" type="checkbox" onchange="var curseur=document.getElementById('accueil-loisir-sansheberg');if(this.checked==true){curseur.style.backgroundColor='#2B88D8'; curseur.style.color='white'; document.getElementById('champ-adresse-2').style.display=''}else{curseur.style.backgroundColor='#F3F4F6';curseur.style.color='black'}">Accueil de loisir sans hébergement</div>
 									</div>
-								</div> 
-              </div> 
+								</div>
+              </div>
               <div id='champ-adresse-2' class="col-lg-12 col-md-12 justify-content-center text-center" style="display: none; margin-bottom: 10px;">
 								<h3 style="color: #2B88D8; font-weight: bold;">Où ?</h3>
 								<div class="row justify-content-center" style="padding:5px; margin-bottom: 10px;">
@@ -1988,29 +1988,45 @@ AUI().use('liferay-navigation-interaction', function(A) {(function() {var $ = AU
 						</div>
 
             <div id='EVENT-CARTE' style="display: none;">
-
 							<div style='padding-top: 10px; padding-bottom: 10px;'>
 								<h2 style="color: grey;">Evenements près de chez vous</h2>
 								<hr size=”10″>
               </div>
               <h3>Thématiques :</h3>
 							<div class="row justify-content-center" style="padding-bottom: 20px;"> 
-								<div class="col-xs-12 col-sm-12 col-md-5 col-lg-3 text-center"> 
-									<div class="me-multi-select" id="themaScolar">
-										<div style="text-align: center; word-wrap:normal; font-weight: bold;"><input style="position: absolute; left: 30px;" type="checkbox" onchange="var curseur=document.getElementById('themaScolar');if(this.checked==true){curseur.style.backgroundColor='#2B88D8'; curseur.style.color='white';}else{curseur.style.backgroundColor='#F3F4F6';curseur.style.color='black'};document.getElementById('champ-adresse-5').style.display=''">Scolarité</div>
-									</div>
-								</div> 
-								<div class="col-xs-12 col-sm-12 col-md-5 col-lg-3 text-center"> 
-									<div class="me-multi-select" id="themaSante">
-										<div style="text-align: center; word-wrap:normal; font-weight: bold;"><input style="position: absolute; left: 30px;" type="checkbox" onchange="var curseur=document.getElementById('themaSante');if(this.checked==true){curseur.style.backgroundColor='#2B88D8'; curseur.style.color='white';}else{curseur.style.backgroundColor='#F3F4F6';curseur.style.color='black'};document.getElementById('champ-adresse-5').style.display=''">Santé</div>
-									</div>
-								</div> 
-								<div class="col-xs-12 col-sm-12 col-md-5 col-lg-3 text-center"> 
-									<div class="me-multi-select" id="themaHandi">
-										<div style="text-align: center; word-wrap:normal; font-weight: bold;"><input style="position: absolute; left: 30px;" type="checkbox" onchange="var curseur=document.getElementById('themaHandi');if(this.checked==true){curseur.style.backgroundColor='#2B88D8'; curseur.style.color='white';}else{curseur.style.backgroundColor='#F3F4F6';curseur.style.color='black'};document.getElementById('champ-adresse-5').style.display=''">Handicap</div>
+								<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 text-center"> 
+									<div class="me-multi-select" id="themaScol">
+										<div style="text-align: center; word-wrap:normal; font-weight: bold;"><input style="position: absolute; left: 30px;" type="checkbox" onchange="var curseur=document.getElementById('themaScol');if(this.checked==true){curseur.style.backgroundColor='#2B88D8'; curseur.style.color='white'; document.getElementById('champ-enfant').style.display=''}else{curseur.style.backgroundColor='#F3F4F6';curseur.style.color='black'}">Scolarité</div>
 									</div>
 								</div> 
               </div> 
+              <div id='champ-enfant' class="col-lg-12 col-md-12 justify-content-center text-center" style="display: none; margin-bottom: 10px;">
+								<h3 style="color: #2B88D8; font-weight: bold;">PUBLIC CIBLE:</h3>
+                <div class="row justify-content-center" style="padding:5px; margin-bottom: 10px;">
+                  <div class="col-lg-2 col-md-2"></div>
+                  <div class="col-lg-2 col-md-2 text-center">
+                    <img src="images/maquette/toutage.png" style="width: 90px; margin:10px; opacity:0.6;">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" onchange="document.getElementById('champ-adresse-5').style.display=''">
+                    <label class="form-check-label" for="inlineRadio1">Tout âge</label>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                    <img src="images/maquette/enfant.png" style="width: 90px; margin:10px; opacity:0.6;">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" onchange="document.getElementById('champ-adresse-5').style.display=''">
+                    <label class="form-check-label" for="inlineRadio2">de 0 à 6 ans</label>
+                  </div>  
+                  <div class="col-lg-2 col-md-2">
+                    <img src="images/maquette/smiling-girl.png" style="width: 90px; margin:10px; opacity:0.6;">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" onchange="document.getElementById('champ-adresse-5').style.display=''">
+                    <label class="form-check-label" for="inlineRadio2">de 6 à 11 ans</label>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                    <img src="images/maquette/ado.png" style="width: 90px; margin:10px; opacity:0.6;">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" onchange="document.getElementById('champ-adresse-5').style.display=''">
+                    <label class="form-check-label" for="inlineRadio2">de 11 à 16 ans</label>
+                  </div>
+                  <div class="col-lg-2 col-md-2"></div>
+                </div>
+              </div>
               <div id='champ-adresse-5' class="col-lg-12 col-md-12 justify-content-center text-center" style="display: none; margin-bottom: 10px;">
 								<h3 style="color: #2B88D8; font-weight: bold;">Où ?</h3>
 								<div class="row justify-content-center" style="padding:5px; margin-bottom: 10px;">
@@ -2063,41 +2079,20 @@ AUI().use('liferay-navigation-interaction', function(A) {(function() {var $ = AU
 								<div>
 									<div class="carte-resultat-adresse">
 										<row>
-											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><img class="picto-structures" src="images/pictos/picto-assmat.svg" ><span style="padding:5px; font-size:large;">Bruce Wayne</span></div>
+											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><img class="picto-structures" src="images/pictos/picto-assmat.svg" ><span style="padding:5px; font-size:large;">Action parentalité sur la scolarité</span></div>
 											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/picto-localisation-rouge.png" style="padding: 5px 10px;">à 20 m</div></div>
 											<div class="col-lg-12 col-md-12" style="margin:12px 0px"><span>4 rue Leriche, 75015 Paris</span></div>
 											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/phone.png" style="padding: 5px 10px;">01 01 01 01 01</div></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/calendar.png" style="padding: 5px 10px;">Disponibilité</div></div>
-											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/mail.png" style="padding: 5px 10px;">testtst@test.fr</div></div>
 											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><img src="images/pictos/id-card.png" style="padding: 5px 10px;">Présentation</div>
+											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/mail.png" style="padding: 5px 10px;">testtst@test.fr</div></div>
 										</row>
 									</div>
-									<div class="carte-resultat-adresse">
-										<row>
-											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><img class="picto-structures" src="images/pictos/picto-creche.svg" ><span style="padding:5px; font-size:large;">Pierre Parker</span></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/picto-localisation-rouge.png" style="padding: 5px 10px;">à 70 m</div></div>
-											<div class="col-lg-12 col-md-12" style="margin:12px 0px"><span>4 rue Leriche, 75015 Paris</span></div>
-											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/phone.png" style="padding: 5px 10px;">01 01 01 01 01</div></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/calendar.png" style="padding: 5px 10px;">Disponibilité</div></div>
-											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/mail.png" style="padding: 5px 10px;">testtst@test.fr</div></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><img src="images/pictos/id-card.png" style="padding: 5px 10px;">Présentation</div>
-										</row>
-									</div>
-									<div class="carte-resultat-adresse">
-										<row>
-											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><img class="picto-structures" src="images/pictos/picto-assmat.svg" ><span style="padding:5px; font-size:large;">Stephane Rogers</span></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/picto-localisation-rouge.png" style="padding: 5px 10px;">à 120 m</div></div>
-											<div class="col-lg-12 col-md-12" style="margin:12px 0px"><span>4 rue Leriche, 75015 Paris</span></div>
-											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/phone.png" style="padding: 5px 10px;">01 01 01 01 01</div></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/calendar.png" style="padding: 5px 10px;">Disponibilité</div></div>
-											<div class="col-lg-8 col-md-8" style="margin:5px 0px"><div class="infos-structures-picto"><img src="images/pictos/mail.png" style="padding: 5px 10px;">testtst@test.fr</div></div>
-											<div class="col-lg-4 col-md-4" style="margin:5px 0px"><img src="images/pictos/id-card.png" style="padding: 5px 10px;">Présentation</div>
-										</row>
-									</div>
+
 								</div>
               </div>
     
             </div>
+
 
 					</div>
 
