@@ -1794,15 +1794,13 @@
                                       <div class="suiviEtapes">
                                         <div id="content-desktop" class="row" style="padding: 32px 60px;">
                                           <div class="col-lg-6 col-md-6 text-center"><span class="circleDXC">Etape
-                                              1</span>Mes informations professionnelles<br><span style="font-size: 11px;">Pour vous identifier</span></div>
+                                              1</span>Mes informations professionnelles<br></div>
                                           <div class="col-lg-6 col-md-6 text-center"><span class="circleDXC" style="background-color: #00C5AD; color: white;">Etape 2</span>Mon activité
-                                            professionnelle<br><span style="font-size: 11px;">Pour présenter
-                                              votre prestation de travail</span></div>
+                                            professionnelle<br></div>
                                         </div>
                                         <div id="content-mobile" class="row" style="padding: 32px 30px;">
                                           <div class="col-lg-4 col-md-4 text-center"><span class="circleDXC">Etape
-                                              2</span>Mon activité professionnelle<br><span style="font-size: 11px;">Pour
-                                              présenter votre prestation de travail</span></div>
+                                              2</span>Mon activité professionnelle<br></div>
                                         </div>
                                       </div>
   
@@ -1895,9 +1893,8 @@
                                               </div>
                                             </div>
                                            
-                                            <h5>Tableau des disponibilités</h5><br>
+                                            <h5>Renseignement des disponibilités</h5><br>
                                             <div id="content-desktop" class="col-lg-12 col-md-12 text-left" style="padding:30px 20px; background-color: rgb(250, 250, 250);">
-  
                                               
                                               <h5>Ma semaine type</h5><br>
   
@@ -1912,13 +1909,14 @@
                                                   for (let i = 1; i < 25; i++) {
                                                     heure = heure + "<option>" + String(i) + ":00" + "</option>"
                                                   };
-                                                  elementSup = '<span id="plagehor">Disponible de <select>' + heure +
+                                                  elementSup = '<span id="plagehor">De <select>' + heure +
                                                     '</select><span> </span> à <select>' + heure +
                                                     '</select><span style="cursor: pointer;" onclick="this.parentElement.style.display=\'none\'"> &#10007;</span><br></span>'
                                                   element.insertAdjacentHTML("beforebegin", elementSup);
                                                   //document.getElementById(idDuParent).innerHTML = contenuEnglobant.replace(bouton,elementSup + String(bouton))
                                                 };
                                               </script>
+
   
                                               <span id="ICI_ON_A_LES_JOURS"></span>
   
@@ -1927,14 +1925,14 @@
                                                   'Dimanche'
                                                 ];
                                                 GROS_STRING =
-                                                  '<div id="XXXXX" style="padding: 10px; border-color: rgb(235, 235, 235); border-width: 1px; border-style: double;"><div class="row"><div class="col-lg-4 col-md-4"><label><strong style="font-size:15px">XXXXX</strong></label><label class="switch" style="float:right;"><input type="checkbox" class="custom-control-input" id="XXXXXOK" onchange=\'if(this.checked==true){document.getElementById("XXXXXContenu").style.display="";}else{document.getElementById("XXXXXContenu").style.display="none";}\'><span class="slider round"></span></label></div><div id="XXXXXContenu" class="col-lg-8 col-md-8" style="display: none"><span id="plagehor">Disponible de <select class="testons"></select><span> </span> à <select class="testons"></select><br></span><button class="btn" onclick="appendUnChampSup(this);">Ajouter une plage</button></div></div></div>';
+                                                  '<div id="XXXXX" style="padding: 10px; border-color: rgb(235, 235, 235); border-width: 1px; border-style: double;"><div class="row"><div class="col-lg-4 col-md-4"><label><strong style="font-size:15px">XXXXX</strong></label><label class="switch" style="float:right;"><input type="checkbox" class="custom-control-input" id="XXXXXOK" onchange=\'if(this.checked==true){document.getElementById("XXXXXContenu").style.display="";}else{document.getElementById("XXXXXContenu").style.display="none";}\'><span class="slider round"></span></label></div><div id="XXXXXContenu" class="col-lg-8 col-md-8" style="display: none"><span id="plagehor">De <select class="testons"></select><span> </span> à <select class="testons"></select><br></span><button class="btn" onclick="appendUnChampSup(this);">Ajouter une plage</button></div></div></div>';
                                                 let aRemplir = "";
                                                 for (i in jrSemaine) {
                                                   aRemplir = aRemplir + GROS_STRING.replace(/XXXXX/g, jrSemaine[i]);
                                                 }
                                                 document.getElementById('ICI_ON_A_LES_JOURS').innerHTML = aRemplir;
                                               </script>
-  
+                                              
                                               <hr>
                                               <div id="choix">
   
@@ -1944,15 +1942,8 @@
                                                 <input name="vacs" id="vacs" type="checkbox">
                                                 <label for="vacs">Je peux travailler pendant les vacances
                                                   scolaires</label><br>
-                                                <hr>
-                                                <h5>Je peux réaliser des accueils:</h5><br>
-                                                <input name="quelsaccueils" id="urgence" type="checkbox">
-                                                <label for="urgence" style="padding-right: 40px;">D'urgence</label>
-                                                <input name="quelsaccueils" id="nuit" type="checkbox">
-                                                <label for="nuit" style="padding-right: 40px;">De nuit</label>
-                                                <input name="quelsaccueils" id="joursfériés" type="checkbox">
-                                                <label for="joursfériés" style="padding-right: 40px;">Des jours
-                                                  fériés</label>
+                                                <input name="urgence" id="urgence" type="checkbox">
+                                                <label for="urgence">Je peux réaliser des accueils d'urgence</label>
   
                                               </div>
                                               <hr>
@@ -1966,7 +1957,6 @@
                                                 let jourchoisiP = "";
                                                 let moischoisiP = "";
                                                 let anneechoisiP="";
-                                                
   
                                                 function newPlace(elt) {
                                                   indicename = indicename + 1
@@ -1988,6 +1978,9 @@
                                                       moisP = moisP + "<option>" + String(j) + "</option>"
                                                     }
                                                   };
+                                                  let ageAChoisir = '<option>3 mois</option><option>4 mois</option><option>6 mois</option><option>9 mois</option><option>1 an</option><option>18 mois</option>'
+  for(let c=2;c<19;c++){ageAChoisir= String(ageAChoisir + '<option>' +String(c)+ ' ans</option>')}
+
                                                   let anneeP = ""
                                                   for (let k = 2020; k < 2030; k++) {
                                                     if (anneechoisiP == k) {
@@ -1996,6 +1989,7 @@
                                                       anneeP = anneeP + "<option>" + String(k) + "</option>"
                                                     }
                                                   }
+                                                  //let agePlist = ['1','2','3','4','5']
                                                   let ageP = ""
                                                   for (let l = 0; l < 19; l++) {
                                                     ageP = ageP + "<option>" + String(l) + " ans </option>"
@@ -2005,19 +1999,20 @@
                                                       agemoisP = agemoisP + "<option>" + String(m) + " mois </option>"
                                                   }
 
-                                                  eltsupP =
-                                                    ' <div class="col-lg-12 col-md-12 text-left" id="panneauPlacesbis' +
-                                                    indiceN + '" style="border-width: 2px; border-color: #dbdbdb; border-style: double; border-radius:15px; margin: 20px 0px; padding: 15px"> <strong>Place disponible</strong><br><br><input type="radio" id="Maintenantbis" name="dispoQuandbis' +
-                                                    indiceN + '" class="custom-control-input" selected  ><label class="custom-control-label" for="Maintenantbis">Dès maintenant</label><br><input type="radio" id="aPartirDubis" name="dispoQuandbis' +
-                                                    indiceN + '" class="custom-control-input" ><label class="custom-control-label" for="aPartirDubis">A partir du <select >' +
-                                                    jourP + '</select><select>' + moisP + '</select><select >' + anneeP +
-                                                    '</select> </label><br><br><span style="padding-right: 15px">Pour un enfant âgé de:</span> <select >' + ageP +
-                                                    '</select><select>'+agemoisP+'</select>  <span style="padding: 0px 15px">à</span>  <select>' + ageP +
-                                                    '</select><select>'+agemoisP+'</select> <br><br>Pour une garde de type:<br><br><input type="checkbox" id="tempspleinbis"><label for="tempspleinbis" style="padding-right: 15px">Temps plein</label><input type="checkbox" id="mitempsbis"> <label for="mitempsbis" style="padding-right: 15px">Mi-temps</label> <input type="checkbox" id="péribis" ><label for="péribis" style="padding-right: 15px">Périscolaire</label> <input type="checkbox" id="occabis"> <label for="occabis" style="padding-right: 15px">Occasionnel</label>  <br><br> <span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="document.getElementById(\'panneauPlacesbis' +
-                                                    indiceN + '\').style.display=\'none\'"> &#10007;</span><div class="row"><span class="col-lg-3 col-md-3">Séléctionnez les jours concernés :</span><span  class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">L</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">M</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">M</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">J</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">V</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">S</span><span class="circleJOUR col-md-1 col-lg-1" onclick="jourAppuye(this);">D</span></div></div></div>';
+                                                  eltsupP =' <div class="col-lg-12 col-md-12 text-left" id="panneauPlacesbis' +
+                                                    indiceN + '" style="border-width: 2px; border-color: #dbdbdb; border-style: double; border-radius:15px; margin: 20px 0px; padding: 15px"> <h4>Place disponible</h4><label class="custom-control-label" for="litepicker' + indiceN + '">A partir du </label>   <input id="litepicker' + indiceN + '" name="fname' + indiceN + '" autocomplete="off" placeholder="Précisez votre date..." style="text-align: center; margin-left: 15px"><br><br><span style="padding-right: 15px">Pour un enfant âgé de:</span> <select >' + ageAChoisir + '</select>  <span style="padding: 0px 15px">à</span>  <select>' + ageAChoisir +
+                                                    '</select> <br><br>Pour une garde de type:<br><br><input type="checkbox" id="tempspleinbis"><label for="tempspleinbis" style="padding-right: 15px">Temps plein</label><input type="checkbox" id="mitempsbis"> <label for="mitempsbis" style="padding-right: 15px">Mi-temps</label> <input type="checkbox" id="péribis" ><label for="péribis" style="padding-right: 15px">Périscolaire</label> <input type="checkbox" id="occabis"> <label for="occabis" style="padding-right: 15px">Occasionnel</label>  <br><br> <span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="document.getElementById(\'panneauPlacesbis' +
+                                                    indiceN + '\').style.display=\'none\'"> &#10007;</span></div>';
+
                                                   elt.insertAdjacentHTML("beforebegin", eltsupP);
+                                                  var pick = "pick" + String(indiceN);
+                                                    window[pick] = new Litepicker({ element: document.getElementById(String("litepicker" + String(indiceN))),singleMode:true, lang:'fr-FR', startDate:new Date() });
                                                 }
                                               </script>
+
+<script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
+<script>import Litepicker from 'litepicker';</script>
+
                                               <script>
                                                 function jourAppuye(element) {
                                                   if(element.classList == "circleJOUR col-md-1 col-lg-1") {

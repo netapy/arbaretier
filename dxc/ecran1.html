@@ -1766,12 +1766,11 @@
                                     <!--DXC ACTION                     000000000000000000000000000000000000000000000000000000000000-->
                                     <div class="suiviEtapes">
                                       <div id="content-desktop" class="row" style="padding: 32px 60px;">
-                                        <div class="col-lg-6 col-md-6 text-center"><span class="circleDXC" style="background-color: #00C5AD; color: white;">Etape 1</span>Mes informations professionnelles<br><span style="font-size: 11px;">Pour vous
-                                            identifier</span></div>
-                                        <div class="col-lg-6 col-md-6 text-center"><span class="circleDXC">Etape 2</span>Mon activité professionnelle<br><span style="font-size: 11px;">Pour présenter votre prestation de travail</span></div>
+                                        <div class="col-lg-6 col-md-6 text-center"><span class="circleDXC" style="background-color: #00C5AD; color: white;">Etape 1</span>Mes informations professionnelles<br></div>
+                                        <div class="col-lg-6 col-md-6 text-center"><span class="circleDXC">Etape 2</span>Mon activité professionnelle<br></div>
                                       </div>
                                       <div id="content-mobile" class="row" style="padding: 32px 30px;">
-                                        <div class="col-lg-4 col-md-4 text-center"><span class="circleDXC">Etape 1</span>Mes informations professionnelles<br><span style="font-size: 11px;">Pour vous identifier</span></div>
+                                        <div class="col-lg-4 col-md-4 text-center"><span class="circleDXC">Etape 1</span>Mes informations professionnelles<br></div>
                                       </div>
                                     </div>
 
@@ -1866,7 +1865,7 @@
                                               <input type="tel" id="fname" name="fname" width="100%" onchange='localStorage.setItem("vAutreNum",this.value);'>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                              <p>Comment souhaitez vous être contacté par les parents ? *</p>
+                                              <p>Quelles sont les coordonnées de contact que vous souhaitez faire apparaitre sur monenfant.fr ? *</p>
                                               <span  style="margin-left:20px"> <input type="checkbox" id="e_mail" name="quel_contact" >
                                                 <label for="e_mail">E-mail</label>
                                               </span>
@@ -1928,7 +1927,7 @@
                                               </div>
                                               <div class="col-lg-12 col-md-12 champParcoursCUT">
                                                 <input type="radio" id="masquer" name="Postal" onchange='localStorage.setItem("vChoix_Postal","0"); document.getElementById("alertCarte").style.display =""'>
-                                                <label for="masquer">Je souhaite masquer mon adresse postale.</label>
+                                                <label for="masquer">Je souhaite masquer mon adresse postale (hors code postal).</label>
                                                 <br><span id="alertCarte" style="display:none; position:absolute; color:#ff9a35">⚠ Votre profil n'apparaîtra pas sur la carte.</span>
                                               </div>
                                             </div>
@@ -2104,7 +2103,7 @@
                                               </select>
                                             </div>
                                             <div class="col-lg-8 col-md-8 champParcoursCUT">
-                                              <span>Agrément pour combien d'enfant maximum ?*</span><br>
+                                              <span>Capacité d'accueil maximale figurant sur l'agrément*</span><br>
                                               <select name="nbenfants" style="padding:3px 20px;width: 100%;" onchange='localStorage.setItem("vMaxEnf",this.value)'>
                                                 <option disabled selected value> -- A dérouler -- </option>
                                                 <option>1 enfant</option>
