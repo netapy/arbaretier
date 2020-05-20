@@ -1773,7 +1773,7 @@
                                       <div class="col-lg-4 col-md-4 text-center"><span class="circleDXC">Etape 3</span>Mon récapitulatif d'inscripton<br><span style="font-size: 11px;">Pour valider vos informations sur monenfant.fr</span></div>
                                     </div>
                                   </div>-->
-                                    <div class="me-menu-intermediaire-item-child text-center" style="padding: 40px;">
+                                    <div class="me-menu-intermediaire-item-child text-center" style="padding: 30px 15px;">
                                       <h1>Mon récapitulatif d'inscription</h1>
                                       <div class="categorie-formulaire">
                                         <row>
@@ -1832,7 +1832,9 @@
 
                                               <script>
                                                 document.getElementById("vnomnaissance2").innerHTML = localStorage.getItem("vNomNaissance")
-                                                document.getElementById("vnomepouse2").innerHTML = localStorage.getItem("vNomEpouse")
+                                                if (localStorage.getItem("vNomEpouse").length > 1) {
+                                                  document.getElementById("vnomepouse").innerHTML = localStorage.getItem("vNomEpouse")
+                                                } else { document.getElementById("vnomepouse").parentElement.style.display = 'none' }
                                               </script>
 
                                             </div>

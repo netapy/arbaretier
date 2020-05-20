@@ -1792,24 +1792,18 @@
   
                                       <!--DXC ACTION                     000000000000000000000000000000000000000000000000000000000000-->
                                       <div class="suiviEtapes">
-                                        <div id="content-desktop" class="row" style="padding: 32px 60px;">
-                                          <div class="col-lg-6 col-md-6 text-center"><span class="circleDXC">Etape
-                                              1</span>Mes informations professionnelles<br></div>
-                                          <div class="col-lg-6 col-md-6 text-center"><span class="circleDXC" style="background-color: #00C5AD; color: white;">Etape 2</span>Mon activité
-                                            professionnelle<br></div>
+                                        <div id="ariaaane" class="row" style="padding: 32px 0px;">
+                                          <nav id="barre-etapes-cnaf" style="position: relative;"> <ul> <li style="z-index:5;"> <span class="etape-nom">Identification</span> </li> <li style="z-index:1;" class="active"> <span class="etape-nom">Profil</span> </li>
+                                          </ul> </nav>
                                         </div>
-                                        <div id="content-mobile" class="row" style="padding: 32px 30px;">
-                                          <div class="col-lg-4 col-md-4 text-center"><span class="circleDXC">Etape
-                                              2</span>Mon activité professionnelle<br></div>
                                         </div>
-                                      </div>
   
-                                      <div class="me-menu-intermediaire-item-child text-center" style="padding: 40px;">
+                                      <div class="me-menu-intermediaire-item-child text-center" style="padding: 30px 15px;">
                                         <h1>Mon activité professionnelle</h1>
                                         <div class="categorie-formulaire">
                                           <div class="col-lg-12 col-md-12 champParcoursCUT text-center"><u>Toutes ces
                                             informations peuvent être modifiées par la suite sur votre espace
-                                            personnel</u></div>
+                                            personnel.</u></div>
                                           <row>
                                             <div id="content-desktop">
                                               <div class="text-center col-md-12 col-lg-12">
@@ -1856,7 +1850,7 @@
                                               <div class="text-center col-md-12 col-lg-12">
                                                 <h5>Ma présentation générale</h5>
                                               </div>
-                                              <div class="text-center champParcoursCUT" style="width: 120%; height:200px;">
+                                              <div class="text-center champParcoursCUT" style="width: 120%; height:120px;">
                                                 <span class="circleDXCategories col-xs-4">Formations<span class="ptitcercle">✎</span></span>
                                                 <span class="circleDXCategories col-xs-4" style="background-color: rgb(247, 129, 129);">Brevet de Secourisme<span class="ptitcercle">✎</span></span>
                                                 <span class="circleDXCategories col-xs-4" style="background-color: rgb(186, 138, 201);">Accueil Atypique<span class="ptitcercle">✎</span></span>
@@ -1882,7 +1876,7 @@
                                               <div class="text-center col-md-12 col-lg-12">
                                                 <h5>Mes activités proposées</h5>
                                               </div>
-                                              <div class="champParcoursCUT" style="width: 120%; height:220px;">
+                                              <div class="champParcoursCUT" style="width: 120%; height:180px;">
                                                 <span class="circleDXCategories col-xs-4" style="background-color: rgb(247, 129, 129);">Bibliothèque<span class="ptitcercle">✎</span></span>
                                                 <span class="circleDXCategories col-xs-4" style="background-color: rgb(186, 138, 201);">Ludothèque<span class="ptitcercle">✎</span></span>
                                                 <span class="circleDXCategories col-xs-4" style="background-color: rgb(250, 176, 79);">Activité d'éveil<span class="ptitcercle">✎</span></span>
@@ -1894,7 +1888,7 @@
                                             </div>
                                            
                                             <h5>Renseignement des disponibilités</h5><br>
-                                            <div id="content-desktop" class="col-lg-12 col-md-12 text-left" style="padding:30px 20px; background-color: rgb(250, 250, 250);">
+                                            <div class="col-lg-12 col-md-12 text-left" style="padding:30px 20px; background-color: rgb(250, 250, 250);">
                                               
                                               <h5>Ma semaine type</h5><br>
   
@@ -1903,27 +1897,24 @@
                                                   //idDuParent = element.parentElement.id
                                                   //contenuEnglobant = element.parentElement.innerHTML;
   
-                                                  bouton =
-                                                    '<button class="btn" onclick="appendUnChampSup(this);">Ajouter une plage</button>'
                                                   let heure = "";
                                                   for (let i = 1; i < 25; i++) {
                                                     heure = heure + "<option>" + String(i) + ":00" + "</option>"
                                                   };
-                                                  elementSup = '<span id="plagehor">De <select>' + heure +
+                                                  elementSup = '<span id="plagehor" style="position:relative;">De <select>' + heure +
                                                     '</select><span> </span> à <select>' + heure +
-                                                    '</select><span style="cursor: pointer;" onclick="this.parentElement.style.display=\'none\'"> &#10007;</span><br></span>'
+                                                    '</select><span style="cursor: pointer; position:absolute;" onclick="this.parentElement.style.display=\'none\'"> &#10007;</span><br></span>'
                                                   element.insertAdjacentHTML("beforebegin", elementSup);
                                                   //document.getElementById(idDuParent).innerHTML = contenuEnglobant.replace(bouton,elementSup + String(bouton))
                                                 };
                                               </script>
 
-  
                                               <span id="ICI_ON_A_LES_JOURS"></span>
   
                                               <script>
                                                 jrSemaine = ["Lundi", 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi','Dimanche'];
                                                 GROS_STRING =
-                                                  '<div id="XXXXX" style="padding: 10px; border-color: rgb(235, 235, 235); border-width: 1px; border-style: double;"><div class="row"><div class="col-lg-4 col-md-4"><label><strong style="font-size:15px">XXXXX</strong></label><label class="switch" style="float:right;"><input type="checkbox" class="custom-control-input" id="XXXXXOK" onchange=\'if(this.checked==true){document.getElementById("XXXXXContenu").style.display="";}else{document.getElementById("XXXXXContenu").style.display="none";}\'><span class="slider round"></span></label></div><div id="XXXXXContenu" class="col-lg-8 col-md-8" style="display: none"><span id="plagehor">De <select class="testons"></select><span> </span> à <select class="testons"></select><br></span><button class="btn" onclick="appendUnChampSup(this);">Ajouter une plage</button></div></div></div>';
+                                                  '<div id="XXXXX" style="padding: 10px; border-color: rgb(235, 235, 235); border-width: 1px; border-style: double;"><div class="row"><div class="col-lg-4 col-md-4" style="margin-bottom:20px;"><label><strong style="font-size:15px;">XXXXX</strong></label><label class="switch" style="float:right;"><input type="checkbox" class="custom-control-input" id="XXXXXOK" onchange=\'if(this.checked==true){document.getElementById("XXXXXContenu").style.display="";}else{document.getElementById("XXXXXContenu").style.display="none";}\'><span class="slider round"></span></label></div><div id="XXXXXContenu" class="col-lg-8 col-md-8 text-center" style="display: none;"><span id="plagehor">De <select class="testons"></select><span> </span> à <select class="testons"></select><br></span><button class="btnPlusPlage" onclick="appendUnChampSup(this);">Ajouter une plage</button></div></div></div>';
                                                 let aRemplir = "";
                                                 for (i in jrSemaine) {
                                                   aRemplir = aRemplir + GROS_STRING.replace(/XXXXX/g, jrSemaine[i]);
@@ -1933,15 +1924,17 @@
                                               
                                               <hr>
                                               <div id="choix">
-  
+                                                <span style="white-space: nowrap;">
                                                 <input name="flexible" id="flexible" type="checkbox">
-                                                <label for="flexible">Je peux être flexible sur les horaires si
+                                                <label style="font-weight: normal" for="flexible">Je </span> peux être flexible sur les horaires si
                                                   besoin</label><br>
+                                                <span style="white-space: nowrap;">
                                                 <input name="vacs" id="vacs" type="checkbox">
-                                                <label for="vacs">Je peux travailler pendant les vacances
+                                                <label style="font-weight: normal" for="vacs">Je</span> peux travailler pendant les vacances
                                                   scolaires</label><br>
+                                                <span style="white-space: nowrap;">
                                                 <input name="urgence" id="urgence" type="checkbox">
-                                                <label for="urgence">Je peux réaliser des accueils d'urgence</label>
+                                                <label style="font-weight: normal" for="urgence">Je </span> peux réaliser des accueils d'urgence</label>
   
                                               </div>
                                               <hr>
@@ -1996,20 +1989,20 @@
                                                   for (let m = 0; m < 12; m++){
                                                       agemoisP = agemoisP + "<option>" + String(m) + " mois </option>"
                                                   }
-
+                                                  dateduJour = new Date().toISOString().substring(0, 10);
+                                                  
                                                   eltsupP =' <div class="col-lg-12 col-md-12 text-left" id="panneauPlacesbis' +
-                                                    indiceN + '" style="border-width: 2px; border-color: #dbdbdb; border-style: double; border-radius:15px; margin: 20px 0px; padding: 15px"> <h4>Place disponible</h4><label class="custom-control-label" for="litepicker' + indiceN + '">A partir du </label>   <input id="litepicker' + indiceN + '" name="fname' + indiceN + '" autocomplete="off" placeholder="Précisez votre date..." style="text-align: center; margin-left: 15px"><br><br><span style="padding-right: 15px">Pour un enfant âgé de:</span> <select >' + ageAChoisir + '</select>  <span style="padding: 0px 15px">à</span>  <select>' + ageAChoisir +
-                                                    '</select> <br><br>Pour une garde de type:<br><br><input type="checkbox" id="tempspleinbis"><label for="tempspleinbis" style="padding-right: 15px">Temps plein</label><input type="checkbox" id="mitempsbis"> <label for="mitempsbis" style="padding-right: 15px">Mi-temps</label> <input type="checkbox" id="péribis" ><label for="péribis" style="padding-right: 15px">Périscolaire</label> <input type="checkbox" id="occabis"> <label for="occabis" style="padding-right: 15px">Occasionnel</label>  <br><br> <span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="document.getElementById(\'panneauPlacesbis' +
+                                                    indiceN + '" style="border-width: 2px; border-color: #dbdbdb; border-style: double; border-radius:15px; margin: 20px 0px; padding: 15px"> <h4>Place disponible</h4><label class="custom-control-label" for="start' + indiceN + '" style="padding-right:10px">A partir du </label>  <input type="date" id="start' + indiceN + '" name="start' + indiceN + '" value="'+ dateduJour +'" min="2025-00-00" max="2025-12-31"><br><br><span style="padding-right: 15px">Pour un enfant âgé de:</span> <select >' + ageAChoisir + '</select>  <span style="padding: 0px 15px">à</span>  <select>' + ageAChoisir +
+                                                    '</select> <br><br>Pour une garde de type:<br><br><div style="display:inline-block;"><span class=" col-lg-6 col-md-6 col-xs-12"><input type="checkbox" id="tempspleinbis" "><label for="tempspleinbis" style="padding: 0px 2px;font-weight: normal;">Temps plein</label></span><span class=" col-lg-6 col-md-6 col-xs-12"><input type="checkbox" id="mitempsbis"><label for="mitempsbis" style="padding: 0px 2px;font-weight: normal">Mi-temps</label></span><span class=" col-lg-6 col-md-6 col-xs-12"><input type="checkbox" id="péribis" ><label for="péribis" style="padding: 0px 2px;font-weight: normal;">Périscolaire</label></span><span class=" col-lg-6 col-md-6 col-xs-12"> <input type="checkbox" id="occabis"><label for="occabis" style="padding: 0px 2px;font-weight: normal;">Occasionnel</label> </span></div> <br><br> <span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="document.getElementById(\'panneauPlacesbis' +
                                                     indiceN + '\').style.display=\'none\'"> &#10007;</span></div>';
 
                                                   elt.insertAdjacentHTML("beforebegin", eltsupP);
-                                                  var pick = "pick" + String(indiceN);
-                                                    window[pick] = new Litepicker({ element: document.getElementById(String("litepicker" + String(indiceN))),singleMode:true, lang:'fr-FR', startDate:new Date() });
+                                                  
                                                 }
                                               </script>
 
-<script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
-<script>import Litepicker from 'litepicker';</script>
+
+                                              
 
                                               <script>
                                                 function jourAppuye(element) {
@@ -2059,18 +2052,12 @@
                                               </script>
   
                                             </div>
-                                            <div id="content-mobile" style="height: 570px;">
-                                              <div style="left: 0px; position: absolute; width: 100%;">
-                                                <img src="images/maquette/tableaudispo.PNG">
-                                              </div>
-                                            </div><br>
-  
                                             <div class="text-center col-md-12 col-lg-12">
                                               <h5 style="margin-top: 20px;">Mon tarif horaire net</h5><br>
                                             </div>
   
                                             <div class="text-left">
-  
+
                                               <div class="col-lg-12 col-md-12 champParcoursCUT">
                                                 <input type="checkbox" id="mycheck" style="margin: 0px 5px;" onclick="myFunction()">Afficher mon tarif
                                                 <script>
@@ -2086,13 +2073,13 @@
                                                 </script>
                                               </div>
   
-                                              <div id="choix_tarif" style="display: none">
+                                              <div id="choix_tarif" style="display: none;">
                                                 <div class="col-lg-12 col-md-12 champParcours">
                                                   <span>Mon tarif horaire net *</span><br>
                                                   <span style="font-size: 12px;">Compris entre (hors indemnité d'entretien
                                                     et repas)</span>
                                                 </div>
-                                                <div class="col-lg-12 col-md-12 champParcours" style="padding: 10px 80px;padding-top: 30px;">
+                                                <div class="col-lg-12 col-md-12 champParcours" style="padding: 20px 12%; padding-top: 30px;">
                                                   <script src="nouislider.min.js"></script>
                                                   <div id="sliderrr" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"></div>
                                                   <script>
@@ -2109,12 +2096,12 @@
                                                   </script>
                                                 </div>
   
-                                              </div><br>
+                                              </div><br><br>
                                               <div class="col-lg-6 col-md-6 champParcours text-center">
                                                 <button class="btn" onclick="window.location.href = 'ecran1.html';">Retour
                                                   à l'étape 1</button>
                                               </div>
-                                              <div class="col-lg-6 col-md-6 champParcours text-center">
+                                              <div class="col-lg-6 col-md-6 champParcours text-center" >
                                                 <button class="btn btn-primary" onclick="localStorage.setItem('vTarifMin',slider.noUiSlider.get()[0]);localStorage.setItem('vTarifMax',slider.noUiSlider.get()[1]);window.location.href = 'ecran3.html';">Valider
                                                   l'étape 2</button>
                                               </div>                                          
@@ -2783,6 +2770,17 @@
         margin: auto;
       }
   
+      .btnPlusPlage {
+        background-color: #2B88D8;
+        border-radius: 5px;
+        border-width: 0px;
+        border-style: solid;
+        color: white;
+        margin-top: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        padding:4px;
+      }
+
       .champParcours {
         margin-bottom: 15px;
       }
