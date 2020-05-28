@@ -2836,7 +2836,7 @@
 
                                             <div class=" col-lg-12 col-md-12 champParcours">
 
-                                              <p>N° de Téléphone :</p>
+                                              <p>N° de Téléphone *:</p>
                                             </div>
 
 
@@ -2863,7 +2863,7 @@
                                               </div>
                                             </div>
 
-                                            <div class="col-lg-12 col-md-12 champParcours" style="font-style: oblique;">
+                                            <div class="col-lg-12 col-md-12 champParcours">
                                               <p>Adresse postale du lieu d'exercice :</p>
                                             </div>
                                             <div class="col-md-12 col-lg-12 champParcours">
@@ -2951,8 +2951,7 @@
                                                 <p>Copie Carte d'identité - Recto *</p>
                                                 <div class="caseCocheLeft">
                                                   <input type="file" id="copCartIdRect" name="fname"
-                                                    style="display: none;"
-                                                    onchange="this.parentElement.childNodes[5].innerHTML ='<a href=\'\'>' + String(this.files[0].name) + '</a>' + '<span class=\'btnVueDoc\'>&#10007</span>'">
+                                                    style="display: none;" onchange="remplirNomFichier(this)">
                                                   <label for="copCartIdRect" class="boutonFileInput">Choisir un
                                                     fichier</label>
                                                   <span>Aucun fichier choisi </span>
@@ -2962,123 +2961,128 @@
                                                 <p>Copie Carte d'identité - Verso *</p>
                                                 <div class="caseCocheLeft">
                                                   <input type="file" id="copCartIdVers" name="fname"
-                                                    style="display: none;"
-                                                    onchange="this.parentElement.childNodes[5].innerHTML ='<a href=\'\'>' + String(this.files[0].name) + '</a>' + '<span class=\'btnVueDoc\'>&#10007</span>'">
+                                                    style="display: none;" onchange="remplirNomFichier(this)">
                                                   <label for="copCartIdVers" class="boutonFileInput">Choisir un
                                                     fichier</label>
                                                   <span>Aucun fichier choisi </span>
                                                 </div>
                                               </div>
+                                              <div class="col-lg-12 col-md-12 champParcours">
+                                                <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
+                                                  onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
+                                              </div>
                                             </span>
+
                                             <span id="champ-passeport" style="display: none;">
                                               <div class="col-lg-12 col-md-12 champParcours Madeleine">
                                                 <p>Copie Passeport *</p>
                                                 <div class="caseCocheLeft">
                                                   <input type="file" id="copPasspt" name="fname" style="display: none;"
-                                                    onchange="this.parentElement.childNodes[5].innerHTML ='<a href=\'\'>' + String(this.files[0].name) + '</a>' + '<span class=\'btnVueDoc\'>&#10007</span>'">
+                                                    onchange="remplirNomFichier(this)">
                                                   <label for="copPasspt" class="boutonFileInput">Choisir un
                                                     fichier</label>
                                                   <span>Aucun fichier choisi </span>
                                                 </div>
                                               </div>
+                                              <div class="col-lg-12 col-md-12 champParcours">
+                                                <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
+                                                  onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
+                                              </div>
                                             </span>
+
                                             <span id="champ-titre-sejour" style="display: none;">
+                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
+                                                <p>Copie titre de séjour 1 *</p>
+                                                <div class="caseCocheLeft">
+                                                  <input type="file" id="copCartIdRect" name="fname"
+                                                    style="display: none;" onchange="remplirNomFichier(this)">
+                                                  <label for="copCartIdRect" class="boutonFileInput">Choisir un
+                                                    fichier</label>
+                                                  <span>Aucun fichier choisi </span>
+                                                </div>
+                                              </div>
+                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
+                                                <p>Copie titre de séjour 2 *</p>
+                                                <div class="caseCocheLeft">
+                                                  <input type="file" id="copCartIdRect" name="fname"
+                                                    style="display: none;" onchange="remplirNomFichier(this)">
+                                                  <label for="copCartIdRect" class="boutonFileInput">Choisir un
+                                                    fichier</label>
+                                                  <span>Aucun fichier choisi </span>
+                                                </div>
+                                              </div>
+                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
+                                                <p>Copie titre de séjour 3 *</p>
+                                                <div class="caseCocheLeft">
+                                                  <input type="file" id="copCartIdRect" name="fname"
+                                                    style="display: none;" onchange="remplirNomFichier(this)">
+                                                  <label for="copCartIdRect" class="boutonFileInput">Choisir un
+                                                    fichier</label>
+                                                  <span>Aucun fichier choisi </span>
+                                                </div>
+                                              </div>
                                               <div class="col-lg-12 col-md-12 champParcours">
-                                                <p>Copie Titre de séjour *</p>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copTitreSejour1" name="fname"
-                                                    style="display: none;"
-                                                    onchange="this.parentElement.childNodes[5].innerHTML ='<a href=\'\'>' + String(this.files[0].name) + '</a>' + '<span class=\'btnVueDoc\'>&#10007</span>'">
-                                                  <label for="copTitreSejour1" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copTitreSejour2" name="fname"
-                                                    style="display: none;"
-                                                    onchange="this.parentElement.childNodes[5].innerHTML ='<a href=\'\'>' + String(this.files[0].name) + '</a>' + '<span class=\'btnVueDoc\'>&#10007</span>'">
-                                                  <label for="copTitreSejour2" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copTitreSejour3" name="fname"
-                                                    style="display: none;"
-                                                    onchange="this.parentElement.childNodes[5].innerHTML ='<a href=\'\'>' + String(this.files[0].name) + '</a>' + '<span class=\'btnVueDoc\'>&#10007</span>'">
-                                                  <label for="copTitreSejour3" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-
+                                                <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
+                                                  onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
                                               </div>
                                             </span>
 
-                                            <div class="col-lg-12 col-md-12 champParcours">
-                                              <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
-                                                onclick="document.getElementById('deuxieme-piece').style.display='';document.getElementById('ajjt-piece').style.display='none'">Ajouter
-                                                une autre pièce</button>
-                                            </div>
-                                            <span id="deuxieme-piece" style="display: none;">
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <select id="inputState"
-                                                  onchange="var choix = this.value; var cid = document.getElementById('champ-carte-id2');var cpsprt = document.getElementById('champ-passeport2');var cttr = document.getElementById('champ-titre-sejour2');if(choix == 'Carte d\'identité'){cid.style.display = '';cpsprt.style.display = 'none'; cttr.style.display = 'none';}else if(choix == 'Passeport'){cid.style.display = 'none';cpsprt.style.display = ''; cttr.style.display = 'none';}else if(choix == 'Titre de séjour autorisant l\'exercice d\'une activité professionelle'){cid.style.display = 'none';cpsprt.style.display = 'none'; cttr.style.display = '';}">
-                                                  <option disabled selected value> -- Nature du document -- </option>
-                                                  <option>Carte d'identité</option>
-                                                  <option>Passeport</option>
-                                                  <option>Titre de séjour autorisant l'exercice d'une activité
-                                                    professionelle</option>
-                                                </select>
-                                              </div>
-                                              <span id="champ-carte-id2" style="display: none;">
-                                                <div class="col-lg-12 col-md-12 champParcours">
-                                                  <span>Copie Carte d'identité - Recto</span><br>
-                                                  <input type="file" id="fname" name="fname">
-                                                </div>
-                                                <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                                  <span>Copie Carte d'identité - Verso</span><br>
-                                                  <input type="file" id="fname" name="fname">
-                                                </div>
-                                              </span>
-                                              <span id="champ-passeport2" style="display: none;">
-                                                <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                                  <span>Copie Passeport</span><br>
-                                                  <input type="file" id="fname" name="fname">
-                                                </div>
-                                              </span>
-                                              <span id="champ-titre-sejour2" style="display: none;">
-                                                <div class="col-lg-12 col-md-12 champParcours">
-                                                  <span>Copie Titre de séjour *</span><br>
-                                                  <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
-                                                  <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
-                                                  <input type="file" id="fname" name="fname" style="padding: 5px 0px;">
-                                                </div>
-                                              </span>
-                                            </span>
+                                            <script>
+                                              // this.parentElement.parentElement.parentElement.lastChild.style.display=\'\'
+                                              let gjj =
+                                                '<div class="col-lg-12 col-md-12 champParcours Madeleine"><p style="position: relative;">Document supplémentaire<span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="this.parentElement.parentElement.parentElement.lastElementChild.children[0].style.display=\'\';this.parentElement.parentElement.remove();"> &#10007;</span></p><div class="caseCocheLeft"><input type="file" id="copCartIdRect" name="fname"style="display: none;"onchange="remplirNomFichier(this)"><label for="copCartIdRect" class="boutonFileInput">Choisir un fichier</label><span> Aucun fichier choisi </span></div></div>'
+
+                                              function ajouterpiece(elem) {
+                                                if (elem.parentElement.parentElement.childElementCount < 5) {
+                                                  elem.parentElement.insertAdjacentHTML('beforebegin', gjj)
+                                                }
+                                                if (elem.parentElement.parentElement.childElementCount > 4) {
+                                                  elem.style.display = 'none';
+                                                }
+                                              }
+                                            </script>
+
                                             <div class="col-lg-12 col-md-12 champParcours" style="margin-top: 40px;">
                                               <p>Document(s) Justificatif professionnel *</p>
                                               <p style="font-size: 12px;">Agrément en cours de validité et
                                                 lisible</p>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 champParcours Madeleine">
-                                              <p>Copie Agrément *</p>
-                                              <div class="caseCocheLeft">
-                                                <input type="file" id="copAgr" name="fname" style="display: none;"
-                                                  onchange="this.parentElement.childNodes[5].innerHTML ='<a href=\'\'>' + String(this.files[0].name) + '</a>' + '<span class=\'btnVueDoc\'>&#10007</span>'">
-                                                <label for="copAgr" class="boutonFileInput">Choisir un fichier</label>
-                                                <span>Aucun fichier choisi </span>
+                                            <span>
+                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
+                                                <p>Copie Agrément *</p>
+                                                <div class="caseCocheLeft">
+                                                  <input type="file" id="copAgr" name="fname" style="display: none;"
+                                                    onchange="remplirNomFichier(this)">
+                                                  <label for="copAgr" class="boutonFileInput">Choisir un fichier</label>
+                                                  <span>Aucun fichier choisi </span>
+                                                </div>
+                                              </div>  
+                                              <div class="col-lg-12 col-md-12 champParcours">
+                                                <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
+                                                  onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
                                               </div>
-                                            </div>
+                                            </span>
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <p>Date de début d'agrément *</p>
                                               <input placeholder="Date de début d'agrément *" type="date" id="start"
-                                                name="trip-start" value="2018-01-01" min="2010-00-00" max="2025-12-31" onchange="localStorage.setItem('vDateDebut', this.value);">
+                                                name="trip-start" value="2018-01-01" min="2010-00-00" max="2025-12-31"
+                                                onchange="localStorage.setItem('vDateDebut', this.value);">
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <p>Date de fin d'agrément *</p>
                                               <input placeholder="Date de début d'agrément *" type="date" id="start"
-                                                name="trip-start" value="2023-01-01" min="2010-00-00" max="2035-12-31" onchange="localStorage.setItem('vDateFinn',this.value);">
+                                                name="trip-start" value="2023-01-01" min="2010-00-00" max="2035-12-31"
+                                                onchange="localStorage.setItem('vDateFinn',this.value);">
                                             </div>
                                             <br>
+                                            <script>
+                                              function remplirNomFichier(elem) {
+                                                elem.parentElement.childNodes[5].innerHTML =
+                                                  '<a href=\'\' style="text-decoration: underline; overflow-wrap: normal;">' +
+                                                  'Prévisualiser ' + String(elem.files[0].name) + '</a>' +
+                                                  '<span class=\'btnVueDoc\'>&#10007</span>'
+                                              }
+                                            </script>
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <select name="bad_day"
                                                 onchange='localStorage.setItem("vDepAgr",this.value);'>
@@ -3096,8 +3100,7 @@
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
                                               <select name="nbenfants"
                                                 onchange='localStorage.setItem("vMaxEnf",this.value)'>
-                                                <option disabled selected value>Capacité d'accueil maximale figurant
-                                                  sur l'agrément *</option>
+                                                <option disabled selected value>Capacité d'accueil maximale *</option>
                                                 <option>1 enfant</option>
                                                 <option>2 enfants</option>
                                                 <option>3 enfants</option>
@@ -3142,7 +3145,7 @@
                                             let stringPrefCont = String(CHECKBOXemail + CHECKBOXtel + CHECKBOXtelFixe);
                                             localStorage.setItem('vContact',stringPrefCont.substring(0, stringPrefCont.length - 2));
                                             console.log(localStorage.getItem('vContact'));
-                                            window.location.href='ecran2.html';">Valider l'étape 1</button>
+                                            window.location.href='ecran2.html';">Continuer</button>
                                           </div>
                                         </row>
                                       </div>
