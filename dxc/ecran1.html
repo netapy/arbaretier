@@ -2765,8 +2765,8 @@
                   .style.display="none";document.getElementById("mail-ok")
                   .style.display="";this.style.color="black";localStorage.setItem("vEmail",this.value);
                 }'>
-                                              <span id="mail-ok" style='color: green; display: none;'>&#10004;</span>
-                                              <span id="mail-ko" style='color: red; display: none;'>&#10007;</span>
+                                              <span id="mail-ok" style='color: green; display: none; padding:10px; position:absolute'>&#10004;</span>
+                                              <span id="mail-ko" style='color: red; display: none; padding:10px; position:absolute'>&#10007;</span>
                                             </div>
                                             <!-- The Modal -->
                                             <div id="myModalMail" class="modal">
@@ -2786,66 +2786,56 @@
                     {document.getElementById("bon_doublon").style.display="";this.style.color="black";document.getElementById("faux_doublon").style.display="none"}
                     else{document.getElementById("faux_doublon").style.display="";this.style.color="red";document.getElementById("bon_doublon").style.display="none"}'>
                                               <span id="bon_doublon"
-                                                style='color: green; display: none;'>&#10004;</span>
-                                              <span id="faux_doublon" style='color: red; display: none;'>&#10007;</span>
+                                                style='color: green; display: none; padding:10px; position:absolute'>&#10004;</span>
+                                              <span id="faux_doublon" style='color: red; display: none; padding:10px; position:absolute'>&#10007;</span>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
-
+                                              <select name="civilite"
+                                                onchange='localStorage.setItem("vCivilite",this.value)'>
+                                                <option disabled selected value>Civilité *</option>
+                                                <option>Monsieur</option>
+                                                <option>Madame</option>
+                                              </select>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
                                               <input type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vPrenom",this.value) '
                                                 placeholder="Prénom *" ;>
                                             </div>
-                                            <!--
-                                            <div id="prenomSupbtn" class="col-lg-6 col-md-6 champParcours">
-                                              <span>Autres prénoms</span><br>
-                                              <button id="autre_prenom" onclick="document.getElementById('prenomSup').style.display='';document.getElementById('prenomSupbtn').style.display='none'">Ajouter</button>
-                                            </div>
-                                            <div id="prenomSup" class="col-lg-6 col-md-6 champParcours" style="display: none;">
-                                              <span>Autres prénoms</span><br>
-                                              <input type="text" id="DeuxiemePrnm" name="fname" onchange='localStorage.setItem("vAutrePrenom",this.value);'>
-                                              <input type="text" id="fname" name="fname" onchange='localStorage.setItem("vAutrePrenom",String(document.getElementById("DeuxiemePrnm").value) + " " + this.value);'>
-                                            </div>
-                                            -->
                                             <div class="col-lg-12 col-md-21 champParcours">
                                               <input placeholder="Nom de naissance *" type="text" id="fname"
                                                 name="fname"
                                                 onchange='localStorage.setItem("vNomNaissance",this.value);'>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                              <input placeholder="Nom d'usage" type="text" id="fname" name="fname"
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <input placeholder="Nom d'usage *" type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vNomEpouse",this.value); if(this.value != ""){document.getElementById("prefNomFam").style.display=""}else{document.getElementById("prefNomFam").style.display="none"}'>
                                             </div>
-                                            <!--
-                                            <div id='prefNomFam' class="col-lg-12 col-md-12 champParcoursCUT" style="display: none;">
-                                              <p>Quel nom voulez-vous que les parents voient sur Monenfant.fr ? *</p>
-                                              <input type="radio" id="vNaissance" name="quel_nom" onchange='localStorage.setItem("vNaissance","1")'>
-                                              <label for="vNaissance">Nom de naissance</label>
-                                              <input type="radio" id="vEpouse" name="quel_nom" style="margin-left:20px" onchange='localStorage.setItem("vNaissance","0")'>
-                                              <label for="vEpouse">Nom d'usage</label>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <p>Date de Naissance *</p>
+                                              <input type="date" id="fname" name="fname"
+                                                onchange='localStorage.setItem("vDateNaissance",this.value) '
+                                                placeholder="Date de Naissance *" ;>
                                             </div>
-                                            -->
+                                            <div class="col-lg-12 col-md-12 champParcoursCUT">
+                                              <input type="text" id="fname" name="fname"
+                                                onchange='localStorage.setItem("vVilleNaissance",this.value) '
+                                                placeholder="Ville de Naissance *" ;>
+                                            </div>
                                           </div>
 
                                           <div class="text-center col-md-12 col-lg-12">
                                             <h5>Mes coordonnées de contact</h5><br>
                                           </div>
-
-
-
                                           <div class="text-center">
-
                                             <div class=" col-lg-12 col-md-12 champParcours">
-
                                               <p>N° de Téléphone *:</p>
                                             </div>
-
-
                                             <div class="col-lg-12 col-md-12 champParcours "
                                               style="margin-bottom: 20px;">
                                               <input placeholder="Portable" type="text" id="fname" name="fname"
                                                 width="100%" onchange='localStorage.setItem("vNTelephone",this.value);'>
                                             </div>
-
                                             <div class="col-lg-12 col-md-12 champParcours "
                                               style="margin-bottom: 20px;">
                                               <input placeholder="Fixe" type="text" id="fname" name="fname" width="100%"
@@ -2926,124 +2916,11 @@
                                           </div>
 
                                           <div class="text-center col-md-12 col-lg-12">
-                                            <h5 style="margin-top: 20px;">Mes justificatifs professionels</h5><br>
+                                            <h5 style="margin-top: 20px;">Mon justificatif professionel</h5><br>
                                           </div>
                                           <div class="text-center">
-                                            <div class="col-lg-12 col-md-12 champParcours">
-                                              <p>Document(s) Justificatif d'identité *</p>
-                                              <p style="font-size: 12px;">Pièce(s) d'identité en cours de validité et
-                                                lisible(s)</p>
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 champParcours">
-                                              <select id="inputState"
-                                                onchange="var choix = this.value; var cid = document.getElementById('champ-carte-id');var cpsprt = document.getElementById('champ-passeport');var cttr = document.getElementById('champ-titre-sejour');if(choix == 'Carte d\'identité'){cid.style.display = '';cpsprt.style.display = 'none'; cttr.style.display = 'none';}else if(choix == 'Passeport'){cid.style.display = 'none';cpsprt.style.display = ''; cttr.style.display = 'none';}else if(choix == 'Titre de séjour autorisant l\'exercice d\'une activité professionelle'){cid.style.display = 'none';cpsprt.style.display = 'none'; cttr.style.display = '';};localStorage.setItem('vChoixID',this.value);">
-                                                <option disabled selected value> -- Nature du document -- </option>
-                                                <option>Carte d'identité</option>
-                                                <option>Passeport</option>
-                                                <option>Titre de séjour autorisant l'exercice d'une activité
-                                                  professionelle</option>
-                                              </select>
-                                            </div>
-
-
-                                            <span id="champ-carte-id" style="display: none;">
-                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
-                                                <p>Copie Carte d'identité - Recto *</p>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copCartIdRect" name="fname"
-                                                    style="display: none;" onchange="remplirNomFichier(this)">
-                                                  <label for="copCartIdRect" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
-                                                <p>Copie Carte d'identité - Verso *</p>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copCartIdVers" name="fname"
-                                                    style="display: none;" onchange="remplirNomFichier(this)">
-                                                  <label for="copCartIdVers" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
-                                                  onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
-                                              </div>
-                                            </span>
-
-                                            <span id="champ-passeport" style="display: none;">
-                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
-                                                <p>Copie Passeport *</p>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copPasspt" name="fname" style="display: none;"
-                                                    onchange="remplirNomFichier(this)">
-                                                  <label for="copPasspt" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
-                                                  onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
-                                              </div>
-                                            </span>
-
-                                            <span id="champ-titre-sejour" style="display: none;">
-                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
-                                                <p>Copie titre de séjour 1 *</p>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copCartIdRect" name="fname"
-                                                    style="display: none;" onchange="remplirNomFichier(this)">
-                                                  <label for="copCartIdRect" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
-                                                <p>Copie titre de séjour 2 *</p>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copCartIdRect" name="fname"
-                                                    style="display: none;" onchange="remplirNomFichier(this)">
-                                                  <label for="copCartIdRect" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
-                                                <p>Copie titre de séjour 3 *</p>
-                                                <div class="caseCocheLeft">
-                                                  <input type="file" id="copCartIdRect" name="fname"
-                                                    style="display: none;" onchange="remplirNomFichier(this)">
-                                                  <label for="copCartIdRect" class="boutonFileInput">Choisir un
-                                                    fichier</label>
-                                                  <span>Aucun fichier choisi </span>
-                                                </div>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
-                                                  onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
-                                              </div>
-                                            </span>
-
-                                            <script>
-                                              // this.parentElement.parentElement.parentElement.lastChild.style.display=\'\'
-                                              let gjj =
-                                                '<div class="col-lg-12 col-md-12 champParcours Madeleine"><p style="position: relative;">Document supplémentaire<span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="this.parentElement.parentElement.parentElement.lastElementChild.children[0].style.display=\'\';this.parentElement.parentElement.remove();"> &#10007;</span></p><div class="caseCocheLeft"><input type="file" id="copCartIdRect" name="fname"style="display: none;"onchange="remplirNomFichier(this)"><label for="copCartIdRect" class="boutonFileInput">Choisir un fichier</label><span> Aucun fichier choisi </span></div></div>'
-
-                                              function ajouterpiece(elem) {
-                                                if (elem.parentElement.parentElement.childElementCount < 5) {
-                                                  elem.parentElement.insertAdjacentHTML('beforebegin', gjj)
-                                                }
-                                                if (elem.parentElement.parentElement.childElementCount > 4) {
-                                                  elem.style.display = 'none';
-                                                }
-                                              }
-                                            </script>
-
-                                            <div class="col-lg-12 col-md-12 champParcours" style="margin-top: 40px;">
-                                              <p>Document(s) Justificatif professionnel *</p>
+                                 
+                                            <div class="col-lg-12 col-md-12 champParcours" style="margin-top: 10px;">
                                               <p style="font-size: 12px;">Agrément en cours de validité et
                                                 lisible</p>
                                             </div>
@@ -3052,7 +2929,7 @@
                                                 <p>Copie Agrément *</p>
                                                 <div class="caseCocheLeft">
                                                   <input type="file" id="copAgr" name="fname" style="display: none;"
-                                                    onchange="remplirNomFichier(this)">
+                                                    onchange="this.parentElement.childNodes[5].innerHTML = '<a href=\'\' style=\'text-decoration: underline; overflow-wrap: normal;\'>' +'Prévisualiser ' + String(this.files[0].name) + '</a>' +'<span class=\'btnVueDoc\'>&#10007</span>'">
                                                   <label for="copAgr" class="boutonFileInput">Choisir un fichier</label>
                                                   <span>Aucun fichier choisi </span>
                                                 </div>
@@ -3062,6 +2939,27 @@
                                                   onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
                                               </div>
                                             </span>
+
+                                            <script>
+                                              // this.parentElement.parentElement.parentElement.lastChild.style.display=\'\'
+                                              let compteurIDAgree = 0;
+
+                                              function ajouterpiece(elem) {
+                                                compteurIDAgree++;
+                                                let gjj =
+                                                '<div class="col-lg-12 col-md-12 champParcours Madeleine"><p style="position: relative;">Document supplémentaire<span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="this.parentElement.parentElement.parentElement.lastElementChild.children[0].style.display=\'\';this.parentElement.parentElement.remove();"> &#10007;</span></p><div class="caseCocheLeft"><input type="file" id="copCartIdRect'+compteurIDAgree +'" name="fname"style="display: none;"onchange="remplirNomFichier(this)"><label for="copCartIdRect'+compteurIDAgree +'" class="boutonFileInput">Choisir un fichier</label><span> Aucun fichier choisi </span></div></div>'
+
+                                                console.log(compteurIDAgree)
+                                                if (elem.parentElement.parentElement.childElementCount < 5) {
+                                                  elem.parentElement.insertAdjacentHTML('beforebegin', gjj)
+                                                }
+                                                if (elem.parentElement.parentElement.childElementCount > 4) {
+                                                  elem.style.display = 'none';
+                                                }
+                                              }
+                                            </script>
+
+
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <p>Date de début d'agrément *</p>
                                               <input placeholder="Date de début d'agrément *" type="date" id="start"
@@ -3077,7 +2975,7 @@
                                             <br>
                                             <script>
                                               function remplirNomFichier(elem) {
-                                                elem.parentElement.childNodes[5].innerHTML =
+                                                elem.parentElement.childNodes[2].innerHTML =
                                                   '<a href=\'\' style="text-decoration: underline; overflow-wrap: normal;">' +
                                                   'Prévisualiser ' + String(elem.files[0].name) + '</a>' +
                                                   '<span class=\'btnVueDoc\'>&#10007</span>'
@@ -3861,6 +3759,7 @@
       border-radius: 7px;
       padding: 5px 10px;
       color: white;
+      cursor: pointer;
     }
 
     .btnVueDoc {
