@@ -2765,8 +2765,10 @@
                   .style.display="none";document.getElementById("mail-ok")
                   .style.display="";this.style.color="black";localStorage.setItem("vEmail",this.value);
                 }'>
-                                              <span id="mail-ok" style='color: green; display: none; padding:10px; position:absolute'>&#10004;</span>
-                                              <span id="mail-ko" style='color: red; display: none; padding:10px; position:absolute'>&#10007;</span>
+                                              <span id="mail-ok"
+                                                style='color: green; display: none; padding:10px; position:absolute'>&#10004;</span>
+                                              <span id="mail-ko"
+                                                style='color: red; display: none; padding:10px; position:absolute'>&#10007;</span>
                                             </div>
                                             <!-- The Modal -->
                                             <div id="myModalMail" class="modal">
@@ -2787,20 +2789,28 @@
                     else{document.getElementById("faux_doublon").style.display="";this.style.color="red";document.getElementById("bon_doublon").style.display="none"}'>
                                               <span id="bon_doublon"
                                                 style='color: green; display: none; padding:10px; position:absolute'>&#10004;</span>
-                                              <span id="faux_doublon" style='color: red; display: none; padding:10px; position:absolute'>&#10007;</span>
+                                              <span id="faux_doublon"
+                                                style='color: red; display: none; padding:10px; position:absolute'>&#10007;</span>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 champParcours">
+                                            <!-- <div class="col-lg-12 col-md-12 champParcours">
                                               <select name="civilite"
                                                 onchange='localStorage.setItem("vCivilite",this.value)'>
                                                 <option disabled selected value>Civilité *</option>
                                                 <option>Monsieur</option>
                                                 <option>Madame</option>
                                               </select>
-                                            </div>
+                                            </div> -->
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <input type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vPrenom",this.value) '
-                                                placeholder="Prénoms *" ;>
+                                                placeholder="Prénom *" ;>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <input type="text" id="fname" name="fname"
+                                                onchange='localStorage.setItem("vAutrePrenom",this.value) '
+                                                placeholder="Autres prénoms" ;>
+                                              <p style="font-size: 12px; padding: 2px 0px;">(séparés par des espaces)
+                                              </p>
                                             </div>
                                             <div class="col-lg-12 col-md-21 champParcours">
                                               <input placeholder="Nom de naissance *" type="text" id="fname"
@@ -2808,8 +2818,19 @@
                                                 onchange='localStorage.setItem("vNomNaissance",this.value);'>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
-                                              <input placeholder="Nom d'usage *" type="text" id="fname" name="fname"
+                                              <input placeholder="Nom d'usage" type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vNomUsage",this.value)'>
+                                            </div>
+                                            <script>
+                                              localStorage.setItem("vNomUsage", "non_renseigne")
+                                            </script>
+                                            <div class="col-lg-12 col-md-12 champParcours"
+                                              style="font-size: 12px; margin-bottom: 0px;">
+                                              <p
+                                                style=" background-color: rgb(245, 245, 245); padding: 0px; text-align: justify; border-radius: 3px; padding: 4px">
+                                                Nous avons besoin des informations suivantes afin de vérifier votre
+                                                identité. Une fois cette assurance obtenue, ces données ne sont pas
+                                                conservées :</p>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <p>Date de Naissance *</p>
@@ -2817,11 +2838,11 @@
                                                 onchange='localStorage.setItem("vDateNaissance",this.value)'
                                                 placeholder="Date de Naissance *" ;>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 champParcours">
+                                            <!-- <div class="col-lg-12 col-md-12 champParcours">
                                               <input type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vVilleNaissance",this.value)'
                                                 placeholder="Ville de Naissance *" ;>
-                                            </div>
+                                            </div> -->
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
                                               <input type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vNumSec",this.value)'
@@ -2924,7 +2945,7 @@
                                             <h5 style="margin-top: 20px;">Mon justificatif professionel</h5><br>
                                           </div>
                                           <div class="text-center">
-                                 
+
                                             <div class="col-lg-12 col-md-12 champParcours" style="margin-top: 10px;">
                                               <p style="font-size: 12px;">Agrément en cours de validité et
                                                 lisible</p>
@@ -2938,7 +2959,7 @@
                                                   <label for="copAgr" class="boutonFileInput">Choisir un fichier</label>
                                                   <span>Aucun fichier choisi </span>
                                                 </div>
-                                              </div>  
+                                              </div>
                                               <div class="col-lg-12 col-md-12 champParcours">
                                                 <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
                                                   onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
@@ -2952,7 +2973,11 @@
                                               function ajouterpiece(elem) {
                                                 compteurIDAgree++;
                                                 let gjj =
-                                                '<div class="col-lg-12 col-md-12 champParcours Madeleine"><p style="position: relative;">Document supplémentaire<span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="this.parentElement.parentElement.parentElement.lastElementChild.children[0].style.display=\'\';this.parentElement.parentElement.remove();"> &#10007;</span></p><div class="caseCocheLeft"><input type="file" id="copCartIdRect'+compteurIDAgree +'" name="fname"style="display: none;"onchange="remplirNomFichier(this)"><label for="copCartIdRect'+compteurIDAgree +'" class="boutonFileInput">Choisir un fichier</label><span> Aucun fichier choisi </span></div></div>'
+                                                  '<div class="col-lg-12 col-md-12 champParcours Madeleine"><p style="position: relative;">Document supplémentaire<span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="this.parentElement.parentElement.parentElement.lastElementChild.children[0].style.display=\'\';this.parentElement.parentElement.remove();"> &#10007;</span></p><div class="caseCocheLeft"><input type="file" id="copCartIdRect' +
+                                                  compteurIDAgree +
+                                                  '" name="fname"style="display: none;"onchange="remplirNomFichier(this)"><label for="copCartIdRect' +
+                                                  compteurIDAgree +
+                                                  '" class="boutonFileInput">Choisir un fichier</label><span> Aucun fichier choisi </span></div></div>'
 
                                                 console.log(compteurIDAgree)
                                                 if (elem.parentElement.parentElement.childElementCount < 5) {
@@ -2968,13 +2993,13 @@
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <p>Date de début d'agrément *</p>
                                               <input placeholder="Date de début d'agrément *" type="date" id="start"
-                                                name="trip-start" value="2018-01-01" min="2010-00-00" max="2025-12-31"
+                                                name="trip-start" min="2010-00-00" max="2025-12-31"
                                                 onchange="localStorage.setItem('vDateDebut', this.value);">
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <p>Date de fin d'agrément *</p>
                                               <input placeholder="Date de début d'agrément *" type="date" id="start"
-                                                name="trip-start" value="2023-01-01" min="2010-00-00" max="2035-12-31"
+                                                name="trip-start" min="2010-00-00" max="2035-12-31"
                                                 onchange="localStorage.setItem('vDateFinn',this.value);">
                                             </div>
                                             <br>
@@ -3933,13 +3958,16 @@
     #content-desktop {
       display: block;
     }
+
     #content-mobile {
       display: none;
     }
+
     @media screen and (max-width: 768px) {
       #content-desktop {
         display: none;
       }
+
       #content-mobile {
         display: block;
       }

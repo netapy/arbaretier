@@ -805,26 +805,12 @@
     // <![CDATA[
 
 
-
-
-
-
-
-
     // ]]>
   </script>
   <link class="lfr-css-file" data-senna-track="temporary"
     href="https://monenfant.fr/o/monenfant-theme/css/main.css?browserId=other&amp;themeId=monenfant_WAR_monenfanttheme&amp;languageId=fr_FR&amp;b=7006&amp;t=1584461297823"
     id="liferayThemeCSS" rel="stylesheet" type="text/css" />
   <style data-senna-track="temporary" type="text/css">
-
-
-
-
-
-
-
-
 
 
   </style>
@@ -2766,24 +2752,86 @@
                                               -->
                                               <!--<span id=" vemail" name="fname" disabled="disabled"> -->
                                             </div>
+                                            <!-- <div class="col-lg-12 col-md-12 champParcours">
+                                              <span style="font-weight: bold;">Civilité :</span>
+                                              <span id="vcivilite"></span>
+                                              <script>
+                                                document.getElementById('vcivilite').innerHTML = localStorage.getItem(
+                                                  "vCivilite")
+                                              </script>
+                                            </div> -->
+
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <span style="font-weight: bold;">Prénom :</span>
                                               <span id="vprenom"></span>
                                               <input type="text" id="new_prenom" style='display : none'>
-                                              <button
+                                              <!-- <button
                                                 style="margin:0px 10px; background-color: #e7e7e7; color: grey; border: none; border-radius: 8px;"
-                                                onclick=" document.getElementById('vprenom').style.display='none' ;document.getElementById('new_prenom').style.display=''">✎</button>
+                                                onclick=" document.getElementById('vprenom').style.display='none' ;document.getElementById('new_prenom').style.display=''">✎</button> -->
+                                              <script>
+                                                document.getElementById('vprenom').innerHTML = localStorage
+                                                  .getItem("vPrenom")
+                                              </script>
                                             </div>
 
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <span style="font-weight: bold;">Autres Prénoms :</span>
+                                              <span id="vautreprenom"></span>
+                                              <script>
+                                                document.getElementById('vautreprenom').innerHTML = localStorage
+                                                  .getItem("vAutrePrenom")
+                                              </script>
+                                            </div>
 
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
+                                              <span style="font-weight: bold;">Nom de naissance :</span>
+                                              <span id="vnomnaissance"></span>
+                                              <script>
+                                                document.getElementById('vnomnaissance').innerHTML = localStorage
+                                                  .getItem("vNomNaissance")
+                                              </script>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 champParcoursCUT" style="display: none;">
                                               <span style="font-weight: bold;">Nom d'usage :</span>
                                               <span id="vnomepouse"></span>
                                               <input type="text" id="new_epouse" style='display : none'>
-                                              <button
+                                              <!-- <button
                                                 style="margin:0px 10px; background-color: #e7e7e7; color: grey; border: none; border-radius: 8px;"
-                                                onclick=" document.getElementById('vnomepouse').style.display='none' ;document.getElementById('new_epouse').style.display=''">✎</button>
+                                                onclick=" document.getElementById('vnomepouse').style.display='none' ;document.getElementById('new_epouse').style.display=''">✎</button> -->
                                             </div>
+                                            <script>
+                                              if (localStorage.getItem('vNomUsage') != "non_renseigne") {
+                                                document.getElementById('vnomepouse').parentElement.style.display = "";
+                                                // }
+                                            </script>
+
+                                            <!-- <div class="col-lg-12 col-md-12 champParcours">
+                                              <span style="font-weight: bold;">Date de naissance :</span>
+                                              <span id="vdatenaissance"></span>
+                                              <script>
+                                                document.getElementById('vdatenaissance').innerHTML = localStorage
+                                                  .getItem("vDateNaissance")
+                                              </script>
+                                            </div> -->
+
+                                            <!-- <div class="col-lg-12 col-md-12 champParcours">
+                                              <span style="font-weight: bold;">Ville de naissance :</span>
+                                              <span id="vvillenaissance"></span>
+                                              <script>
+                                                document.getElementById('vvillenaissance').innerHTML = localStorage
+                                                  .getItem("vVilleNaissance")
+                                              </script>
+                                            </div> -->
+
+                                            <!-- <div class="col-lg-12 col-md-12 champParcoursCUT">
+                                              <span style="font-weight: bold;">Numéro de sécurité sociale :</span>
+                                              <span id="vnumsec"></span>
+                                              <script>
+                                                document.getElementById('vnumsec').innerHTML = localStorage
+                                                  .getItem("vNumSec")
+                                              </script>
+                                            </div> -->
 
                                             <div class="col-lg-12 col-md-12 champParcours" style="display: none;">
                                               <span style="font-weight: bold;">Le nom que voient les parents
@@ -2806,11 +2854,6 @@
                                               </script>
 
                                             </div>
-                                            <script>
-                                              if (localStorage.getItem("vAutrePrenom") != undefined) {
-                                                document.getElementById("bonusprenom").style.display = ""
-                                              }
-                                            </script>
                                           </div>
 
                                           <div class="text-center col-md-12 col-lg-12">
@@ -2822,7 +2865,6 @@
                                           <div class="text-left">
                                             <br>
                                             <div class="col-lg-12 col-md-12 champParcours">
-
                                               <span style="font-weight: bold;">N° de téléphone Portable:</span>
                                               <span id="vntelephone"></span>
 
@@ -2951,7 +2993,9 @@
                                             <div id="content-desktop">
                                               <div style="padding:0px" class="text-center col-md-12 col-lg-12">
                                                 <div class="titreTraitYAKA">
-                                                  <span>Ma présentation générale</span><br>
+                                                  <span>Ma présentation générale</span><strong class="modiffff"
+                                                    onclick="window.location.href = 'ecran2.html'">✎
+                                                    Modifier</strong><br>
                                                   <hr>
                                                 </div>
                                               </div>
@@ -2979,13 +3023,12 @@
                                                     class="ptitcercle">✎</span></span>
                                               </div>
                                               <div style="padding:0px" class="text-center col-md-12 col-lg-12">
-                                                <span style="border-bottom: 4px solid #00C5AD;
-                                                  text-transform: uppercase;
-                                                  padding-bottom: 6px;float: left;">Mon lieu d'accueil</span>
-                                                <hr style="border-color: #00C5AD;
-                                                   border-top-width: 1px;
-                                                    border-style: solid;
-                                                    margin-top: 28px;">
+                                                <div class="titreTraitYAKA">
+                                                  <span>Mon lieu d'accueil</span><strong class="modiffff"
+                                                    onclick="window.location.href = 'ecran2.html'">✎
+                                                    Modifier</strong><br>
+                                                  <hr>
+                                                </div>
                                               </div>
                                               <div class="text-center col-md-12 col-lg-12 champParcoursCUT"
                                                 style="padding:0px 60px; width: 100%;">
@@ -3009,7 +3052,9 @@
                                               </div>
                                               <div style="padding:0px" class="text-center col-md-12 col-lg-12">
                                                 <div class="titreTraitYAKA">
-                                                  <span>Mes activités proposées</span><br>
+                                                  <span>Mes activités proposées</span><strong class="modiffff"
+                                                    onclick="window.location.href = 'ecran2.html'">✎
+                                                    Modifier</strong><br>
                                                   <hr>
                                                 </div>
                                               </div>
@@ -3041,7 +3086,9 @@
                                             <div id="content-mobile">
                                               <div style="padding:0px" class="text-center col-md-12 col-lg-12">
                                                 <div class="titreTraitYAKA">
-                                                  <span>Ma présentation générale</span><br>
+                                                  <span>Ma présentation générale</span><strong class="modiffff"
+                                                    onclick="window.location.href = 'ecran2.html'">✎
+                                                    Modifier</strong><br>
                                                   <hr>
                                                 </div>
                                               </div>
@@ -3070,7 +3117,9 @@
                                               </div><br>
                                               <div style="padding:0px" class="text-center col-md-12 col-lg-12">
                                                 <div class="titreTraitYAKA">
-                                                  <span>Mon lieu d'accueil</span><br>
+                                                  <span>Mon lieu d'accueil</span><strong class="modiffff"
+                                                    onclick="window.location.href = 'ecran2.html'">✎
+                                                    Modifier</strong><br>
                                                   <hr>
                                                 </div>
                                               </div>
@@ -3095,7 +3144,9 @@
                                               </div><br>
                                               <div style="padding:0px" class="text-center col-md-12 col-lg-12">
                                                 <div class="titreTraitYAKA">
-                                                  <span>Mes activités proposées</span><br>
+                                                  <span>Mes activités proposées</span><strong class="modiffff"
+                                                    onclick="window.location.href = 'ecran2.html'">✎
+                                                    Modifier</strong><br>
                                                   <hr>
                                                 </div>
                                               </div>
@@ -3137,7 +3188,7 @@
                                                 <div class="col-xs-4 col-lg-4 col-md-4 textYakari">Lundi</div>
                                                 <div class="col-xs-8 col-lg-8 col-md-8">
                                                   <div class="yakari">
-                                                    9h - 18h
+                                                    8h - 16h
                                                   </div>
                                                 </div>
                                                 <div class="col-xs-4 col-lg-4 col-md-4 textYakari">Mardi</div>
@@ -3160,7 +3211,7 @@
                                                 <div class="col-xs-4 col-lg-4 col-md-4 textYakari">Jeudi</div>
                                                 <div class="col-xs-8 col-lg-8 col-md-8">
                                                   <div class="yakari">
-                                                    9h - 18h
+                                                    10h - 17h
                                                   </div>
                                                 </div>
                                               </div>
@@ -3180,7 +3231,7 @@
                                                 <div class="col-xs-4 col-lg-4 col-md-4 textYakari">Dimanche</div>
                                                 <div class="col-xs-8 col-lg-8 col-md-8">
                                                   <div class="yakari">
-                                                    9h - 18h
+                                                    10h - 16h
                                                   </div>
                                                 </div>
                                               </div>
@@ -3207,7 +3258,20 @@
                                                   <div class="col-md-8 col-lg-8 col-xs-8">
                                                     <h6>Une place</h6>
                                                     <p>Pour un enfant âgé de <strong>2 à 4 mois.</strong></p>
-                                                    <p>A partir du <strong>12 juin 2020.</strong></p>
+                                                  </div>
+                                                  <div class="col-md-12 col-lg-12 col-xs-12">
+                                                    <p>Disponible à partir du <strong>12 juin 2020.</strong></p>
+                                                  </div>
+                                                  <div class="col-md-12 col-lg-12 col-xs-12">
+                                                    <p>Sur les jours suivants :</p>
+                                                    <div class="row" style="padding: 0px 15px;"><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">L</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">M</span><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">M</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">J</span><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">V</span><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">S</span><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">D</span></div>
                                                   </div>
                                                 </div>
                                               </div>
@@ -3217,17 +3281,29 @@
                                                     <img
                                                       src="https://monenfant.fr/documents/20143/65168/picto-garde-enfants.svg/825e4f37-bb87-5740-3dd0-1a814eb95ebf"
                                                       class="imgcartedispo">
-                                                    <span class="periscoTag">Periscolaire</span>
                                                   </div>
                                                   <div class="col-md-8 col-lg-8 col-xs-8">
                                                     <h6>Une place</h6>
                                                     <p>Pour un enfant âgé de <strong>5 à 8 ans.</strong></p>
-                                                    <p>A partir du <strong>12 juin 2020.</strong></p>
+                                                  </div>
+                                                  <div class="col-md-12 col-lg-12 col-xs-12">
+                                                    <p>Disponible à partir du <strong>12 juin 2020.</strong></p>
+                                                  </div>
+                                                  <div class="col-md-12 col-lg-12 col-xs-12">
+                                                    <p>Sur les jours suivants :</p>
+                                                    <div class="row" style="padding: 0px 15px;"><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">L</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">M</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">M</span><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">J</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">V</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">S</span><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">D</span></div>
                                                   </div>
                                                 </div>
                                               </div>
                                               <div class="col-md-6 col-lg-6 col-xs-12 text-left">
-                                                <div class="cartePlace" style="border-bottom-color: #cfcfcf;">
+                                                <div class="cartePlace" style="border-bottom-color:#ccc;">
                                                   <div class="col-md-4 col-lg-4 col-xs-4" style="position: relative;">
                                                     <img
                                                       src="https://monenfant.fr/documents/20143/65168/picto-garde-enfants.svg/825e4f37-bb87-5740-3dd0-1a814eb95ebf"
@@ -3236,7 +3312,20 @@
                                                   <div class="col-md-8 col-lg-8 col-xs-8">
                                                     <h6>Une place</h6>
                                                     <p>Pour un enfant âgé de <strong>8 à 12 ans.</strong></p>
-                                                    <p>A partir du <strong>29 juillet 2020.</strong></p>
+                                                  </div>
+                                                  <div class="col-md-12 col-lg-12 col-xs-12">
+                                                    <p>Disponible à partir du <strong>28 mai 2021.</strong></p>
+                                                  </div>
+                                                  <div class="col-md-12 col-lg-12 col-xs-12">
+                                                    <p>Sur les jours suivants :</p>
+                                                    <div class="row" style="padding: 0px 15px;"><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">L</span><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">M</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">M</span><span
+                                                        class="circleJOUR col-md-1 col-lg-1 col-xs-1">J</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">V</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">S</span><span
+                                                        class="circleJOUR_ACT col-md-1 col-lg-1 col-xs-1">D</span></div>
                                                   </div>
                                                 </div>
                                               </div>
@@ -3290,25 +3379,12 @@
 
                                       <script>
                                         document.getElementById('vemail').innerHTML = localStorage.getItem("vEmail");
-                                        document.getElementById('vprenom').innerHTML = localStorage.getItem("vPrenom");
-                                        document.getElementById('vautreprenom').innerHTML = localStorage.getItem(
-                                          "vAutrePrenom");
                                         document.getElementById('vnomnaissance').innerHTML = localStorage.getItem(
                                           "vNomNaissance");
-                                        document.getElementById('vnomepouse').innerHTML = localStorage.getItem(
-                                          "vNomEpouse");
                                         document.getElementById('vchoixid').innerHTML = localStorage.getItem(
                                           "vChoixID");
                                       </script>
                                       <script>
-                                        if (localStorage.getItem("vNaissance") == "1") {
-                                          document.getElementById("nom_parents").innerHTML = localStorage.getItem(
-                                            "vNomNaissance");
-                                        } else {
-                                          document.getElementById("nom_parents").innerHTML = localStorage.getItem(
-                                            "vNomEpouse");
-                                        };
-
                                         document.getElementById("vcontact").innerHTML = localStorage.getItem(
                                           "vContact");
 
@@ -4184,7 +4260,7 @@
       border-bottom-style: solid;
       border-bottom-color: #00C5AD;
       padding: 8px 3px;
-      height: 160px;
+      height: 210px;
       transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
       margin: 10px 0px;
     }
@@ -4228,6 +4304,44 @@
       border-style: solid;
       margin-top: 10px;
 
+    }
+
+    .circleJOUR {
+      background: rgb(235, 235, 235);
+      color: rgb(168, 168, 168);
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border-width: 2px;
+      border-color: rgb(216, 216, 216);
+      border-style: solid;
+      text-align: center;
+      font-size: 12px;
+      display: flex;
+      height: 27px;
+      width: 27px;
+      font-weight: bold;
+      margin: 0px 2px;
+      padding: 0px;
+    }
+
+    .circleJOUR_ACT {
+      background: rgb(0, 216, 191);
+      color: rgb(255, 255, 255);
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border-width: 2px;
+      border-color: rgb(0, 192, 170);
+      border-style: solid;
+      text-align: center;
+      font-size: 12px;
+      display: flex;
+      height: 27px;
+      width: 27px;
+      font-weight: bold;
+      margin: 0px 2px;
+      padding: 0px;
     }
   </style>
   <style>
