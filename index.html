@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/custom.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -39,6 +41,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/force-js/0.1.3/force.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
 
     <!-- SLICK CARROUSEL -->
     <link rel="stylesheet" type="text/css" href="css/slick.css" />
@@ -75,44 +78,42 @@
         <!-- Articles Etudes -->
         <div class="b-section" id="etude"><br>
             <h5 class="b-header"><span style='color:#073763;'>A</span>rticles & Etudes</h5>
-            <div class="b-example">
-                <div class="row">
-                    <div class="four columns value-prop spacing">
+            <div class="b-example" style="padding: 10px 0px;">
+                <div class="slider-slick">
+                    <div class="panneauSlider">
                         <a href='files/ETUDE_ARB_19Q3.pdf' target="_blank" rel="noopener noreferrer">
                             <img class="u-max-full-width card-1" src="images/mini/arb2.jpg"></a>
-                        <center style='opacity:0.5;'>21/10/2019</center>
+                        <center style='opacity:0.6; font-size:14px; padding: 4px'>21/10/2019</center>
                     </div>
-                    <div class="four columns value-prop spacing">
+                    <div class="panneauSlider">
                         <a href='https://medium.com/swlh/microsoft-could-win-the-smartphone-game-f71f4e3f1a91'
                             target="_blank" rel="noopener noreferrer">
                             <img class="u-max-full-width card-1" src="images/mini/smrtphonegame.jpg"></a>
-                        <center style='opacity:0.5;'>02/06/2019</center>
+                        <center style='opacity:0.6; font-size:14px; padding: 4px'>02/06/2019</center>
                     </div>
-                    <div class="four columns value-prop spacing">
+                    <div class="panneauSlider">
                         <a href='https://blog.usejournal.com/apple-end-innovation-2745d8fb1ade' target="_blank"
                             rel="noopener noreferrer">
                             <img class="u-max-full-width card-1" src="images/mini/appleinnov.jpg"></a>
-                        <center style='opacity:0.5;'>31/03/2019</center>
+                        <center style='opacity:0.6; font-size:14px; padding: 4px'>31/03/2019</center>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="four columns value-prop spacing">
+                    <div class="panneauSlider">
                         <a href='https://becominghuman.ai/sophia-the-overhyped-toaster-d2e5203c8539' target="_blank"
                             rel="noopener noreferrer">
                             <img class="u-max-full-width card-1" src="images/mini/sophiaover.jpg"></a>
-                        <center style='opacity:0.5;'>10/01/2019</center>
+                        <center style='opacity:0.6; font-size:14px; padding: 4px'>10/01/2019</center>
                     </div>
-                    <div class="four columns value-prop spacing">
+                    <div class="panneauSlider">
                         <a href='https://medium.com/@b.arbaretier/where-is-smartphone-design-headed-82c7d914bb9d'
                             target="_blank" rel="noopener noreferrer">
                             <img class="u-max-full-width card-1" src="images/mini/designsmrtph.jpg"></a>
-                        <center style='opacity:0.5;'>19/11/2018</center>
+                        <center style='opacity:0.6; font-size:14px; padding: 4px'>19/11/2018</center>
                     </div>
-                    <div class="four columns value-prop spacing">
+                    <div class="panneauSlider">
                         <a href='https://medium.com/@b.arbaretier/youtube-music-the-new-take-of-google-on-music-distribution-fedf1c8affcb'
                             target="_blank" rel="noopener noreferrer">
                             <img class="u-max-full-width card-1" src="images/mini/ytube.jpg"></a>
-                        <center style='opacity:0.5;'>05/10/2018</center>
+                        <center style='opacity:0.6; font-size:14px; padding: 4px'>05/10/2018</center>
                     </div>
                 </div>
             </div>
@@ -368,6 +369,42 @@
                     </div>
                     <script>
                         AOS.init();
+                    </script>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('.slider-slick').slick({
+                                dots: true,
+                                arrows: true,
+                                infinite: false,
+                                speed: 300,
+                                autoplay: true,
+                                autoplaySpeed: 2300,
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                responsive: [{
+                                        breakpoint: 1024,
+                                        settings: {
+                                            slidesToShow: 3,
+                                            slidesToScroll: 3,
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 600,
+                                        settings: {
+                                            slidesToShow: 2,
+                                            slidesToScroll: 2
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 480,
+                                        settings: {
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1
+                                        }
+                                    }
+                                ]
+                            });
+                        });
                     </script>
 
 </body>
