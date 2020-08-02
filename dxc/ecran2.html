@@ -2946,7 +2946,8 @@
                                               <span style="white-space: nowrap;">
                                                 <input name="flexible" id="flexible" type="checkbox">
                                                 <label style="font-weight: normal" for="flexible">Je </span> peux être
-                                              flexible sur les horaires</label><br>
+                                              flexible sur les horaires si
+                                              besoin</label><br>
                                               <span style="white-space: nowrap;">
                                                 <input name="vacs" id="vacs" type="checkbox">
                                                 <label style="font-weight: normal" for="vacs">Je</span> peux travailler
@@ -2958,89 +2959,21 @@
                                               réaliser des accueils d'urgence</label><br>
                                               <span style="white-space: nowrap;">
                                                 <input name="remplacement" id="remplacement" type="checkbox">
-                                                <label style="font-weight: normal" for="remplacement">Je </span> peux me
-                                              faire remplacer</label>
+                                                <label style="font-weight: normal" for="remplacement">J'ai </span> des
+                                              possibilités de remplacement</label>
                                             </div>
                                             <hr>
                                           </div><br>
 
                                           <h5>Mes places disponibles</h5>
                                           <div class="col-lg-12 col-md-12 text-left" style="padding:10px 20px;">
-                                            <div
-                                              style="background-color: #f8f8f8; border-radius: 10px; width: auto; padding: 4px; padding-left: 10px;">
-                                              <span style="white-space: nowrap;">
-                                                <input type="checkbox" id="pasRemplacement" style="margin-right: 5px;"
-                                                  onclick="let izipizi = document.getElementById('leboutonmagique'); if(this.checked == true){izipizi.style.display='none'}else{izipizi.style.display=''}"><label
-                                                  style="font-weight: normal;" for="pasRemplacement">Je n'ai pas de
-                                              </span> places disponibles sur les prochains mois.</label>
-                                            </div>
+
                                             <div id="leboutonmagique">
-                                              <div class="col-lg-12 col-md-12 text-left" id="panneauPlacesbis0"
-                                                style="border-width: 2px; border-color: #dbdbdb; border-style: double; border-radius:15px; margin: 20px 0px; padding: 15px">
-                                                <h5>Une place disponible</h5><label class="custom-control-label"
-                                                  for="start0'" style="padding-right:10px">A partir du </label> <input
-                                                  type="date" id="start0" name="start0" value="jj/mm/aaaa"
-                                                  min="2025-00-00" max="2025-12-31"><br><br><span
-                                                  style="padding-right: 15px">Pour un enfant âgé de:</span> <select>
-                                                  <option>0 ans</option>
-                                                  <option>3 mois</option>
-                                                  <option>4 mois</option>
-                                                  <option>6 mois</option>
-                                                  <option>9 mois</option>
-                                                  <option>1 an</option>
-                                                  <option>18 mois</option>
-                                                  <option>2 ans</option>
-                                                  <option>3 ans</option>
-                                                  <option>4 ans</option>
-                                                  <option>5 ans</option>
-                                                  <option>6 ans</option>
-                                                  <option>7 ans</option>
-                                                  <option>8 ans</option>
-                                                  <option>9 ans</option>
-                                                  <option>10 ans</option>
-                                                  <option>11 ans</option>
-                                                  <option>12 ans</option>
-                                                  <option>13 ans</option>
-                                                  <option>14 ans</option>
-                                                  <option>15 ans</option>
-                                                  <option>16 ans</option>
-                                                  <option>17 ans</option>
-                                                  <option>18 ans</option>
-                                                </select> <span style="padding: 0px 15px">à</span> <select>
-                                                  <option>0 ans</option>
-                                                  <option>3 mois</option>
-                                                  <option>4 mois</option>
-                                                  <option>6 mois</option>
-                                                  <option>9 mois</option>
-                                                  <option>1 an</option>
-                                                  <option>18 mois</option>
-                                                  <option>2 ans</option>
-                                                  <option>3 ans</option>
-                                                  <option>4 ans</option>
-                                                  <option>5 ans</option>
-                                                  <option>6 ans</option>
-                                                  <option>7 ans</option>
-                                                  <option>8 ans</option>
-                                                  <option>9 ans</option>
-                                                  <option>10 ans</option>
-                                                  <option>11 ans</option>
-                                                  <option>12 ans</option>
-                                                  <option>13 ans</option>
-                                                  <option>14 ans</option>
-                                                  <option>15 ans</option>
-                                                  <option>16 ans</option>
-                                                  <option>17 ans</option>
-                                                  <option>18 ans</option>
-                                                </select><br>
-                                              </div>
-
-
                                               <button id="AjoutBGR" class="btn" onclick="newPlace(this)">Ajouter une
-                                                place</button>
-                                            </div>
+                                                place</button> </div>
 
                                             <script>
-                                              let indicename = 1;
+                                              let indicename = 0;
                                               let jourchoisiP = "";
                                               let moischoisiP = "";
                                               let anneechoisiP = "";
@@ -3089,8 +3022,7 @@
                                                 for (let m = 0; m < 12; m++) {
                                                   agemoisP = agemoisP + "<option>" + String(m) + " mois </option>"
                                                 }
-                                                dateduJour = "jj/mm/aaaa"
-                                                //dateduJour = new Date().toISOString().substring(0, 10);
+                                                dateduJour = new Date().toISOString().substring(0, 10);
 
                                                 eltsupP =
                                                   ' <div class="col-lg-12 col-md-12 text-left" id="panneauPlacesbis' +
@@ -3166,8 +3098,7 @@
 
                                           <div class="text-left">
 
-                                            <div class="col-lg-12 col-md-12 champParcoursCUT"
-                                              style="background-color: #f8f8f8; border-radius: 10px; padding: 10px; padding-left: 10px; margin-left: 20px;margin-right: 20px;">
+                                            <div class="col-lg-12 col-md-12 champParcoursCUT">
                                               <input type="checkbox" id="mycheck" style="margin: 0px 5px;"
                                                 onclick="myFunction()">Afficher mon tarif
                                               <script>
@@ -3197,11 +3128,11 @@
                                                 <script>
                                                   var slider = document.getElementById('sliderrr');
                                                   noUiSlider.create(slider, {
-                                                    start: [3.17, 5.05],
+                                                    start: [1.5, 4.5],
                                                     tooltips: [true, true],
                                                     connect: true,
                                                     range: {
-                                                      'min': 2.23,
+                                                      'min': 0,
                                                       'max': 6
                                                     }
                                                   });
@@ -3228,6 +3159,7 @@
                                             for (omb in ombrelle) {
                                               ombrelle[omb].innerHTML = heure
                                             }
+                                            newPlace(document.getElementById('AjoutBGR'));
                                           </script>
                                         </row>
                                       </div>
@@ -4137,6 +4069,9 @@
 
     }
   </style>
+
+
+
 
 </body>
 

@@ -2756,7 +2756,7 @@
                                           <div class="text-center">
                                             <div class="col-lg-12 col-md-12 champParcours">
 
-                                              <input class="aHandicaper"  placeholder="Email *" type="text" id="fnamex" name="fnamex"
+                                              <input placeholder="Email *" type="text" id="fnamex" name="fnamex"
                                                 onchange='if(this.value=="doublon@gmail.com"){document.getElementById("myModalMail").style
                   .display="block"}else if(this.value.includes("@")==false){document.getElementById("mail-ko")
                   .style.display="";document.getElementById("mail-ok")
@@ -2783,7 +2783,7 @@
                                             </div>
                                             <!-- end Modal -->
                                             <div class="col-lg-12 col-md-12 champParcours">
-                                              <input class="aHandicaper" placeholder="Confirmation d'Email *" type="text" id="bname"
+                                              <input placeholder="Confirmation d'Email *" type="text" id="bname"
                                                 onchange='if(this.value==document.getElementById("fnamex").value)
                     {document.getElementById("bon_doublon").style.display="";this.style.color="black";document.getElementById("faux_doublon").style.display="none"}
                     else{document.getElementById("faux_doublon").style.display="";this.style.color="red";document.getElementById("bon_doublon").style.display="none"}'>
@@ -2801,24 +2801,24 @@
                                               </select>
                                             </div> -->
                                             <div class="col-lg-12 col-md-12 champParcours">
-                                              <input class="aHandicaper" type="text" id="fname" name="fname"
+                                              <input type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vPrenom",this.value) '
                                                 placeholder="Prénom *" ;>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
-                                              <input class="aHandicaper" type="text" id="fname" name="fname"
+                                              <input type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vAutrePrenom",this.value) '
                                                 placeholder="Autres prénoms" ;>
                                               <p style="font-size: 12px; padding: 2px 0px;">(séparés par des espaces)
                                               </p>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 champParcours">
-                                              <input class="aHandicaper" placeholder="Nom de naissance *" type="text" id="fname"
+                                            <div class="col-lg-12 col-md-21 champParcours">
+                                              <input placeholder="Nom de naissance *" type="text" id="fname"
                                                 name="fname"
                                                 onchange='localStorage.setItem("vNomNaissance",this.value);'>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
-                                              <input class="aHandicaper" placeholder="Nom d'usage" type="text" id="fname" name="fname"
+                                              <input placeholder="Nom d'usage" type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vNomUsage",this.value)'>
                                             </div>
                                             <script>
@@ -2829,12 +2829,12 @@
                                               <p
                                                 style=" background-color: rgb(245, 245, 245); padding: 0px; text-align: justify; border-radius: 3px; padding: 4px">
                                                 Nous avons besoin des informations suivantes afin de vérifier votre
-                                                identité. Ces données ne seront pas conservées à l'issu de la
-                                                vérification :</p>
+                                                identité. Une fois cette assurance obtenue, ces données ne sont pas
+                                                conservées :</p>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <p>Date de Naissance *</p>
-                                              <input class="aHandicaper" type="date" id="fname" name="fname"
+                                              <input type="date" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vDateNaissance",this.value)'
                                                 placeholder="Date de Naissance *" ;>
                                             </div>
@@ -2844,234 +2844,229 @@
                                                 placeholder="Ville de Naissance *" ;>
                                             </div> -->
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                              <input class="aHandicaper" type="text" id="fname" name="fname"
-                                                onchange='localStorage.setItem("vNumSec",this.value); document.getElementById("pourSuivre").disabled=false; document.getElementById("pourSuivre").style.backgroundColor="#00C5AD"'
+                                              <input type="text" id="fname" name="fname"
+                                                onchange='localStorage.setItem("vNumSec",this.value)'
                                                 placeholder="Numéro de sécurité sociale *" ;>
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                              <button id="pourSuivre" class="btn btn-primary" disabled=true
-                                                style="background-color: grey;"
-                                                onclick="document.getElementById('leResteMadeleine').style.display = ''; this.parentElement.style.display ='none'; for(let i in document.getElementsByClassName('aHandicaper')){document.getElementsByClassName('aHandicaper')[i].disabled = true} ">
-                                                Poursuivre </button>
                                             </div>
                                           </div>
 
-                                          <span id="leResteMadeleine" style="display: none;">
-                                            <div class="text-center col-md-12 col-lg-12">
-                                              <h5>Mes coordonnées de contact</h5><br>
+                                          <div class="text-center col-md-12 col-lg-12">
+                                            <h5>Mes coordonnées de contact</h5><br>
+                                          </div>
+                                          <div class="text-center">
+                                            <div class=" col-lg-12 col-md-12 champParcours">
+                                              <p>N° de Téléphone *:</p>
                                             </div>
-                                            <div class="text-center">
-                                              <div class=" col-lg-12 col-md-12 champParcours">
-                                                <p>N° de Téléphone *:</p>
+                                            <div class="col-lg-12 col-md-12 champParcours "
+                                              style="margin-bottom: 20px;">
+                                              <input placeholder="Portable" type="text" id="fname" name="fname"
+                                                width="100%" onchange='localStorage.setItem("vNTelephone",this.value);'>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours "
+                                              style="margin-bottom: 20px;">
+                                              <input placeholder="Fixe" type="text" id="fname" name="fname" width="100%"
+                                                onchange='localStorage.setItem("vAutreNum",this.value);'>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <p>Que souhaitez-vous faire apparaitre sur monenfant.fr ? *</p>
+                                              <div class="caseCocheLeft">
+                                                <input type="checkbox" id="e_mail" name="quel_contact">
+                                                <label style="font-weight: normal" for="e_mail">E-mail</label><br>
+                                                <input type="checkbox" id="tel" name="quel_contact">
+                                                <label style="font-weight: normal" for="tel">Portable</label><br>
+                                                <input type="checkbox" id="tell" name="quel_contact">
+                                                <label style="font-weight: normal" for="tell">Fixe</label>
                                               </div>
-                                              <div class="col-lg-12 col-md-12 champParcours "
-                                                style="margin-bottom: 20px;">
-                                                <input placeholder="Portable" type="text" id="fname" name="fname"
-                                                  width="100%"
-                                                  onchange='localStorage.setItem("vNTelephone",this.value);'>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <p>Adresse postale du lieu d'exercice :</p>
+                                            </div>
+                                            <div class="col-md-12 col-lg-12 champParcours">
+                                              <input placeholder="N° de voie" type="text" id="fname" name="fname"
+                                                maxlength="10" onchange='localStorage.setItem("vNumVoie",this.value);'
+                                                style="width: 30%; max-width: 175px;">
+                                              <select name="type_voie" style="width: 50%; max-width: 175px;"
+                                                onchange='localStorage.setItem("vTypeVoie",this.value);'>
+                                                <option disabled selected value> -- Type de voie -- </option>
+                                                <option>avenue</option>
+                                                <option>boulevard</option>
+                                                <option>cité</option>
+                                                <option>domaine</option>
+                                                <option>esplanade</option>
+                                                <option>impasse</option>
+                                                <option>quai</option>
+                                                <option>rue</option>
+                                                <option>villa</option>
+                                              </select>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <input placeholder="Nom de voie *" type="text" id="fname" name="fname"
+                                                onchange='localStorage.setItem("vNomVoie",this.value);'>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <input placeholder="Complément d'adresse" type="text" id="fname"
+                                                name="fname" onchange='localStorage.setItem("vCompVoie",this.value);'>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <input placeholder="Code Postale *" type="text" name="codepostal"
+                                                onchange='localStorage.setItem("vCodePost",this.value);if(this.value.includes("75")){document.getElementById("ombrelle").value="Paris"}else if(this.value.includes("13007")){document.getElementById("ombrelle").value="Marseille"}'>
+                                              </input>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <input placeholder="Commune *" type="text" id="ombrelle" name="co"
+                                                onchange='localStorage.setItem("vCommune",this.value);' disabled>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <p>Quelle est votre préférence d'affichage sur Monenfant.fr ? *</p>
+                                              <div class="caseCocheLeft">
+                                                <span style="white-space: nowrap;"><input type="radio" id="visible"
+                                                    name="Postal"
+                                                    onchange='localStorage.setItem("vChoix_Postal","1"); document.getElementById("alertCarte").style.display ="none"'>
+                                                  <label style="font-weight: normal" for="visible">Je</span> souhaite
+                                                afficher mon adresse
+                                                postale.</label><br>
+                                                <span style="white-space: nowrap;"><input type="radio" id="masquer"
+                                                    name="Postal"
+                                                    onchange='localStorage.setItem("vChoix_Postal","0"); document.getElementById("alertCarte").style.display =""'>
+                                                  <label for="masquer" style="font-weight: normal">Je</span> souhaite
+                                                masquer mon adresse
+                                                postale (hors code
+                                                postal).</label>
+                                                <br><span id="alertCarte"
+                                                  style="display:none; position:absolute; color:#ff9a35">⚠ Votre profil
+                                                  n'apparaîtra pas sur la carte.</span>
                                               </div>
-                                              <div class="col-lg-12 col-md-12 champParcours "
-                                                style="margin-bottom: 20px;">
-                                                <input placeholder="Fixe" type="text" id="fname" name="fname"
-                                                  width="100%" onchange='localStorage.setItem("vAutreNum",this.value);'>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <p>Que souhaitez-vous faire apparaitre sur monenfant.fr ? *</p>
+                                            </div>
+                                          </div>
+
+                                          <div class="text-center col-md-12 col-lg-12">
+                                            <h5 style="margin-top: 20px;">Mon justificatif professionel</h5><br>
+                                          </div>
+                                          <div class="text-center">
+
+                                            <div class="col-lg-12 col-md-12 champParcours" style="margin-top: 10px;">
+                                              <p style="font-size: 12px;">Agrément en cours de validité et
+                                                lisible</p>
+                                            </div>
+                                            <span>
+                                              <div class="col-lg-12 col-md-12 champParcours Madeleine">
+                                                <p>Copie Agrément *</p>
                                                 <div class="caseCocheLeft">
-                                                  <input type="checkbox" id="e_mail" name="quel_contact">
-                                                  <label style="font-weight: normal" for="e_mail">E-mail</label><br>
-                                                  <input type="checkbox" id="tel" name="quel_contact">
-                                                  <label style="font-weight: normal" for="tel">Portable</label><br>
-                                                  <input type="checkbox" id="tell" name="quel_contact">
-                                                  <label style="font-weight: normal" for="tell">Fixe</label>
+                                                  <input type="file" id="copAgr" name="fname" style="display: none;"
+                                                    onchange="this.parentElement.childNodes[5].innerHTML = '<a href=\'\' style=\'text-decoration: underline; overflow-wrap: normal;\'>' +'Prévisualiser ' + String(this.files[0].name) + '</a>' +'<span class=\'btnVueDoc\'>&#10007</span>'">
+                                                  <label for="copAgr" class="boutonFileInput">Choisir un fichier</label>
+                                                  <span>Aucun fichier choisi </span>
                                                 </div>
                                               </div>
-
                                               <div class="col-lg-12 col-md-12 champParcours">
-                                                <p>Adresse postale du lieu d'exercice :</p>
+                                                <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
+                                                  onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
                                               </div>
-                                              <div class="col-md-12 col-lg-12 champParcours">
-                                                <input placeholder="N° de voie" type="text" id="fname" name="fname"
-                                                  maxlength="10" onchange='localStorage.setItem("vNumVoie",this.value);'
-                                                  style="width: 30%; max-width: 175px;">
-                                                <select name="type_voie" style="width: 50%; max-width: 175px;"
-                                                  onchange='localStorage.setItem("vTypeVoie",this.value);'>
-                                                  <option disabled selected value> -- Type de voie -- </option>
-                                                  <option>avenue</option>
-                                                  <option>boulevard</option>
-                                                  <option>cité</option>
-                                                  <option>domaine</option>
-                                                  <option>esplanade</option>
-                                                  <option>impasse</option>
-                                                  <option>quai</option>
-                                                  <option>rue</option>
-                                                  <option>villa</option>
-                                                </select>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <input placeholder="Nom de voie *" type="text" id="fname" name="fname"
-                                                  onchange='localStorage.setItem("vNomVoie",this.value);'>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <input placeholder="Complément d'adresse" type="text" id="fname"
-                                                  name="fname" onchange='localStorage.setItem("vCompVoie",this.value);'>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <input placeholder="Code Postale *" type="text" name="codepostal"
-                                                  onchange='localStorage.setItem("vCodePost",this.value);if(this.value.includes("75")){document.getElementById("ombrelle").value="Paris"}else if(this.value.includes("13007")){document.getElementById("ombrelle").value="Marseille"}'>
-                                                </input>
-                                              </div>
+                                            </span>
 
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <input placeholder="Commune *" type="text" id="ombrelle" name="co"
-                                                  onchange='localStorage.setItem("vCommune",this.value);' disabled>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <p>Votre préférence d'affichage sur le site : *</p>
-                                                <div class="caseCocheLeft">
-                                                  <span style="white-space: nowrap;"><input type="radio" id="visible"
-                                                      name="Postal"
-                                                      onchange='localStorage.setItem("vChoix_Postal","1"); document.getElementById("alertCarte").style.display ="none"'>
-                                                    <label style="font-weight: normal" for="visible">Je</span> souhaite
-                                                  afficher mon adresse
-                                                  postale.</label><br>
-                                                  <span style="white-space: nowrap;"><input type="radio" id="masquer"
-                                                      name="Postal"
-                                                      onchange='localStorage.setItem("vChoix_Postal","0"); document.getElementById("alertCarte").style.display =""'>
-                                                    <label for="masquer" style="font-weight: normal">Je</span> souhaite
-                                                  masquer mon adresse
-                                                  postale (hors code
-                                                  postal).</label>
-                                                  <br><span id="alertCarte"
-                                                    style="display:none; position:absolute; color:#ff9a35">⚠ Votre
-                                                    profil
-                                                    n'apparaîtra pas sur la carte.</span>
-                                                </div>
-                                              </div>
-                                            </div>
-
-                                            <div class="text-center col-md-12 col-lg-12">
-                                              <h5 style="margin-top: 20px;">Mon agrément</h5><br>
-                                            </div>
-                                            <div class="text-center">
-                                              <span>
-                                                <div class="col-lg-12 col-md-12 champParcours Madeleine">
-                                                  <p>Copie de votre agrément en cours de validité et lisible *</p>
-                                                  <div class="caseCocheLeft">
-                                                    <input type="file" id="copAgr" name="fname" style="display: none;"
-                                                      onchange="this.parentElement.childNodes[5].innerHTML = '<a href=\'\' style=\'text-decoration: underline; overflow-wrap: normal;\'>' +'Prévisualiser ' + String(this.files[0].name) + '</a>' +'<span class=\'btnVueDoc\'>&#10007</span>'">
-                                                    <label for="copAgr" class="boutonFileInput">Choisir un
-                                                      fichier</label>
-                                                    <span>Aucun fichier choisi </span>
-                                                  </div>
-                                                </div>
-                                                <div class="col-lg-12 col-md-12 champParcours">
-                                                  <button id="ajjt-piece" class="champParcoursCUT boutonAjoutPieceLeft"
-                                                    onclick="ajouterpiece(this)">Ajouter une autre pièce</button>
-                                                </div>
-                                              </span>
-
-                                              <script>
-                                                // this.parentElement.parentElement.parentElement.lastChild.style.display=\'\'
-                                                let compteurIDAgree = 0;
-
-                                                function ajouterpiece(elem) {
-                                                  compteurIDAgree++;
-                                                  let gjj =
-                                                    '<div class="col-lg-12 col-md-12 champParcours Madeleine"><p style="position: relative;">Document supplémentaire<span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="this.parentElement.parentElement.parentElement.lastElementChild.children[0].style.display=\'\';this.parentElement.parentElement.remove();"> &#10007;</span></p><div class="caseCocheLeft"><input type="file" id="copCartIdRect' +
-                                                    compteurIDAgree +
-                                                    '" name="fname"style="display: none;"onchange="remplirNomFichier(this)"><label for="copCartIdRect' +
-                                                    compteurIDAgree +
-                                                    '" class="boutonFileInput">Choisir un fichier</label><span> Aucun fichier choisi </span></div></div>'
-
-                                                  console.log(compteurIDAgree)
-                                                  if (elem.parentElement.parentElement.childElementCount < 5) {
-                                                    elem.parentElement.insertAdjacentHTML('beforebegin', gjj)
-                                                  }
-                                                  if (elem.parentElement.parentElement.childElementCount > 4) {
-                                                    elem.style.display = 'none';
-                                                  }
-                                                }
-                                              </script>
-
-
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <p>Date de début d'agrément *</p>
-                                                <input placeholder="Date de début d'agrément *" type="date" id="start"
-                                                  name="trip-start" min="2010-00-00" max="2025-12-31"
-                                                  onchange="localStorage.setItem('vDateDebut', this.value);">
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <p>Date de fin d'agrément *</p>
-                                                <input placeholder="Date de début d'agrément *" type="date" id="start"
-                                                  name="trip-start" min="2010-00-00" max="2035-12-31"
-                                                  onchange="localStorage.setItem('vDateFinn',this.value);">
-                                              </div>
-                                              <br>
-                                              <script>
-                                                function remplirNomFichier(elem) {
-                                                  elem.parentElement.childNodes[2].innerHTML =
-                                                    '<a href=\'\' style="text-decoration: underline; overflow-wrap: normal;">' +
-                                                    'Prévisualiser ' + String(elem.files[0].name) + '</a>' +
-                                                    '<span class=\'btnVueDoc\'>&#10007</span>'
-                                                }
-                                              </script>
-                                              <div class="col-lg-12 col-md-12 champParcours">
-                                                <select name="bad_day"
-                                                  onchange='localStorage.setItem("vDepAgr",this.value);'>
-                                                  <option disabled selected value>Département de délivrance de
-                                                    l'agrément *</option>
-                                                  <option>01 - Ain</option>
-                                                  <option>02 - Aisne</option>
-                                                  <option>24 - Dordogne</option>
-                                                  <option>33 - Gironde</option>
-                                                  <option>75 - Paris</option>
-                                                  <option>91 - Essone</option>
-                                                  <option>972 - Martinique</option>
-                                                </select>
-                                              </div>
-                                              <div class="col-lg-12 col-md-12 champParcoursCUT">
-                                                <select name="nbenfants"
-                                                  onchange='localStorage.setItem("vMaxEnf",this.value)'>
-                                                  <option disabled selected value>Capacité d'accueil maximale *</option>
-                                                  <option>1 enfant</option>
-                                                  <option>2 enfants</option>
-                                                  <option>3 enfants</option>
-                                                  <option>4 enfants</option>
-                                                </select>
-                                              </div>
-                                              <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js">
-                                              </script>
-                                              <script>
-                                                import Litepicker from 'litepicker';
-                                              </script>
-                                              <script>
-                                                var picker = new Litepicker({
-                                                  element: document.getElementById('litepicker')
-                                                });
-                                                var picker2 = new Litepicker({
-                                                  element: document.getElementById('litepicker2')
-                                                });
-                                              </script>
-                                            </div>
-                                            <div class='col-lg-12 col-md-12 champParcoursCUT'
-                                              style="border:1px solid rgb(223, 223, 223);padding: 10px;">
-                                              <span>Saisisez le CAPTCHA</span>
-                                              <span
-                                                style="font-size: 30px;  margin-left: 30px;margin-right: 30px; background-color: grey;">1234</span>
-                                              <input type=text placeholder="captcha">
-                                            </div>
-
-                                            <div class="col-lg-6 col-md-6 champParcours">
-                                              <button class="btn">Annuler</button>
-                                            </div>
                                             <script>
-                                              let CHECKBOXemail = '';
-                                              let CHECKBOXtel = '';
-                                              let CHECKBOXtelFixe = '';
+                                              // this.parentElement.parentElement.parentElement.lastChild.style.display=\'\'
+                                              let compteurIDAgree = 0;
+
+                                              function ajouterpiece(elem) {
+                                                compteurIDAgree++;
+                                                let gjj =
+                                                  '<div class="col-lg-12 col-md-12 champParcours Madeleine"><p style="position: relative;">Document supplémentaire<span style="cursor: pointer; position: absolute;top: 5px;right: 5px" onclick="this.parentElement.parentElement.parentElement.lastElementChild.children[0].style.display=\'\';this.parentElement.parentElement.remove();"> &#10007;</span></p><div class="caseCocheLeft"><input type="file" id="copCartIdRect' +
+                                                  compteurIDAgree +
+                                                  '" name="fname"style="display: none;"onchange="remplirNomFichier(this)"><label for="copCartIdRect' +
+                                                  compteurIDAgree +
+                                                  '" class="boutonFileInput">Choisir un fichier</label><span> Aucun fichier choisi </span></div></div>'
+
+                                                console.log(compteurIDAgree)
+                                                if (elem.parentElement.parentElement.childElementCount < 5) {
+                                                  elem.parentElement.insertAdjacentHTML('beforebegin', gjj)
+                                                }
+                                                if (elem.parentElement.parentElement.childElementCount > 4) {
+                                                  elem.style.display = 'none';
+                                                }
+                                              }
                                             </script>
-                                            <div class="col-lg-6 col-md-6 champParcours">
-                                              <button class="btn btn-primary" onclick="localStorage.setItem('vCommune', document.getElementById('ombrelle').value);
+
+
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <p>Date de début d'agrément *</p>
+                                              <input placeholder="Date de début d'agrément *" type="date" id="start"
+                                                name="trip-start" min="2010-00-00" max="2025-12-31"
+                                                onchange="localStorage.setItem('vDateDebut', this.value);">
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <p>Date de fin d'agrément *</p>
+                                              <input placeholder="Date de début d'agrément *" type="date" id="start"
+                                                name="trip-start" min="2010-00-00" max="2035-12-31"
+                                                onchange="localStorage.setItem('vDateFinn',this.value);">
+                                            </div>
+                                            <br>
+                                            <script>
+                                              function remplirNomFichier(elem) {
+                                                elem.parentElement.childNodes[2].innerHTML =
+                                                  '<a href=\'\' style="text-decoration: underline; overflow-wrap: normal;">' +
+                                                  'Prévisualiser ' + String(elem.files[0].name) + '</a>' +
+                                                  '<span class=\'btnVueDoc\'>&#10007</span>'
+                                              }
+                                            </script>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <select name="bad_day"
+                                                onchange='localStorage.setItem("vDepAgr",this.value);'>
+                                                <option disabled selected value>Département de délivrance de
+                                                  l'agrément *</option>
+                                                <option>01 - Ain</option>
+                                                <option>02 - Aisne</option>
+                                                <option>24 - Dordogne</option>
+                                                <option>33 - Gironde</option>
+                                                <option>75 - Paris</option>
+                                                <option>91 - Essone</option>
+                                                <option>972 - Martinique</option>
+                                              </select>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcoursCUT">
+                                              <select name="nbenfants"
+                                                onchange='localStorage.setItem("vMaxEnf",this.value)'>
+                                                <option disabled selected value>Capacité d'accueil maximale *</option>
+                                                <option>1 enfant</option>
+                                                <option>2 enfants</option>
+                                                <option>3 enfants</option>
+                                                <option>4 enfants</option>
+                                              </select>
+                                            </div>
+                                            <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js">
+                                            </script>
+                                            <script>
+                                              import Litepicker from 'litepicker';
+                                            </script>
+                                            <script>
+                                              var picker = new Litepicker({
+                                                element: document.getElementById('litepicker')
+                                              });
+                                              var picker2 = new Litepicker({
+                                                element: document.getElementById('litepicker2')
+                                              });
+                                            </script>
+                                          </div>
+                                          <div class='col-lg-12 col-md-12 champParcoursCUT'
+                                            style="border:1px solid rgb(223, 223, 223);padding: 10px;">
+                                            <span>Saisisez le CAPTCHA</span>
+                                            <span
+                                              style="font-size: 30px;  margin-left: 30px;margin-right: 30px; background-color: grey;">1234</span>
+                                            <input type=text placeholder="captcha">
+                                          </div>
+
+                                          <div class="col-lg-6 col-md-6 champParcours">
+                                            <button class="btn">Annuler</button>
+                                          </div>
+                                          <script>
+                                            let CHECKBOXemail = '';
+                                            let CHECKBOXtel = '';
+                                            let CHECKBOXtelFixe = '';
+                                          </script>
+                                          <div class="col-lg-6 col-md-6 champParcours">
+                                            <button class="btn btn-primary" onclick="localStorage.setItem('vCommune', document.getElementById('ombrelle').value);
                                             if (document.getElementById('e_mail').checked == true){CHECKBOXemail = ' Email  /'}
                                             if (document.getElementById('tel').checked == true){CHECKBOXtel = ' Portable /'}
                                             if (document.getElementById('tell').checked == true){CHECKBOXtelFixe = ' Fixe /'}
@@ -3079,13 +3074,7 @@
                                             localStorage.setItem('vContact',stringPrefCont.substring(0, stringPrefCont.length - 2));
                                             console.log(localStorage.getItem('vContact'));
                                             window.location.href='ecran2.html';">Continuer</button>
-                                            </div>
-                                          </span>
-                                          <div class="col-lg-12 col-md-12 text-right">
-                                            <a style="color: #FF5A5F; text-decoration: underline;"
-                                              href="https://monenfant.fr/aide-assistants-maternels">Besoin d'aide ?</a>
                                           </div>
-
                                         </row>
                                       </div>
                                     </div>
@@ -3734,6 +3723,7 @@
     .champParcoursCUT input[type="text"],
     .champParcoursCUT input[type="date"],
     .champParcours input[type="date"] {
+      background-color: white;
       border-color: rgb(180, 180, 180);
       border-radius: 5px;
       border-width: 1px;
