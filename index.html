@@ -122,251 +122,290 @@
         <!-- Experiences -->
         <div class="b-section" id="apropos">
             <h5 class="b-header">A propos de <span style='color:#073763;'>B</span>audouin</h5>
-            <!-- <div class='souspartie'>- Mes expériences professionelles -</div> -->
-            <div class="souspartie">- Expériences -</div>
-            <div class="b-example" style="padding: 10px 0px;">
-                <div class="row">
-                    <div class="six columns spacing">
-                        <div class="expCard" onclick="showDetails(this);" id="prez_dxc">
-                            <img src="images/logo_dxc.jpg" alt="Avatar" class='card-logo'>
-                        </div>
-                    </div>
-                    <div class="six columns spacing">
-                        <div class="expCard" onclick="showDetails(this);" id="prez_eres">
-                            <img src="images/logo_eres.jpg" alt="Avatar" class='card-logo'>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="six columns spacing">
-                        <div class="expCard" onclick="showDetails(this);" id="prez_netapy">
-                            <img src="images/logo_netapy.jpg" alt="Avatar" class='card-logo'>
-                        </div>
-                    </div>
-                    <div class="six columns spacing">
-                        <div class="expCard" onclick="showDetails(this);" id="prez_nicolas">
-                            <img src="images/logo_nicolas.jpg" alt="Avatar" class=' card-logo'>
+            <p>Je suis Baudouin Arbarétier, étudiant de Master 2 en Consulting à l'ESSCA, passionné de technologie et
+                artiste de musique électronique.
+            </p>
+            <div class='souspartie'>- Mes expériences professionelles -</div>
+            <div class="row">
+                <div class="six columns spacing">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="images/logo_dxc.jpg" alt="Avatar" class='card-logo'>
+                                <h6 style='position: absolute; bottom:0; opacity:0.4;'>Jan. – Jul. 2020</h6>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class='b-text'>
+                                    <h6 class='shy'>Consultant Junior<br>(6 mois)</h6>
+                                    <p>&#8226; Réalisation d’études sur l’actionnariat salarié et les fonds de placement
+                                        (traitement, collecte et analyse de données, élaboration des études).</p>
+                                    <p>&#8226; Réalisation d’études sur l’actionnariat salarié et les fonds de placement
+                                        (traitement, collecte et analyse de données, élaboration des études).</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="six columns spacing">
-                        <div class="expCard" onclick="showDetails(this);" id="prez_hermes">
-                            <img src="images/logo_hermes.jpg" alt="Avatar" class='card-logo'>
+
+                <div class="six columns spacing">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="images/logo_eres.jpg" alt="Avatar" class='card-logo'>
+                                <h6 style='position: absolute; bottom:0; opacity:0.4;'>Jan. – Jul. 2019</h6>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class='b-text'>
+                                    <h6 class='shy'>Consultant Junior<br>(6 mois)</h6>
+                                    <p>&#8226; Réalisation d’études sur l’actionnariat salarié et les fonds de placement
+                                        (traitement, collecte et analyse de données, élaboration des études).</p>
+                                    <p>&#8226; Développement autonome d’outils d’automatisation (Python).</p>
+                                    <p>&#8226; Développement front-end de <a
+                                            href="https://www.eres-group.com/panorama-actionnariat-salarie/"
+                                            target="_blank">pages web de
+                                            présentation d'études</a> (JavaScript).</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <script>
-                function showDetails(expCarte) {
-                    expCarte.innerHTML = dicJobDescription[expCarte.id][0]
-                    expCarte.id = dicJobDescription[expCarte.id][1]
-                }
-            </script>
+            <div class="row">
+                <div class="six columns spacing">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="images/logo_nicolas.jpg" alt="Avatar" class='card-logo'>
+                                <h6 style='position: absolute; bottom:0; opacity:0.4;'>Jul. – Aug. 2017</h6>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class='b-text'>
+                                    <h6 class='shy'>Gérant de boutique<br>(2 mois)</h6>
+                                    <p>&#8226; Gestion autonome d'une cave a vin Nicolas en période estivale.</p>
+                                    <p>&#8226; Gestion des finances et de l'inventaire du magasin (prévision
+                                        hebdomadaire des stocks, commande et récéption des produits).</p>
+                                    <p>&#8226; Recommandation et vente de vins, champagnes et spiritueux.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <script>
-                var dicJobDescription = {
-                    "logo_netapy": ['<img src="images/logo_netapy.jpg" alt="Avatar" class="card-logo">',
-                        'prez_netapy'
-                    ],
-                    "prez_netapy": [
-                        '<div class="b-text"><h6 class="shy">Artiste / Manager<br>(6 ans)</h6><p>• Production de musique éléctronique (composition, mixing &amp; mastering) et de contenus audiovisuels (designs, animations).</p> <p>• Gestion des partenariats (artistes, promoteurs) et des contrats de maison de disque.</p><p>(200,000 vues sur <a href="https://www.youtube.com/channel/UCckNHSC4PH4QkE69xKPL9kA" target="_blank">YouTube</a> / 300,000 écoutes sur<a href="https://open.spotify.com/artist/52J7rEcDelC7oLDzzHWfz2?si=744YFn1ZTPajb4f47PL5bgy" \'="" target="_blank"> Spotify</a>)</p></div>',
-                        'logo_netapy'
-                    ],
-                    "logo_dxc": ['<img src="images/logo_dxc.jpg" alt="Avatar" class="card-logo">',
-                        'prez_dxc'
-                    ],
-                    "prez_dxc": [
-                        '<div class="b-text"><h6 class="shy">Associate Consultant<br>(1 an)</h6><p>• Mission AMOA dans un organisme du secteur public français sur la refonte d\'un service public (projet semi-agile).</p><p>• PMO sur le projet : suivi des actions, reporting et présentation des avancés avec le client.</p><p>• Programmation de scripts permettant d’automatiser des traitements de fichiers et des communications entre le client et ses relais départementaux (Python)</p> <p>• Confection et présentation d’études au client : arbitrages et analyse de faisabilité à partir de maquettes confectionnées sur mesure</p></div>',
-                        'logo_dxc'
-                    ],
-                    "logo_eres": ['<img src="images/logo_eres.jpg" alt="Avatar" class="card-logo">',
-                        'prez_eres'
-                    ],
-                    "prez_eres": [
-                        '<div class="b-text"><h6 class="shy">Consultant Junior<br>(6 mois)</h6><p>• Réalisation d’études sur l’actionnariat salarié et les fonds de placement (traitement, collecte et analyse de données, élaboration des études).</p><p>• Développement autonome d’outils d’automatisation (Python).</p><p>• Développement front-end de <a href="https://www.eres-group.com/panorama-actionnariat-salarie/" target="_blank">pages web de présentation d\'études </a> (JavaScript).</p > </div>',
-                        'logo_eres'
-                    ],
-                    "logo_nicolas": ['<img src="images/logo_nicolas.jpg" alt="Avatar" class="card-logo">',
-                        'prez_nicolas'
-                    ],
-                    "prez_nicolas": [
-                        '<div class="b-text"><h6 class="shy">Gérant de boutique<br>(2 mois)</h6><p>• Gestion autonome d\'une cave a vin Nicolas en période estivale.</p><p>• Gestion des finances et de l\'inventaire du magasin(prévision hebdomadaire des stocks, commande et récéption des produits).</p><p>• Recommandation et vente de vins, champagnes et spiritueux.</p></div>',
-                        'logo_nicolas'
-                    ],
-                    "logo_hermes": ['<img src="images/logo_hermes.jpg" alt="Avatar" class="card-logo">',
-                        'prez_hermes'
-                    ],
-                    "prez_hermes": [
-                        '<div class=" b-text "><h6 class=" shy ">Paie &amp; Administration<br>(3 mois)</h6><p>• Découverte et apréhension du monde du luxe, plus spécifiquement du secteur de la paie et de la gestion du personnel.</p><p>• Vérification puis validation de contrats et factures des interimaires de Hermes Sellier.</p><p>• Création d\'infographies d\'instruction à destination des équipes RH en interne.</p></div>',
-                        'logo_hermes'
-                    ]
-                }
-            </script>
-
-            <center><a href=' files/CV Baudouin Arbaretier.pdf ' target="_blank">
-                    <p class=' shy '>(CV au format pdf)</p>
-                </a></center>
-
-            <!-- #PARTIE A AJOUTER !!!!!!                                                                         <------------------>
-            <br>
-            <div class="souspartie">- Recommandations -</div>
-            <div class="slideshow">
-                <div class="slide ">
-                    <h4>Olivier de Fontenay<br>
-                        <span style="font-size: 2rem;">Associé fondateur d' Eres</span> </h4>
-                    <blockquote> Nous avons eu la chance
-                        d’avoir Baudouin en stage pendant 6 mois dans l’équipe marketing. Il
-                        a
-                        pleinement rempli sa mission en réalisant une étude quanti sur
-                        l’actionnariat salarié de grande qualité avec précision,
-                        implication et rigueur. <br>En plus il est allé au-delà en faisant
-                        de
-                        nombreuses propositions originales et à forte valeur ajoutée, par
-                        exemple de
-                        créer une page en JavaScript pour présenter les résultats
-                        de l’étude de façon vivante et très pro. Enfin il a imaginé plein de
-                        solutions concrètes par exemple pour améliorer notre blog ou les
-                        rapports de
-                        SEO.<br>Baudouin a de grandes qualités pour analyser une
-                        situation et trouver une solution d’optimisation. Il fera un
-                        excellent
-                        consultant et je le recommande vivement ! </blockquote>
                 </div>
-                <div class="slide">
-                    <h4>Mirela Stoeva<br>
-                        <span style="font-size: 2rem;">Responsable des études chez Eres</span>
-                    </h4>
-                    <blockquote> Baudouin a été un stagiaire extrêmement efficace.<br> En 6
-                        mois, il a
-                        travaillé sur plusieurs études : Panorama de l’actionnariat salarié dans
-                        les
-                        entreprises cotées en France et en Europe, étude annuelle sur
-                        l’actionnariat
-                        salarié dans les PME, impact de l’actionnariat salarié sur des
-                        indicateurs RH
-                        des sociétés du SBF120 avec l’analyse de 2 nouveaux indicateurs :
-                        l'ancienneté
-                        et le nombre d'heures de formation par salarié, Argus
-                        des FCPE qui analyse plus de 600 fonds d’épargne salariale (performance,
-                        frais,
-                        …).<br> Grâce à sa maturité et sa curiosité intellectuelle, il est allé
-                        au-delà
-                        des missions de base et a pu ainsi travailler sur l’amélioration
-                        de notre référencement naturel SEO, sur l’optimisation de l’analyse des
-                        données
-                        en créant des outils sur mesure dédiés. Il a fait évoluer le format de
-                        présentation de nos études en créant une page web dynamique
-                        en JavaScripts, langage qu’il a appris à l’occasion. Il a même écrit
-                        quelques
-                        posts pour notre blog.
-                        <br> Très autonome et toujours à la recherche de solutions/outils
-                        d’optimisation
-                        de son travail, Baudouin a su rapidement gagner ma confiance et a été un
-                        vrai
-                        coéquipier.</blockquote>
+
+                <div class="six columns spacing">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="images/logo_netapy.jpg" alt="Avatar" class='card-logo'>
+                                <h6 style='position: absolute; bottom:0; opacity:0.4;'>2014 – Présent</h6>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class='b-text'>
+                                    <h6 class='shy'>Artiste / Manager<br>(6 ans)</h6>
+                                    <p>&#8226; Production de musique éléctronique (composition, mixing & mastering) et
+                                        de contenus audiovisuels (designs, animations).</p>
+                                    <p>&#8226; Gestion des partenariats (artistes, promoteurs) et des contrats de maison
+                                        de disque.</p>
+                                    <p>(200,000 vues sur <a
+                                            href='https://www.youtube.com/channel/UCckNHSC4PH4QkE69xKPL9kA'
+                                            target="_blank">YouTube</a> / 300,000 écoutes sur
+                                        <a href=https://open.spotify.com/artist/52J7rEcDelC7oLDzzHWfz2?si=744YFn1ZTPajb4f47PL5bgy '
+                      target="_blank">Spotify</a>)
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+      </div>
+      <div class="row">
+            <div class="six columns spacing">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/logo_hermes.jpg" alt="Avatar" class=' card-logo '>
+                    <h6 style=' position: absolute; bottom:0; opacity:0.4; '>May. – Jul. 2016</h6>
+                </div>
+                <div class="flip-card-back">
+                    <div class=' b-text '>
+                    <h6 class=' shy '>Paie & Administration<br>(3 mois)</h6>
+                    <p>&#8226; Découverte et apréhension du monde du luxe, plus spécifiquement du secteur de la paie et de
+                        la gestion du personnel.</p>
+                    <p>&#8226; Vérification puis validation de contrats et factures des interimaires de Hermes Sellier.
+                    </p>
+                    <p>&#8226; Création d' infographies d 'instruction à destination des équipes RH en interne.</p>
+                    </div>
+                </div>
                 </div>
             </div>
-
-            <script>
-                $(document).ready(function () {
-                    $('.slideshow').slick({
-                        dots: false,
-                        prevArrow: false,
-                        nextArrow: true,
-                        centerMode: true,
-                        centerPadding: '60px',
-                        slidesToShow: 1,
-                        fade: true,
-                        adaptiveHeight: true,
-                        autoplay: true,
-                        nextArrow: "<center><div style='font-size:1.5em;'>&#8614;</div></center>",
-                        autoplaySpeed: 5000
-                    });
-                });
-            </script>
+            </div>
         </div>
 
-        <!-- Forms -->
-        <div class="b-section" id="contact">
-            <h5 class="b-header">Me <span style='color:#073763;'>C</span>ontacter</h5>
-            <p class='spacing'>Pour toute prise de contact, vous pouvez me joindre sur les
-                plateformes
-                suivantes. </p>
-            <div class="value-prop row">
-                <div class="four columns value-prop spacing">
-                    <a href='mailto:b.arbaretier@outlook.fr' target="_blank" rel="noopener noreferrer">
-                        <center><img class="u-max-full-width hover-zoom" src="images/email.svg"
-                                style='width:30%; opacity:0.7'><br>
-                    </a>
-                    E-mail</center>
-                </div>
-                <div class="four columns value-prop spacing">
-                    <a href='https://twitter.com/b_arbaretier' target="_blank" rel="noopener noreferrer">
-                        <center><img class="u-max-full-width hover-zoom" src="images/twitter.svg"
-                                style='width:30%; opacity:0.7'><br>
-                    </a>
-                    Twitter</center>
-                </div>
-                <div class="four columns value-prop spacing">
-                    <a href='https://www.linkedin.com/in/b-arbaretier/' target="_blank" rel="noopener noreferrer">
-                        <center><img class="u-max-full-width hover-zoom" src="images/linkedin.svg"
-                                style='width:30%; opacity:0.7'><br>
-                    </a>
-                    LinkedIn</center>
-                </div>
-            </div>
-            <br><br><br><br <footer>
-            <div style='opacity:0.4'>
-                <center>© 2019 | Design by Baudouin Arbarétier.
-                    <center>
-                        <center style="color: black; opacity: 0.5;">
-                            <a href="mirror.html">Miroir</a>
-                        </center>
-            </div>
-            </footer>
-        </div>
+      <center><a href=' files/CV Baudouin Arbaretier.pdf ' target="_blank">
+          <p class=' shy '>(CV au format pdf)</p>
+        </a></center>
 
-    </div>
-    <script>
-        AOS.init();
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.slider-slick').slick({
-                dots: true,
-                arrows: true,
-                infinite: true,
-                speed: 600,
-                autoplay: true,
-                autoplaySpeed: 2500,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
+      <!-- #PARTIE A AJOUTER !!!!!!                                                                         <------------------>
+      <br>
+      <div class="souspartie">- Recommandations -</div>
+      <div class="slideshow">
+        <div class="slide ">
+          <h4>Olivier de Fontenay<br>
+            <span style="font-size: 2rem;">Associé fondateur d' Eres</span> </h4> <blockquote> Nous avons eu la chance
+                                            d’avoir Baudouin en stage pendant 6 mois dans l’équipe marketing. Il
+                                            a
+                                            pleinement rempli sa mission en réalisant une étude quanti sur
+                                            l’actionnariat salarié de grande qualité avec précision,
+                                            implication et rigueur. <br>En plus il est allé au-delà en faisant
+                                            de
+                                            nombreuses propositions originales et à forte valeur ajoutée, par
+                                            exemple de
+                                            créer une page en JavaScript pour présenter les résultats
+                                            de l’étude de façon vivante et très pro. Enfin il a imaginé plein de
+                                            solutions concrètes par exemple pour améliorer notre blog ou les
+                                            rapports de
+                                            SEO.<br>Baudouin a de grandes qualités pour analyser une
+                                            situation et trouver une solution d’optimisation. Il fera un
+                                            excellent
+                                            consultant et je le recommande vivement ! </blockquote>
+                                </div>
+                                <div class="slide">
+                                    <h4>Mirela Stoeva<br>
+                                        <span style="font-size: 2rem;">Responsable des études chez Eres</span>
+                                    </h4>
+                                    <blockquote> Baudouin a été un stagiaire extrêmement efficace.<br> En 6
+                                        mois, il a
+                                        travaillé sur plusieurs études : Panorama de l’actionnariat salarié dans
+                                        les
+                                        entreprises cotées en France et en Europe, étude annuelle sur
+                                        l’actionnariat
+                                        salarié dans les PME, impact de l’actionnariat salarié sur des
+                                        indicateurs RH
+                                        des sociétés du SBF120 avec l’analyse de 2 nouveaux indicateurs :
+                                        l'ancienneté
+                                        et le nombre d'heures de formation par salarié, Argus
+                                        des FCPE qui analyse plus de 600 fonds d’épargne salariale (performance,
+                                        frais,
+                                        …).<br> Grâce à sa maturité et sa curiosité intellectuelle, il est allé
+                                        au-delà
+                                        des missions de base et a pu ainsi travailler sur l’amélioration
+                                        de notre référencement naturel SEO, sur l’optimisation de l’analyse des
+                                        données
+                                        en créant des outils sur mesure dédiés. Il a fait évoluer le format de
+                                        présentation de nos études en créant une page web dynamique
+                                        en JavaScripts, langage qu’il a appris à l’occasion. Il a même écrit
+                                        quelques
+                                        posts pour notre blog.
+                                        <br> Très autonome et toujours à la recherche de solutions/outils
+                                        d’optimisation
+                                        de son travail, Baudouin a su rapidement gagner ma confiance et a été un
+                                        vrai
+                                        coéquipier.</blockquote>
+                                </div>
+                            </div>
+
+                            <script>
+                                $(document).ready(function () {
+                                    $('.slideshow').slick({
+                                        dots: false,
+                                        prevArrow: false,
+                                        nextArrow: true,
+                                        centerMode: true,
+                                        centerPadding: '60px',
+                                        slidesToShow: 1,
+                                        fade: true,
+                                        adaptiveHeight: true,
+                                        autoplay: true,
+                                        nextArrow: "<center><div style='font-size:1.5em;'>&#8614;</div></center>",
+                                        autoplaySpeed: 5000
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <!-- Forms -->
+                        <div class="b-section" id="contact">
+                            <h5 class="b-header">Me <span style='color:#073763;'>C</span>ontacter</h5>
+                            <p class='spacing'>Pour toute prise de contact, vous pouvez me joindre sur les
+                                plateformes
+                                suivantes. </p>
+
+                            <div class="value-prop row">
+                                <div class="four columns value-prop spacing">
+                                    <a href='mailto:b.arbaretier@outlook.fr' target="_blank" rel="noopener noreferrer">
+                                        <center><img class="u-max-full-width hover-zoom" src="images/email.svg"
+                                                style='width:30%; opacity:0.7'><br>
+                                    </a>
+                                    E-mail</center>
+                                </div>
+                                <div class="four columns value-prop spacing">
+                                    <a href='https://twitter.com/b_arbaretier' target="_blank"
+                                        rel="noopener noreferrer">
+                                        <center><img class="u-max-full-width hover-zoom" src="images/twitter.svg"
+                                                style='width:30%; opacity:0.7'><br>
+                                    </a>
+                                    Twitter</center>
+                                </div>
+                                <div class="four columns value-prop spacing">
+                                    <a href='https://www.linkedin.com/in/b-arbaretier/' target="_blank"
+                                        rel="noopener noreferrer">
+                                        <center><img class="u-max-full-width hover-zoom" src="images/linkedin.svg"
+                                                style='width:30%; opacity:0.7'><br>
+                                    </a>
+                                    LinkedIn</center>
+                                </div>
+                            </div>
+                            <br><br><br><br <footer>
+                            <div style='opacity:0.4'>
+                                <center>© 2019 | Design by Baudouin Arbarétier.
+                                    <center>
+                                        <center style="color: black; opacity: 0.5;">
+                                            <a href="mirror.html">Miroir</a>
+                                        </center>
+                            </div>
+                            </footer>
+                        </div>
+
+                    </div>
+                    <script>
+                        AOS.init();
+                    </script>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('.slider-slick').slick({
+                                dots: true,
+                                arrows: true,
+                                infinite: false,
+                                speed: 300,
+                                autoplay: true,
+                                autoplaySpeed: 2300,
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                responsive: [{
+                                        breakpoint: 1024,
+                                        settings: {
+                                            slidesToShow: 3,
+                                            slidesToScroll: 3,
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 600,
+                                        settings: {
+                                            slidesToShow: 2,
+                                            slidesToScroll: 2
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 480,
+                                        settings: {
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1
+                                        }
+                                    }
+                                ]
+                            });
+                        });
+                    </script>
 
 </body>
 
