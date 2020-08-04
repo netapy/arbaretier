@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.6">
+  <title>Modérateur Monenfant.fr</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sticky-footer-navbar/">
+
+  <!-- Favicons -->
+  <meta name="theme-color" content="#563d7c">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Espace de modération Monenfant.fr</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mr-auto">
+        </div>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Rechercher" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Begin page content -->
+
+  <main role="main" class="flex-shrink-0" style="padding:100px 0px">
+    <div class="container">
+      <h4>Recherche</h4>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="quelle_recherche"
+          placeholder="Nom, Prénom, Code Postal...">
+
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <h4>Filtrer par</h4>
+      <div class="input-group mb-3">
+        <select id="filtre" class='custom-select'
+          onchange='filtragemaisontype()'>
+          <option selected disabled>Type de demande</option>
+          <option>- Tout -</option>
+          <option>Inscription</option>
+          <option>Renouvellement</option>
+        </select>
+        <select id="statutselec" class='custom-select' onchange="filtragemaison()">
+          <option selected disabled>Statut de demande</option>
+          <option>- Tout -</option>
+          <option>Rejeté</option>
+          <option>Validé</option>
+          <option>En attente de nouveaux éléments</option>
+          <option>En attente de traitement</option>
+          <option>En cours de traitement</option>
+        </select>
+
+
+
+      </div>
+    </div> <br>
+
+
+    <div class="container">
+
+      <table class="table" id="tableau">
+        <thead class="thead-dark">
+          <tr>
+            <th> N° de demande </th>
+            <th>Prénom </th>
+            <th>Nom </th>
+            <th>Code postal </th>
+            <th>Date de demande </th>
+            <th>Date de dernier changement de statut 
+            </th>
+            <th>Type </th>
+            <th>Statut </th>
+            <th>Demande traitée par </th>
+            <th>Demande traitée le </th>
+            <th>Actions possibles </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0004</td>
+            <td>Elodie</td>
+            <td>Leclerq</td>
+            <td>750000</td>
+            <td>22/03/2020</td>
+            <td>22/03/2020</td>
+            <td>Inscription</td>
+            <td>En attente de traitement</td>
+            <td>--</td>
+            <td>--</td>
+            <td><a href="./testttt.html">Accéder à la demande</a></td>
+          </tr>
+          <tr>
+            <td>0005</td>
+            <td>Morgane</td>
+            <td>Sevigne</td>
+            <td>750000</td>
+            <td>22/03/2020</td>
+            <td>22/03/2020</td>
+            <td>Inscription</td>
+            <td>En attente de nouveaux éléments</td>
+            <td>--</td>
+            <td>--</td>
+            <td><a href="./incomplet_oui.html">Accéder à la demande</a></td>
+          </tr>
+          <tr>
+            <td>0015</td>
+            <td>Eleonore</td>
+            <td>Cravinsky</td>
+            <td>750000</td>
+            <td>22/03/2020</td>
+            <td>22/03/2020</td>
+            <td>Inscription</td>
+            <td>En attente de nouveaux éléments</td>
+            <td>--</td>
+            <td>--</td>
+            <td><a href="./incomplet_non.html">Accéder à la demande</a></td>
+          </tr>
+          <tr>
+            <td>0006</td>
+            <td>Nicolas</td>
+            <td>Aspi</td>
+            <td>750000</td>
+            <td>22/03/2020</td>
+            <td>22/03/2020</td>
+            <td>Renouvellement</td>
+            <td>En cours de traitement</td>
+            <td>--</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td>0007</td>
+            <td>Rachelle</td>
+            <td>Sam</td>
+            <td>750000</td>
+            <td>22/03/2020</td>
+            <td>22/03/2020</td>
+            <td>Inscription</td>
+            <td>Validé</td>
+            <td>--</td>
+            <td>--</td>
+            <td><a href="./valide.html">Accéder à la demande</a></td>
+          </tr>
+          <tr>
+            <td>0008</td>
+            <td>Louise</td>
+            <td>Lelieu</td>
+            <td>750000</td>
+            <td>22/03/2020</td>
+            <td>22/03/2020</td>
+            <td>Renouvellement</td>
+            <td>Rejeté</td>
+            <td>--</td>
+            <td>--</td>
+            <td><a href="./rejete.html">Accéder à la demande</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+
+    <script>
+      var tableaucomp = document.getElementById('tableau')
+
+      function filtragemaison() {
+        console.log(tableaucomp.rows[4].cells[7].innerHTML)
+        console.log(tableaucomp.rows.length)
+        console.log(document.getElementById("statutselec").value)
+        for (let i = 1; i < tableaucomp.rows.length; i++) {
+          if (document.getElementById("statutselec").value == tableaucomp.rows[i].cells[7].innerHTML ||
+            document.getElementById("statutselec").value == undefined ||
+            document.getElementById("statutselec").value == "- Tout -") {
+            tableaucomp.rows[i].style.display = ""
+          } else {
+            tableaucomp.rows[i].style.display = "none"
+          }
+        }
+      }
+
+      function filtragemaisontype() {
+        console.log(tableaucomp.rows[4].cells[7].innerHTML)
+        console.log(tableaucomp.rows.length)
+        console.log(document.getElementById("filtre").value)
+        for (let i = 1; i < tableaucomp.rows.length; i++) {
+          if (document.getElementById("filtre").value == tableaucomp.rows[i].cells[6].innerHTML ||
+            document.getElementById("filtre").value == undefined ||
+            document.getElementById("filtre").value == "- Tout -") {
+            tableaucomp.rows[i].style.display = ""
+          } else {
+            tableaucomp.rows[i].style.display = "none"
+          }
+        }
+      }
+
+      function filtragemaisonDeux() {
+        console.log(tableaucomp.rows[4].cells[4].innerHTML)
+        console.log(tableaucomp.rows.length)
+        console.log(document.getElementById("quel_filtre").value)
+        for (let i = 1; i < tableaucomp.rows.length; i++) {
+          if (document.getElementById("quel_filtre").value == tableaucomp.rows[i].cells[4].innerHTML ||
+            document.getElementById("quel_filtre").value == undefined ||
+            document.getElementById("quel_filtre").value == "") {
+            tableaucomp.rows[i].style.display = ""
+          } else {
+            tableaucomp.rows[i].style.display = "none"
+          }
+        }
+      }
+    </script>
+    <!--
+
+    <div class="container">
+      <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+      <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>main &gt; .container</code>.</p>
+      <p>Back to <a href="/docs/4.4/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
+    </div>
+-->
+  </main>
+
+
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span class="text-muted">Maquette DXC à usage interne.</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
