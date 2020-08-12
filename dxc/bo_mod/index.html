@@ -48,6 +48,8 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand" href="#">Espace de modération Monenfant.fr</a>
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Déconnexion</button>
+      <a class="navbar-brand" style="margin-left: 10px; font-size: 14px;">n.dupont4</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,8 +58,8 @@
         <div class="navbar-nav mr-auto">
         </div>
         <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Rechercher" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+          <!-- <input class="form-control mr-sm-2" type="text" placeholder="Rechercher" aria-label="Search">
+          <button class="btn my-2 my-sm-0" type="submit">🔎</button> -->
         </form>
       </div>
     </nav>
@@ -70,16 +72,16 @@
       <h4>Recherche</h4>
       <div class="input-group mb-3">
         <input type="text" class="form-control" aria-label="Text input with dropdown button" id="quelle_recherche"
-          placeholder="Nom, Prénom, Code Postal...">
-
+          placeholder="Nom/Prénom">
+        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="quelle_recherche"
+          placeholder="Code Postal">
       </div>
     </div>
     <br>
     <div class="container">
       <h4>Filtrer par</h4>
       <div class="input-group mb-3">
-        <select id="filtre" class='custom-select'
-          onchange='filtragemaisontype()'>
+        <select id="filtre" class='custom-select' onchange='filtragemaisontype()'>
           <option selected disabled>Type de demande</option>
           <option>- Tout -</option>
           <option>Inscription</option>
@@ -90,13 +92,11 @@
           <option>- Tout -</option>
           <option>Rejeté</option>
           <option>Validé</option>
+          <option>Expiré</option>
           <option>En attente de nouveaux éléments</option>
           <option>En attente de traitement</option>
           <option>En cours de traitement</option>
         </select>
-
-
-
       </div>
     </div> <br>
 
@@ -111,7 +111,7 @@
             <th>Nom </th>
             <th>Code postal </th>
             <th>Date de demande </th>
-            <th>Date de dernier changement de statut 
+            <th>Date de dernier changement de statut
             </th>
             <th>Type </th>
             <th>Statut </th>
@@ -181,8 +181,8 @@
             <td>22/03/2020</td>
             <td>Inscription</td>
             <td>Validé</td>
-            <td>--</td>
-            <td>--</td>
+            <td>n.dupont4</td>
+            <td>20/07/2020</td>
             <td><a href="./valide.html">Accéder à la demande</a></td>
           </tr>
           <tr>
@@ -194,9 +194,22 @@
             <td>22/03/2020</td>
             <td>Renouvellement</td>
             <td>Rejeté</td>
-            <td>--</td>
-            <td>--</td>
+            <td>b.paire7</td>
+            <td>25/07/2020</td>
             <td><a href="./rejete.html">Accéder à la demande</a></td>
+          </tr>
+          <tr>
+            <td>0009</td>
+            <td>Damien</td>
+            <td>Fabrice</td>
+            <td>750000</td>
+            <td>25/03/2020</td>
+            <td>25/03/2020</td>
+            <td>Renouvellement</td>
+            <td>Expiré</td>
+            <td>--</td> 
+            <td>--</td>
+            <td><a href="./incomplet_non.html">Accéder à la demande</a></td>
           </tr>
         </tbody>
       </table>

@@ -47,19 +47,19 @@
 
 <body class="d-flex flex-column h-100">
   <header>
-    <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand" href="#">Espace de modération Monenfant.fr</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Déconnexion</button>
+      <a class="navbar-brand" style="margin-left: 10px; font-size: 14px;">n.dupont4</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mr-auto">
         </div>
         <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Rechercher" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+          <!-- <input class="form-control mr-sm-2" type="text" placeholder="Rechercher" aria-label="Search">
+          <button class="btn my-2 my-sm-0" type="submit">🔎</button> -->
         </form>
       </div>
     </nav>
@@ -195,11 +195,9 @@
                     <span id="warninganograve">
                       <span>Si vous confirmez, un mail sera envoyée à l’ASM pour qu’elle
                         soumette un nouvel agrément.</span><br>
-                      <span>Des potentiels doublons pour ce profil ont été trouvés, vous serez redirigés vers une page
-                        pour les identifier.</span><br><br>
                       <button onclick="modal3.style.display = 'none';" style="max-width: 200px;">Revenir sur la
                         demande</button>
-                      <button onclick="window.location.href='robot_dbl.html'"
+                      <button onclick="window.location.href='index.html'"
                         style="max-width: 100px;">Confirmer</button>
                   </div>
                 </div>
@@ -220,10 +218,13 @@
                     <span class="close" onclick="modal1.style.display = 'none'">&times;</span>
                     <span id="warninganograve"><span>Si vous confirmez, la demande d’inscription sur ME.fr sera
                         validée.</span><br><br>
-                      <button onclick="modal1.style.display = 'none';" style="max-width: 200px;">Revenir sur la
-                        demande</button>
-                      <button onclick="window.location.href='index.html'" style="max-width: 100px;">Confirmer</button>
-                  </div>
+                        <span>Des potentiels doublons pour ce profil ont été trouvés, vous serez redirigés vers une page
+                          pour les identifier.</span><br><br>
+                        <button onclick="modal3.style.display = 'none';" style="max-width: 200px;">Revenir sur la
+                          demande</button>
+                        <button onclick="window.location.href='robot_dbl.html'"
+                          style="max-width: 100px;">Confirmer</button>
+                    </div>
                 </div>
 
                 <button id="validation" type="button" class="btn btn-secondary" style="margin:30px 0px"
