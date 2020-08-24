@@ -51,7 +51,8 @@
       <a class="navbar-brand" href="#">Espace de modération Monenfant.fr</a>
       <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Déconnexion</button>
       <a class="navbar-brand" style="margin-left: 10px; font-size: 14px;">n.dupont4</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -73,7 +74,7 @@
           <p class="lead">Veuillez vérifier la cohérence des informations.</p>
           <div class="row">
             <div class="col row" style="height:300px">
-              <div class="col-6" id="carte-identification"></div>
+              <div class="col-8" id="carte-identification"></div>
               <script>
                 PDFObject.embed("assistante_maternelle_agrement_7.pdf", "#carte-identification", {
                   height: "600px"
@@ -87,7 +88,7 @@
                   <option selected>Non</option>
                 </select><br><br>
                 <div id="doc_non_conforme">
-                  <strong>Séléctionnez les motifs de non-conformité :</strong><br>
+                  <strong>Séléctionnez le motifs de non-conformité :</strong><br>
                   <input id="illisible" type="radio" name="conformite" onclick="funCalled(this);"><label for="illisible"
                     style="padding-left:10px">Illisilité du document</label><br>
                   <input id="manquante" type="radio" name="conformite" onclick="funCalled(this)"><label for="manquante"
@@ -164,7 +165,6 @@
                         <td><input type="checkbox" id="c66"></td>
                       </tr>
                     </tbody>
-
                   </table>
                 </div>
 
@@ -174,12 +174,13 @@
                     <span class="close" onclick="modal4.style.display = 'none'">&times;</span>
                     <span id="warninganograve"><span style='color: red'>Cette action entrainera une
                         supression de la demande</span><br><br>
-                      Sélectionnez le motif de rejet :<br> <input id="illicite" type="radio" name="anomalieg"><label
-                        for="illicite" style="padding-left:10px">Document à caractère illicite</label><br>
+                      Sélectionnez le motif de rejet :<br>
+                      <input id="illicite" type="radio" name="anomalieg"><label for="illicite"
+                        style="padding-left:10px">Document à caractère illicite</label><br>
+                        <input id="illicite" type="radio" name="anomalieg"><label for="illicite"
+                        style="padding-left:10px">Document falsifié</label><br>
                       <input id="castest" type="radio" name="anomalieg"><label for="castest"
-                        style="padding-left:10px">Cas
-                        de
-                        test</label><br>
+                        style="padding-left:10px">Cas de test</label><br>
                       <input id="radiation" type="radio" name="anomalieg"><label for="radiation"
                         style="padding-left:10px">ASM
                         radiée</label><br></span>
@@ -197,8 +198,7 @@
                         soumette un nouvel agrément.</span><br>
                       <button onclick="modal3.style.display = 'none';" style="max-width: 200px;">Revenir sur la
                         demande</button>
-                      <button onclick="window.location.href='index.html'"
-                        style="max-width: 100px;">Confirmer</button>
+                      <button onclick="window.location.href='index.html'" style="max-width: 100px;">Confirmer</button>
                   </div>
                 </div>
                 <div id="modalNNIDENT" class="modal">
@@ -218,13 +218,13 @@
                     <span class="close" onclick="modal1.style.display = 'none'">&times;</span>
                     <span id="warninganograve"><span>Si vous confirmez, la demande d’inscription sur ME.fr sera
                         validée.</span><br><br>
-                        <span>Des potentiels doublons pour ce profil ont été trouvés, vous serez redirigés vers une page
-                          pour les identifier.</span><br><br>
-                        <button onclick="modal3.style.display = 'none';" style="max-width: 200px;">Revenir sur la
-                          demande</button>
-                        <button onclick="window.location.href='robot_dbl.html'"
-                          style="max-width: 100px;">Confirmer</button>
-                    </div>
+                      <span>Des potentiels doublons pour ce profil ont été trouvés, vous serez redirigés vers une page
+                        pour les identifier.</span><br><br>
+                      <button onclick="modal3.style.display = 'none';" style="max-width: 200px;">Revenir sur la
+                        demande</button>
+                      <button onclick="window.location.href='robot_dbl.html'"
+                        style="max-width: 100px;">Confirmer</button>
+                  </div>
                 </div>
 
                 <button id="validation" type="button" class="btn btn-secondary" style="margin:30px 0px"
