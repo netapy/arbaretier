@@ -88,7 +88,7 @@
                   <option selected>Non</option>
                 </select><br><br>
                 <div id="doc_non_conforme">
-                  <strong>Séléctionnez le motifs de non-conformité :</strong><br>
+                  <strong>Séléctionnez le motif de non-conformité :</strong><br>
                   <input id="illisible" type="radio" name="conformite" onclick="funCalled(this);"><label for="illisible"
                     style="padding-left:10px">Illisilité du document</label><br>
                   <input id="manquante" type="radio" name="conformite" onclick="funCalled(this)"><label for="manquante"
@@ -97,9 +97,10 @@
                     style="padding-left:10px">Mauvais document</label><br>
                   <input id="agrexp" type="radio" name="conformite" onclick="funCalled(this)"><label for="agrexp"
                     style="padding-left:10px">Agrément expiré</label><br>
-                  <input id="anograve" type="radio" name="conformite" onclick="funCalled(this)"><label for="anograve"
-                    style="padding-left:10px">Anomalie grave (document illicite, de test ou ASM
-                    radiée)</label><br>
+                  <span style="white-space: nowrap;"><input id="anograve" type="radio" name="conformite"
+                      onclick="funCalled(this)"><label for="anograve" style="padding-left:10px">A</span>nomalie grave
+                  (document illicite, de test ou ASM
+                  radiée)</label><br>
 
                   <script>
                     function sortirPage() {
@@ -177,10 +178,8 @@
                       Sélectionnez le motif de rejet :<br>
                       <input id="illicite" type="radio" name="anomalieg"><label for="illicite"
                         style="padding-left:10px">Document à caractère illicite</label><br>
-                        <input id="illicite" type="radio" name="anomalieg"><label for="illicite"
+                      <input id="illicite" type="radio" name="anomalieg"><label for="illicite"
                         style="padding-left:10px">Document falsifié</label><br>
-                      <input id="castest" type="radio" name="anomalieg"><label for="castest"
-                        style="padding-left:10px">Cas de test</label><br>
                       <input id="radiation" type="radio" name="anomalieg"><label for="radiation"
                         style="padding-left:10px">ASM
                         radiée</label><br></span>
@@ -219,7 +218,7 @@
                     <span id="warninganograve"><span>Si vous confirmez, la demande d’inscription sur ME.fr sera
                         validée.</span><br><br>
                       <span>Des potentiels doublons pour ce profil ont été trouvés, vous serez redirigés vers une page
-                        pour les identifier.</span><br><br>
+                        pour les supprimer.</span><br><br>
                       <button onclick="modal3.style.display = 'none';" style="max-width: 200px;">Revenir sur la
                         demande</button>
                       <button onclick="window.location.href='robot_dbl.html'"
