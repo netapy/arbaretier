@@ -38,7 +38,7 @@
                             <td>PARIS</td>
                             <td>01 99 99 04 05</td>
                             <td>12/08/2020</td>
-                            <td>Validée</td>
+                            <td>Validé</td>
                             <td>Ancien compte</td>
                             <td>           
                                 <div class="dropdown">
@@ -64,7 +64,7 @@
                         <td>PARIS</td>
                         <td>07 53 42 12 12</td>
                         <td>06/08/2020</td>
-                        <td>Inactive (registre sans habilitation en V1)</td>
+                        <td>Inactif (registre sans habilitation en V1)</td>
                         <td>Ancien compte</td>
                         <td>           
                             <div class="dropdown">
@@ -86,7 +86,7 @@
                         <td>PARIS</td>
                         <td>01 02 03 04 05</td>
                         <td>06/08/2020</td>
-                        <td>Validée</td>
+                        <td>Validé</td>
                         <td>Nouveau compte</td>
                         <td>           
                             <div class="dropdown">
@@ -112,7 +112,7 @@
                         <td>Senlis</td>
                         <td>01 01 01 01 01</td>
                         <td>01/08/2020</td>
-                        <td>Radiée</td>
+                        <td>Radié</td>
                         <td>Nouveau compte</td>
                         <td>           
                             <div class="dropdown">
@@ -134,7 +134,7 @@
                         <td>Lille</td>
                         <td>03 01 03 01 01</td>
                         <td>10/08/2020</td>
-                        <td>Suspendue</td>
+                        <td>Suspendu</td>
                         <td>Nouveau compte</td>
                         <td>           
                             <div class="dropdown">
@@ -159,7 +159,7 @@
                         <td>Beauvais</td>
                         <td>06 01 01 11 01</td>
                         <td>01/01/2020</td>
-                        <td>Radiée</td>
+                        <td>Radié</td>
                         <td>Nouveau compte</td>
                         <td>           
                             <div class="dropdown">
@@ -168,7 +168,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">   
                                     <!-- A voir pour le wording -->                            
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modalSupprimerAsm">Supprimer</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modalAutorInscript">Autoriser l'inscription</a>
                                 </div>
                             </div>
                         </td>
@@ -188,7 +188,7 @@
                         </div>
                         <div class="modal-body">
                             Êtes-vous sûr de vouloir radier <b>NOM PRENOM</b> ? <br>
-                            Les données seront supprimées dans x semaines. L’assistant maternel n’aura plus accès à son BackOffice. 
+                            Les données seront supprimées dans 30 jours. L’assistant maternel n’aura plus accès à son BackOffice. 
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
@@ -252,6 +252,27 @@
                         </div>
                         <div class="modal-body">
                             Êtes-vous sûr de vouloir lever la radiation de <b>NOM PRENOM</b> ? <br>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary">Valider</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Modal autoriser inscription -->
+                <div class="modal fade" id="modalAutorInscript" tabindex="-1" role="dialog" aria-labelledby="modalLeverRadiation" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Autoriser l'inscription</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            Êtes-vous sûr de vouloir autoriser l'inscription de <b>NOM PRENOM</b> et le déshistoriser de la base des assistants maternels radiés ? <br>
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
