@@ -1,66 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Plain webRTC</title>
-	<style type="text/css">
-		.sent{
-			color:blue;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>webrtc</title>
 </head>
 <body>
-<div>
-	<input type="checkbox" id="enable_chat" onclick="enableChat()" checked> Enable chat
-	<span id=micused style="right:0;position:fixed;"></span>
-</div>
+    <script>
+        let channel = null
 
-<div>
-	<h4>LocalStream</h4>
-	<input type="checkbox" id="enableAudioFile">Audio File
-	<input type="file" id="streamAudioFile">	
-	<br>
-	<!-- <input type="checkbox" id="enable_mic" checked>Microphone -->
-</div>
-<div>
-	<p>
-		<video width=250 id=local controls autoplay></video>
-		Local
-		<textarea rows="4" cols="50"  id=localOffer></textarea>
-		<button id=localOfferSet>CreateOffer</button>	
-	</p>	
-</div>
-<div>
-	<p>
-		<video width=250 id=remote controls autoplay></video>
-		Remote
-		<textarea id="remoteOffer" rows="4" cols="50" placeholder="Paste remote SDP"></textarea>
-		<button id=remoteOfferGot>Answer</button>
-	</p>	
-</div>
-<div id="chat" style="overflow:scroll;"></div>
-<div>
-	<br><br>
-	<form action="" onsubmit="event.preventDefault();return sendMsg();">
-		<input id=sendTxt type="text" name="" placeholder="chat here" size="50">
-		<button type="submit">send</button>		
-	</form>
-</div>
-<div>
-	<p>
-	File transfer:
-	</p>
-	<div>
-		<progress value="0" id="sendFileProg"></progress>
-		<input type="file" name="" id=fileTransfer>
-		<button type="submit" onclick="sendFile()">send</button>			
-	</div>
-	<div>
-		<p>
-			<progress value="0" id="recFileProg"></progress>
-			<a href="" id=file_download></a>
-		</p>
-	</div>
-</div>
-<script src="plainwebrtc.js"></script>
+        const connection = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] })
+
+        connection.ondatachannel = event => {
+            console.log('ondatachannel')
+            channel = event.channel
+            // channel.onopen = event => console.log('onopen', event);
+            // channel.onmessage = event => console.log('onmessage', event);
+            channel.onmessage = event => alert(event.data)
+        }
+
+        connection.onconnectionstatechange = event => document.getElementById("connectionState").innerText = connection.connectionState // console.log('onconnectionstatechange', connection.connectionState)
+        connection.oniceconnectionstatechange = event => document.getElementById("iceConnectionState").innerText = connection.iceConnectionState // console.log('oniceconnectionstatechange', connection.iceConnectionState)
+
+        async function step_1_initiator_create_offer() {
+            channel = connection.createDataChannel('data')
+            // channel.onopen = event => console.log('onopen', event)
+            // channel.onmessage = event => console.log('onmessage', event)
+            channel.onmessage = event => alert(event.data)
+
+            connection.onicecandidate = event => {
+                // console.log('onicecandidate', event)
+                if (!event.candidate) {
+                    document.getElementById("createdOffer").value = JSON.stringify(connection.localDescription)
+                    document.getElementById("createdOffer").hidden = false
+                }
+            }
+
+            const offer = await connection.createOffer()
+            await connection.setLocalDescription(offer)
+        }
+
+        async function step_2_accept_remote_offer() {
+            const offer = JSON.parse(document.getElementById("remoteOffer").value)
+            await connection.setRemoteDescription(offer)
+        }
+
+        async function step_3_create_answer() {
+            connection.onicecandidate = event => {
+                // console.log('onicecandidate', event)
+                if (!event.candidate) {
+                    document.getElementById("createdAnswer").value = JSON.stringify(connection.localDescription)
+                    document.getElementById("createdAnswer").hidden = false
+                }
+            }
+            
+            const answer = await connection.createAnswer()
+            await connection.setLocalDescription(answer)
+        }
+
+        async function step_4_accept_answer() {
+            const answer = JSON.parse(document.getElementById("remoteAnswer").value)
+            await connection.setRemoteDescription(answer)
+        }
+
+        async function send_text() {
+            const text = document.getElementById("text").value
+
+            channel.send(text)
+        }
+    </script>
+
+    <table width="100%" border="1">
+        <tr>
+            <th>#</th>
+            <th>initiator</th>
+            <th>peer</th>
+        </tr>
+        <tr>
+            <td>step 1</td>
+            <td>
+                <input type="button" value="create offer" onclick="step_1_initiator_create_offer()">
+                <input id="createdOffer" type="text" hidden>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>step 2</td>
+            <td></td>
+            <td>
+                <input id="remoteOffer" type="text" placeholder="offer from initiator">
+                <input type="button" value="accept offer" onclick="step_2_accept_remote_offer()">
+            </td>
+        </tr>
+        <tr>
+            <td>step 3</td>
+            <td></td>
+            <td>
+                <input type="button" value="create answer" onclick="step_3_create_answer()">
+                <input id="createdAnswer" type="text" hidden>
+            </td>
+        </tr>
+        <tr>
+            <td>step 4</td>
+            <td>
+                <input id="remoteAnswer" type="text" placeholder="answer from peer">
+                <input type="button" value="accept answer" onclick="step_4_accept_answer()">
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <hr>
+    <input id="text" type="text">
+    <input type="button" value="send" onclick="send_text()">
+    <hr>
+    <table border="1">
+        <tr>
+            <th colspan="2">connection</th>
+        </tr>
+        <tr>
+            <th>connectionState</th>
+            <td id="connectionState">unknown</td>
+        </tr>
+        <tr>
+            <th>iceConnectionState</th>
+            <td id="iceConnectionState">unknown</td>
+        </tr>
+    </table>
 </body>
 </html>
