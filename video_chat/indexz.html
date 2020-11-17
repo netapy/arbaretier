@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Baud SMS</title>
+	<script type="text/javascript" src="qrcode.js"></script>
+	<script type="text/javascript" src="jsQR.js"></script>
+	<script src="adapter.min.js"></script>
+</head>
+
+<body>
+	<script>
+		let channel = null
+		const connection = new RTCPeerConnection({
+			iceServers: [{
+				urls: 'stun:stun.l.google.com:19302'
+			}]
+		})
+
+		connection.ondatachannel = event => {
+			console.log('ondatachannel')
+			channel = event.channel
+			// channel.onopen = event => console.log('onopen', event);
+			// channel.onmessage = event => console.log('onmessage', event);
+			channel.onclose = alert("L'utilisateur s'est deconnecté.")
+			channel.onmessage = event => alert(event.data) //			>>>ici c'est ce qui arrive quand on reçoit un message
+			connection.ontrack = event => {
+				document.getElementById("MonPreviewVideo").srcObject = event.streams[0];
+			}
+		}
+
+		connection.onconnectionstatechange = event => document.getElementById("connectionState").innerText = connection
+			.connectionState // console.log('onconnectionstatechange', connection.connectionState)
+		connection.oniceconnectionstatechange = event => document.getElementById("iceConnectionState").innerText = connection
+			.iceConnectionState // console.log('oniceconnectionstatechange', connection.iceConnectionState)
+
+		async function step_1_initiator_create_offer() {
+			channel = connection.createDataChannel('data')
+			// channel.onopen = event => console.log('onopen', event)
+			// channel.onmessage = event => console.log('onmessage', event)
+			channel.onmessage = event => alert(event.data)
+
+			connection.onicecandidate = event => {
+				// console.log('onicecandidate', event)
+				if (!event.candidate) {
+					document.getElementById("createdOffer").value = JSON.stringify(connection.localDescription)
+					document.getElementById("createdOffer").hidden = false
+					new QRCode(document.getElementById("qrcodeOffer"), JSON.stringify(connection.localDescription));
+					console.log(connection.localDescription.sdp)
+				}
+			}
+
+			const offer = await connection.createOffer()
+			await connection.setLocalDescription(offer)
+		}
+
+		async function step_2_accept_remote_offer() {
+			const offer = JSON.parse(document.getElementById("remoteOffer").value)
+			await connection.setRemoteDescription(offer)
+		}
+
+		async function step_3_create_answer() {
+			connection.onicecandidate = event => {
+				// console.log('onicecandidate', event)
+				if (!event.candidate) {
+					document.getElementById("createdAnswer").value = JSON.stringify(connection.localDescription)
+					document.getElementById("createdAnswer").hidden = false
+					new QRCode(document.getElementById("qrcodeAnswer"), JSON.stringify(connection.localDescription));
+					console.log(connection.localDescription.sdp)
+				}
+			}
+
+			const answer = await connection.createAnswer()
+			await connection.setLocalDescription(answer)
+		}
+
+		async function step_4_accept_answer() {
+			const answer = JSON.parse(document.getElementById("remoteAnswer2").value)
+			await connection.setRemoteDescription(answer)
+		}
+
+		async function send_text() {
+			const text = document.getElementById("text").value
+			channel.send(text)
+			navigator.mediaDevices.getUserMedia({
+				audio: false,
+				video: true,
+			}).then(stream => {
+				// Display your local video in #localVideo element
+				//localVideo.srcObject = stream;
+				// Add your stream to be sent to the conneting peer
+				connection.addTrack(stream);
+			});
+
+		}
+	</script>
+
+	<table border="1">
+		<tr>
+			<th colspan="2">connection</th>
+		</tr>
+		<tr>
+			<th>connectionState</th>
+			<td id="connectionState">unknown</td>
+		</tr>
+		<tr>
+			<th>iceConnectionState</th>
+			<td id="iceConnectionState">unknown</td>
+		</tr>
+	</table>
+
+
+	<div style="background-color: blanchedalmond; padding: 20px; margin: 30px 10px;">
+
+		<video id="MonPreviewVideo" autoplay></video>
+
+		<script type="text/javascript">
+			var mediaOptions = {
+				video: true,
+				audio: false
+			};
+			//const mediaStream = new MediaStream();
+			//const videoPlacement = document.getElementById('MonPreviewVideo');
+			//videoPlacement.srcObject = mediaStream;
+		</script>
+	</div>
+
+	<table width="100%" border="1">
+		<tr>
+			<th>#</th>
+			<th>initiator</th>
+			<th>peer</th>
+		</tr>
+		<tr>
+			<td>step 1</td>
+			<td style="padding: 10px;">
+				<input type="button" value="create offer" onclick="step_1_initiator_create_offer()">
+				<input id="createdOffer" type="text" hidden>
+				<div id="qrcodeOffer"></div>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>step 2</td>
+			<td></td>
+			<td style="padding: 10px;">
+				<button id="loadingMessage" onclick="camRep = false; lancementCameraQR()">🎥 Tu veux scanner le code de
+					quelqu'un ?</button><br>
+				<canvas id="canvasss" style="width: 300px;" hidden></canvas>
+				<div id="output" hidden>
+					<div id="outputMessage">No QR code detected.</div>
+					<div hidden><b>Code:</b> <span id="outputData"></span></div>
+				</div>
+				<input id="remoteOffer" type="text" placeholder="offer from initiator">
+				<input type="button" value="accept offer" onclick="step_2_accept_remote_offer()">
+			</td>
+		</tr>
+		<tr>
+			<td>step 3</td>
+			<td></td>
+			<td>
+				<input type="button" value="create answer" onclick="step_3_create_answer()">
+				<input id="createdAnswer" type="text" hidden>
+				<div id="qrcodeAnswer"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>step 4</td>
+			<td style="padding: 10px;">
+				<button id="loadingMessage2" onclick="camRep = true; lancementCameraQR()">
+					🎥 Tu veux scanner le code réponse ?
+				</button><br>
+				<canvas id="canvasss2" style="width: 300px;" hidden></canvas>
+				<div id="output2" hidden>
+					<div id="outputMessage2">No QR code detected.</div>
+					<div hidden><b>Code:</b> <span id="outputData2"></span></div>
+				</div>
+				<input id="remoteAnswer2" type="text" placeholder="answer from peer">
+				<input type="button" value="accept answer" onclick="step_4_accept_answer()">
+			</td>
+			<td></td>
+		</tr>
+	</table>
+	<hr>
+	<input id="text" type="text">
+	<input type="button" value="send" onclick="send_text()">
+	<hr>
+</body>
+
+<script>
+	var video;
+	var canvasElement;
+	var canvas;
+	var loadingMessage;
+	var outputContainer;
+	var outputMessage;
+	var outputData;
+	var champRep;
+	var camRep = false;
+
+	function drawLine(begin, end, color) {
+		canvas.beginPath();
+		canvas.moveTo(begin.x, begin.y);
+		canvas.lineTo(end.x, end.y);
+		canvas.lineWidth = 5;
+		canvas.strokeStyle = color;
+		canvas.stroke();
+	}
+
+	// Use facingMode: environment to attemt to get the front camera on phones
+	function lancementCameraQR() {
+		if (camRep == false) {
+			video = document.createElement("video");
+			canvasElement = document.getElementById("canvasss");
+			canvas = canvasElement.getContext("2d");
+			loadingMessage = document.getElementById("loadingMessage");
+			outputContainer = document.getElementById("output");
+			outputMessage = document.getElementById("outputMessage");
+			outputData = document.getElementById("outputData");
+			champRep = document.getElementById("remoteOffer");
+		} else {
+			video = document.createElement("video");
+			canvasElement = document.getElementById("canvasss2");
+			canvas = canvasElement.getContext("2d");
+			loadingMessage = document.getElementById("loadingMessage2");
+			outputContainer = document.getElementById("output2");
+			outputMessage = document.getElementById("outputMessage2");
+			outputData = document.getElementById("outputData2");
+			champRep = document.getElementById("remoteAnswer2");
+		}
+
+		navigator.mediaDevices.getUserMedia({
+			video: {
+				facingMode: "environment"
+			}
+		}).then(function (stream) {
+			video.srcObject = stream;
+			video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+			video.play();
+			requestAnimationFrame(tick);
+		});
+	}
+
+	function tick() {
+		loadingMessage.innerText = "⌛ Chargement..."
+		if (video.readyState === video.HAVE_ENOUGH_DATA) {
+			loadingMessage.hidden = true;
+			canvasElement.hidden = false;
+			outputContainer.hidden = false;
+
+			canvasElement.height = video.videoHeight;
+			canvasElement.width = video.videoWidth;
+			canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+			var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+			var code = jsQR(imageData.data, imageData.width, imageData.height, {
+				inversionAttempts: "dontInvert",
+			});
+			let codeTrouve;
+			if (code) {
+				codeTrouve = true;
+				drawLine(code.location.topLeftCorner, code.location.topRightCorner, "blue");
+				drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "blue");
+				drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "blue");
+				drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "blue");
+				outputMessage.hidden = true;
+				outputData.parentElement.hidden = false;
+				outputData.innerText = code.data;
+				champRep.value = code.data
+				setTimeout(codeTrouve = false, 500)
+			} else if (codeTrouve == false) {
+				outputMessage.hidden = false;
+				outputData.parentElement.hidden = true;
+			}
+		}
+		requestAnimationFrame(tick);
+	}
+</script>
+
+
+</html>
