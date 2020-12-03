@@ -632,6 +632,13 @@ blockquote:before {
     margin-right: 20px
 }
 
+.box .logo img {
+    position: absolute;
+    top: 30%;
+    right: -120px;
+    opacity: 1;
+}
+
 
 .box .time span {
     position: absolute;
