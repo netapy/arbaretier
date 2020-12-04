@@ -565,7 +565,7 @@ blockquote:before {
     display: block;
     width: 0;
     height: 100%;
-    border: 1px dashed rgb(63, 63, 63);
+    border: 1px dashed #b1b1b1;
     position: absolute;
     top: 0;
     left: 30px
