@@ -51,7 +51,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand" href="#">Espace de modération Monenfant.fr</a>
       <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Déconnexion</button>
-      <a class="navbar-brand" style="margin-left: 10px; font-size: 14px;">n.dupont4</a>
+      <a class="navbar-brand" style="margin-left: 10px; font-size: 14px;">didier8</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -71,104 +71,127 @@
   <main role="main" class="flex-shrink-0" style="padding:100px 0px">
     <div class="container">
       <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">
-        < Retour</button> <h1 class="mt-2">Dossier N°015</h1>
-          <p class="lead">Veuillez vérifier la cohérence des informations.</p>
-          <div class="row">
-            <div class="col row" style="height:300px">
-              <div class="col-8" id="carte-identification"></div>
-              <script>
-                PDFObject.embed("assistante_maternelle_agrement_7.pdf", "#carte-identification", {
-                  height: "600px"
-                });
-              </script>
-              <div class="col">
-                <strong>Les informations fournies vous permettent-elles de traiter la demande ? *</strong>
-                <select disabled
-                  onchange="if(this.value=='Oui'){document.getElementById('doc_conforme').style.display='';document.getElementById('doc_non_conforme').style.display='none';document.getElementById('validation').className='btn btn-success'}else{document.getElementById('doc_non_conforme').style.display='';document.getElementById('doc_conforme').style.display='none';document.getElementById('validation').className='btn btn-secondary'}">
-                  <option>Oui</option>
-                  <option selected>Non</option>
-                </select><br><br>
-                <div id="doc_non_conforme">
-                  <strong>Séléctionnez les motifs de non-conformité :</strong><br>
-                  <input disabled id="illisible" type="radio" name="conformite" onclick="funCalled(this);"><label
-                    for="illisible" style="padding-left:10px">Illisilité du document</label><br>
-                  <input disabled id="manquante" type="radio" name="conformite" onclick="funCalled(this)"><label
-                    for="manquante" style="padding-left:10px">Pages manquantes</label><br>
-                  <input checked disabled id="mauvais" type="radio" name="conformite" onclick="funCalled(this)"><label
-                    for="mauvais" style="padding-left:10px">Mauvais document</label><br>
-                  <input disabled id="agrexp" type="radio" name="conformite" onclick="funCalled(this)"><label
-                    for="agrexp" style="padding-left:10px">Agrément expiré</label><br>
-                  <input disabled id="anograve" type="radio" name="conformite" onclick="funCalled(this)"><label
-                    for="anograve" style="padding-left:10px">Anomalie grave (document illicite, document falsifié ou assistant maternel radié)</label><br>
+        &lt; Retour</button>
+      <h1 class="mt-2">Dossier N°015</h1><button class="btn-primary" style="
+    border-radius: 5px;
+    padding: 6px;
+" onclick="document.querySelector('#infoAsm').style.display='block'">Contacter l'assistant maternel</button>
+<div id="infoAsm" style="display: none;background-color: #c6defa;width:fit-content; padding: 10px;" >Nom : Elodie Leclerq<br>Tél : 07 07 07 07 07<br>mail : elodielec@gmail.com</div>
+      <p class="lead">Veuillez vérifier la cohérence des informations.</p>
+      <div class="row">
+        <div class="col row" style="height:300px">
+          <div class="col-8 pdfobject-container" id="carte-identification"><embed class="pdfobject"
+              src="assistante_maternelle_agrement_7.pdf" type="application/pdf"
+              style="overflow: auto; width: 100%; height: 600px;"></div>
+          <script>
+            PDFObject.embed("assistante_maternelle_agrement_7.pdf", "#carte-identification", {
+              height: "600px"
+            });
+          </script>
+          <div class="col">
+            <strong>Les informations fournies vous permettent-elles de traiter la demande ? *</strong>
+            <select disabled=""
+              onchange="if(this.value=='Oui'){document.getElementById('doc_conforme').style.display='';document.getElementById('doc_non_conforme').style.display='none';document.getElementById('validation').className='btn btn-success'}else{document.getElementById('doc_non_conforme').style.display='';document.getElementById('doc_conforme').style.display='none';document.getElementById('validation').className='btn btn-secondary'}">
+              <option>Oui</option>
+              <option selected="">Non</option>
+            </select><br><br>
+            <div id="doc_non_conforme">
+              <strong>Séléctionnez les motifs de non-conformité :</strong><br>
+              <input disabled="" id="illisible" type="radio" name="conformite" onclick="funCalled(this);"><label
+                for="illisible" style="padding-left:10px">Illisilité du document</label><br>
+              <input disabled="" id="manquante" type="radio" name="conformite" onclick="funCalled(this)"><label
+                for="manquante" style="padding-left:10px">Pages manquantes</label><br>
+              <input checked="" disabled="" id="mauvais" type="radio" name="conformite" onclick="funCalled(this)"><label
+                for="mauvais" style="padding-left:10px">Mauvais document</label><br>
+              <input disabled="" id="agrexp" type="radio" name="conformite" onclick="funCalled(this)"><label
+                for="agrexp" style="padding-left:10px">Agrément expiré</label><br>
+                <span style="white-space: nowrap;"><input id="anograve" type="radio" name="conformite" disabled><label for="anograve" style="padding-left:10px">A</label></span>nomalie grave
+                (document illicite, document falsifié ou ASM radiée)<br>
 
-                  <!-- <strong>En sélectionnant ce motif, la demande d'inscription sera supprimée :</strong><br>
+              <!-- <strong>En sélectionnant ce motif, la demande d'inscription sera supprimée :</strong><br>
               <input id="radiee" type="checkbox" name="conformite" onclick="funCalled(this)"><label for="radiee" style="padding-left:10px">ASM radiée</label><br>
               <input id="castest" type="checkbox" name="conformite" onclick="funCalled(this)"><label for="castest" style="padding-left:10px">Cas de test ?</label><br>
               <input id="illicite" type="checkbox" name="conformite" onclick="funCalled(this)"><label for="illicite" style="padding-left:10px">Document à caractère illicite</label> -->
-                </div>
+            </div><br><br>
 
-                <div id="doc_conforme" style="display:none">
-                  <strong>Cochez les informations identiques à celles indiquées sur l'agrément</strong><br><br>
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td>Prénom donné par le SNGI :</td>
-                        <td>Aurélie</td>
-                        <td><input type="checkbox"></td>
-                      </tr>
-                      <tr>
-                        <td>Nom donné par le SNGI :</td>
-                        <td>Leclerc</td>
-                        <td><input type="checkbox"></td>
-                      </tr>
-                      <tr>
-                        <td>Adresse renseignée:</td>
-                        <td>02400 Chateau Thierry</td>
-                        <td><input type="checkbox"></td>
-                      </tr>
-                      <tr>
-                        <td>Capacité d’accueil renseignée:</td>
-                        <td>3</td>
-                        <td><input type="checkbox"></td>
-                      </tr>
-                      <tr>
-                        <td>Date de début de l’agrément renseignée:</td>
-                        <td>19/04/2012</td>
-                        <td><input type="checkbox"></td>
-                      </tr>
-                      <tr>
-                        <td>Date de fin de l’agrément renseignée:</td>
-                        <td>18/04/2017</td>
-                        <td><input type="checkbox"></td>
-                      </tr>
-                    </tbody>
+            <div id="doc_conforme" style="display:none">
+              <strong>Cochez les informations identiques à celles indiquées sur l'agrément</strong><br><br>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Prénom donné par le SNGI :</td>
+                    <td>Aurélie</td>
+                    <td><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>Nom donné par le SNGI :</td>
+                    <td>Leclerc</td>
+                    <td><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>Adresse renseignée:</td>
+                    <td>02400 Chateau Thierry</td>
+                    <td><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>Capacité d’accueil renseignée:</td>
+                    <td>3</td>
+                    <td><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>Date de début de l’agrément renseignée:</td>
+                    <td>19/04/2012</td>
+                    <td><input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td>Date de fin de l’agrément renseignée:</td>
+                    <td>18/04/2017</td>
+                    <td><input type="checkbox"></td>
+                  </tr>
+                </tbody>
 
-                  </table>
-                </div>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <span id="warninganograve"><span style='color: red'>Cette action entrainera une
-                        supression de la demande</span><br><br>
-                      Sélectionnez le motif de rejet :<br> <input id="illicite" type="radio" name="anomalieg"><label
-                        for="illicite" style="padding-left:10px">Document à caractère illicite</label><br>
-                      <input id="castest" type="radio" name="anomalieg"><label for="castest"
-                        style="padding-left:10px">Cas
-                        de
-                        test</label><br>
-                      <input id="radiation" type="radio" name="anomalieg"><label for="radiation"
-                        style="padding-left:10px">ASM
-                        radiée</label><br></span>
-                  </div>
-                </div>
-
-              </div>
-
+              </table>
             </div>
-
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">×</span>
+                <span id="warninganograve"><span style="color: red">Cette action entrainera une
+                    supression de la demande</span><br><br>
+                  Sélectionnez le motif de rejet :<br> <input id="illicite" type="radio" name="anomalieg"><label
+                    for="illicite" style="padding-left:10px">Document à caractère illicite</label><br>
+                  <input id="castest" type="radio" name="anomalieg"><label for="castest" style="padding-left:10px">Cas
+                    de
+                    test</label><br>
+                  <input id="radiation" type="radio" name="anomalieg"><label for="radiation"
+                    style="padding-left:10px">ASM
+                    radiée</label><br></span>
+              </div>
+            </div>
+            <div>
+              <div style="
+    text-decoration: underline; padding: 10px;
+">Espace commentaire pour la modération : 
+              </div><input type="text" style="width:80%;" placeholder="Commentaire..."><button>-&gt;</button>
+            </div>
+            <div style="margin:10px;background-color: #b0e6f2;padding:10px;">
+              <i>15/12/2020</i><br><u>Changement de statut</u> : en attente de nouveaux éléments<br></div>
+            <div style="margin:10px;background-color: #fff39c;padding:10px;"><i>Arthur - 14/12/2020</i><br> Blablabla un
+              commentaire</div>
+            <div style="margin:10px;background-color: #fff39c;padding:10px;">
+              <span style="
+    text-decoration: un;
+    position: absolute;
+    right: 35px;
+    opacity: .6;
+    font-size: 14px;
+">modif. suppr.</span><i>Didier - 06/12/2020</i><br> Blablabla un commentaire</div>
           </div>
+
+        </div>
+
+      </div>
     </div>
   </main>
 
@@ -265,6 +288,8 @@
       <span class="text-muted">Maquette DXC à usage interne.</span>
     </div>
   </footer>
+
+
 </body>
 
 </html>
