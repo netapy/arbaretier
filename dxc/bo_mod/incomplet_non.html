@@ -72,11 +72,9 @@
     <div class="container">
       <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">
         &lt; Retour</button>
-      <h1 class="mt-2">Dossier N°015</h1><button class="btn-primary" style="
-    border-radius: 5px;
-    padding: 6px;
-" onclick="document.querySelector('#infoAsm').style.display='block'">Contacter l'assistant maternel</button>
-<div id="infoAsm" style="display: none;background-color: #c6defa;width:fit-content; padding: 10px;" >Nom : Elodie Leclerq<br>Tél : 07 07 07 07 07<br>mail : elodielec@gmail.com</div>
+      <h1 class="mt-2">Dossier N°015</h1>
+      <div id="infoAsm" style="display: none;background-color: #c6defa;width:fit-content; padding: 10px;">Nom : Elodie
+        Leclerq<br>Tél : 07 07 07 07 07<br>mail : elodielec@gmail.com</div>
       <p class="lead">Veuillez vérifier la cohérence des informations.</p>
       <div class="row">
         <div class="col row" style="height:300px">
@@ -105,8 +103,9 @@
                 for="mauvais" style="padding-left:10px">Mauvais document</label><br>
               <input disabled="" id="agrexp" type="radio" name="conformite" onclick="funCalled(this)"><label
                 for="agrexp" style="padding-left:10px">Agrément expiré</label><br>
-                <span style="white-space: nowrap;"><input id="anograve" type="radio" name="conformite" disabled><label for="anograve" style="padding-left:10px">A</label></span>nomalie grave
-                (document illicite, document falsifié ou ASM radiée)<br>
+              <span style="white-space: nowrap;"><input id="anograve" type="radio" name="conformite" disabled><label
+                  for="anograve" style="padding-left:10px">A</label></span>nomalie grave
+              (document illicite, document falsifié ou ASM radiée)<br>
 
               <!-- <strong>En sélectionnant ce motif, la demande d'inscription sera supprimée :</strong><br>
               <input id="radiee" type="checkbox" name="conformite" onclick="funCalled(this)"><label for="radiee" style="padding-left:10px">ASM radiée</label><br>
@@ -169,24 +168,6 @@
                     radiée</label><br></span>
               </div>
             </div>
-            <div>
-              <div style="
-    text-decoration: underline; padding: 10px;
-">Espace commentaire pour la modération : 
-              </div><input type="text" style="width:80%;" placeholder="Commentaire..."><button>-&gt;</button>
-            </div>
-            <div style="margin:10px;background-color: #b0e6f2;padding:10px;">
-              <i>15/12/2020</i><br><u>Changement de statut</u> : en attente de nouveaux éléments<br></div>
-            <div style="margin:10px;background-color: #fff39c;padding:10px;"><i>Arthur - 14/12/2020</i><br> Blablabla un
-              commentaire</div>
-            <div style="margin:10px;background-color: #fff39c;padding:10px;">
-              <span style="
-    text-decoration: un;
-    position: absolute;
-    right: 35px;
-    opacity: .6;
-    font-size: 14px;
-">modif. suppr.</span><i>Didier - 06/12/2020</i><br> Blablabla un commentaire</div>
           </div>
 
         </div>

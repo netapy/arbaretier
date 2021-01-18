@@ -69,18 +69,13 @@
 
   <main role="main" class="flex-shrink-0" style="padding:100px 0px">
     <div class="container">
-      <h4>Recherche</h4>
+      <h4>Filtres</h4>
       <div class="input-group mb-3">
         <input type="text" class="form-control" aria-label="Text input with dropdown button" id="quelle_recherche"
           placeholder="Nom">
         <input type="text" class="form-control" aria-label="Text input with dropdown button" id="quelle_recherche"
           placeholder="Code Postal">
-        <button class="btn btn-primary">Rechercher</button>
       </div>
-    </div>
-    <br>
-    <div class="container">
-      <h4>Filtrer par</h4>
       <div class="input-group mb-3">
         <select id="filtre" class='custom-select'>
           <option selected disabled>Type de demande</option>
@@ -97,14 +92,17 @@
           <option>En attente de traitement</option>
           <option>En cours de traitement</option>
         </select>
-        <button class="btn btn-primary" onclick="filtragemaisontype();filtragemaison();">Filtrer</button>
       </div>
-    </div> <br>
+      <div class="col-md-12 text-center">
+        <button class="btn btn-primary" style="padding: 6px 40px; font-size: 18px;" onclick="filtragemaisontype();filtragemaison();">Filtrer</button>
+      </div>
+    </div>
+    <br> <br>
 
 
     <div class="container">
       <table class="table" id="tableau">
-        <thead class="thead-dark">
+        <thead class="thead-light">
           <tr>
             <th> N° de demande <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
             <th>Prénom <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
