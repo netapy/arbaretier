@@ -90,7 +90,10 @@
     href="https://monenfant.fr/o/banner-portlet/css/custom.css?browserId=other&amp;themeId=monenfant_WAR_monenfanttheme&amp;languageId=fr_FR&amp;b=7006&amp;t=1584457696000"
     id="f228f18" rel="stylesheet" type="text/css" />
   <script data-senna-track="temporary" type="text/javascript">
-    // <![CDATA[
+  </script>
+
+  //
+  <![CDATA[
     var Liferay = Liferay || {};
 
     Liferay.Browser = {
@@ -2741,7 +2744,9 @@
                                           <ul>
                                             <li style="z-index:5;" class="active"> <span
                                                 class="etape-nom">Identification</span> </li>
-                                            <li style="z-index:1;"> <span class="etape-nom">Profil</span> </li>
+                                            <li style="z-index:4;"> <span class="etape-nom">Profil</span> </li>
+                                            <li style="z-index:3;"> <span class="etape-nom">Récapitulatif</span> </li>
+                                            <li style="z-index:1;"> <span class="etape-nom">Fin</span> </li>
                                           </ul>
                                         </nav>
                                       </div>
@@ -2756,8 +2761,8 @@
                                           <div class="text-center">
                                             <div class="col-lg-12 col-md-12 champParcours">
 
-                                              <input class="aHandicaper"  placeholder="Email *" type="text" id="fnamex" name="fnamex"
-                                                onchange='if(this.value=="doublon@gmail.com"){document.getElementById("myModalMail").style
+                                              <input class="aHandicaper" placeholder="Email *" type="text" id="fnamex"
+                                                name="fnamex" onchange='if(this.value=="doublon@gmail.com"){document.getElementById("myModalMail").style
                   .display="block"}else if(this.value.includes("@")==false){document.getElementById("mail-ko")
                   .style.display="";document.getElementById("mail-ok")
                   .style.display="none"; this.style.color="red";}
@@ -2783,7 +2788,8 @@
                                             </div>
                                             <!-- end Modal -->
                                             <div class="col-lg-12 col-md-12 champParcours">
-                                              <input class="aHandicaper" placeholder="Confirmation d'Email *" type="text" id="bname"
+                                              <input class="aHandicaper" placeholder="Confirmation d'Email *"
+                                                type="text" id="bname"
                                                 onchange='if(this.value==document.getElementById("fnamex").value)
                     {document.getElementById("bon_doublon").style.display="";this.style.color="black";document.getElementById("faux_doublon").style.display="none"}
                     else{document.getElementById("faux_doublon").style.display="";this.style.color="red";document.getElementById("bon_doublon").style.display="none"}'>
@@ -2791,6 +2797,12 @@
                                                 style='color: green; display: none; padding:10px; position:absolute'>&#10004;</span>
                                               <span id="faux_doublon"
                                                 style='color: red; display: none; padding:10px; position:absolute'>&#10007;</span>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 champParcours">
+                                              <input class="aHandicaper" placeholder="Mot de passe *" type="text"
+                                                id="bname">
+                                              <p style="font-size: 12px; padding: 2px 0px;">8 caractères, 2 chiffres...
+                                              </p>
                                             </div>
                                             <!-- <div class="col-lg-12 col-md-12 champParcours">
                                               <select name="civilite"
@@ -2803,22 +2815,25 @@
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <input class="aHandicaper" type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vPrenom",this.value) '
-                                                placeholder="Prénom *" ;>
+                                                placeholder="Prénoms *" ;>
+                                              <p style="font-size: 12px; padding: 2px 0px;">Indiquez tous vos prénoms
+                                                figurant sur votre pièce
+                                                d'identité séparés par des espaces
+                                              </p>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
                                               <input class="aHandicaper" type="text" id="fname" name="fname"
                                                 onchange='localStorage.setItem("vAutrePrenom",this.value) '
-                                                placeholder="Autres prénoms" ;>
-                                              <p style="font-size: 12px; padding: 2px 0px;">(séparés par des espaces)
-                                              </p>
+                                                placeholder="Prénom à afficher sur monenfant.fr" ;>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
-                                              <input class="aHandicaper" placeholder="Nom de naissance *" type="text" id="fname"
-                                                name="fname"
+                                              <input class="aHandicaper" placeholder="Nom de naissance *" type="text"
+                                                id="fname" name="fname"
                                                 onchange='localStorage.setItem("vNomNaissance",this.value);'>
                                             </div>
                                             <div class="col-lg-12 col-md-12 champParcours">
-                                              <input class="aHandicaper" placeholder="Nom d'usage" type="text" id="fname" name="fname"
+                                              <input class="aHandicaper" placeholder="Nom d'usage" type="text"
+                                                id="fname" name="fname"
                                                 onchange='localStorage.setItem("vNomUsage",this.value)'>
                                             </div>
                                             <script>
@@ -2827,7 +2842,7 @@
                                             <div class="col-lg-12 col-md-12 champParcours"
                                               style="font-size: 12px; margin-bottom: 0px;">
                                               <p
-                                                style=" background-color: rgb(245, 245, 245); padding: 0px; text-align: justify; border-radius: 3px; padding: 4px">
+                                                style=" background-color: #2B88D8; padding: 3px; text-align: justify; border-radius: 3px; padding: 4px; color: white;font-size: 13px;">
                                                 Nous avons besoin des informations suivantes afin de vérifier votre
                                                 identité. Ces données ne seront pas conservées à l'issu de la
                                                 vérification :</p>
@@ -2848,10 +2863,40 @@
                                                 onchange='localStorage.setItem("vNumSec",this.value); document.getElementById("pourSuivre").disabled=false; document.getElementById("pourSuivre").style.backgroundColor="#00C5AD"'
                                                 placeholder="Numéro de sécurité sociale *" ;>
                                             </div>
+                                            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                                            <style>
+                                              .swal-modal {
+                                                background-color: #f3f4f6;
+                                              }
+                                            </style>
+                                            <script>
+                                              let tagg = document.createElement('span')
+                                              tagg.innerHTML =
+                                                "<div> <img src='images/spinner.gif' style='width:50px;'> Nous sommes entrain de vérifier votre identité.<br>Veuillez patienter un instant. </div>"
+                                              const popSNGI = () => {
+                                                swal({
+                                                  content: tagg,
+                                                  timer: 4000,
+                                                  button: false,
+                                                  closeOnClickOutside: false,
+                                                }).then(
+                                                  function () {
+                                                    document.getElementById('leResteMadeleine').style.display =
+                                                      '';
+                                                    document.querySelector("#pourSuivre").parentElement.style.display = 'none';
+                                                    for (let i in document.getElementsByClassName(
+                                                        'aHandicaper')) {
+                                                      document.getElementsByClassName('aHandicaper')[i].disabled =
+                                                        true
+                                                    };
+                                                  },
+                                                )
+                                              }
+                                            </script>
+
                                             <div class="col-lg-12 col-md-12 champParcoursCUT">
                                               <button id="pourSuivre" class="btn btn-primary" disabled=true
-                                                style="background-color: grey;"
-                                                onclick="document.getElementById('leResteMadeleine').style.display = ''; this.parentElement.style.display ='none'; for(let i in document.getElementsByClassName('aHandicaper')){document.getElementsByClassName('aHandicaper')[i].disabled = true} ">
+                                                style="background-color: grey;" onclick="popSNGI(); ">
                                                 Poursuivre </button>
                                             </div>
                                           </div>
