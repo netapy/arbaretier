@@ -79,22 +79,22 @@
       <div class="input-group mb-3">
         <select id="filtre" class='custom-select'>
           <option selected disabled>Type de demande</option>
-          <option>- Tout -</option>
+          <option>Tout</option>
           <option>Inscription</option>
           <option>Renouvellement</option>
         </select>
         <select id="statutselec" class='custom-select'>
           <option selected disabled>Statut de demande</option>
-          <option>- Tout -</option>
+          <option>Tout</option>
           <option>Rejeté</option>
-          <option>Validé</option>
           <option>En attente de nouveaux éléments</option>
           <option>En attente de traitement</option>
           <option>En cours de traitement</option>
         </select>
       </div>
       <div class="col-md-12 text-center">
-        <button class="btn btn-primary" style="padding: 6px 40px; font-size: 18px;" onclick="filtragemaisontype();filtragemaison();">Filtrer</button>
+        <button class="btn btn-primary" style="padding: 6px 40px; font-size: 18px;"
+          onclick="filtragemaisontype();filtragemaison();">Filtrer</button>
       </div>
     </div>
     <br> <br>
@@ -149,19 +149,6 @@
             <td><a href="./incomplet_oui.html">Accéder à la demande</a></td>
           </tr>
           <tr>
-            <td>0015</td>
-            <td>Eleonore</td>
-            <td>Cravinsky</td>
-            <td>750000</td>
-            <td>22/03/2020</td>
-            <td>22/03/2020</td>
-            <td>Inscription</td>
-            <td>En attente de nouveaux éléments</td>
-            <td>--</td>
-            <td>--</td>
-            <td><a href="./incomplet_non.html">Accéder à la demande</a></td>
-          </tr>
-          <tr>
             <td>0006</td>
             <td>Nicolas</td>
             <td>Aspi</td>
@@ -174,17 +161,17 @@
             <td>--</td>
           </tr>
           <tr>
-            <td>0007</td>
-            <td>Rachelle</td>
-            <td>Sam</td>
+            <td>0015</td>
+            <td>Eleonore</td>
+            <td>Cravinsky</td>
             <td>750000</td>
             <td>22/03/2020</td>
             <td>22/03/2020</td>
             <td>Inscription</td>
-            <td>Validé</td>
-            <td>n.dupont4</td>
-            <td>20/07/2020</td>
-            <td><a href="./valide.html"></a></td>
+            <td>En attente de nouveaux éléments</td>
+            <td>--</td>
+            <td>--</td>
+            <td><a href="./incomplet_non.html">Accéder à la demande</a></td>
           </tr>
           <tr>
             <td>0008</td>
@@ -213,7 +200,7 @@
         for (let i = 1; i < tableaucomp.rows.length; i++) {
           if (document.getElementById("statutselec").value == tableaucomp.rows[i].cells[7].innerHTML ||
             document.getElementById("statutselec").value == undefined ||
-            document.getElementById("statutselec").value == "- Tout -") {
+            document.getElementById("statutselec").value == "Tout") {
             tableaucomp.rows[i].style.display = ""
           } else {
             tableaucomp.rows[i].style.display = "none"
@@ -228,7 +215,7 @@
         for (let i = 1; i < tableaucomp.rows.length; i++) {
           if (document.getElementById("filtre").value == tableaucomp.rows[i].cells[6].innerHTML ||
             document.getElementById("filtre").value == undefined ||
-            document.getElementById("filtre").value == "- Tout -") {
+            document.getElementById("filtre").value == "Tout") {
             tableaucomp.rows[i].style.display = ""
           } else {
             tableaucomp.rows[i].style.display = "none"
