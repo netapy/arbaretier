@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-
     <title>Integrateur Vidéos</title>
     <meta name="description" content="Integrateur Vidéos">
     <meta name="author" content="dxc">
@@ -19,26 +18,36 @@
             <input id="leLien" placeholder="Lien YouTube à intégrer..." class="form-control neuChamp" type="text"
                 style="max-width: 300px; margin: 20px auto;  padding: 15px;">
         </div>
-        <div>
-            <button class="btn btngrow" onclick="transformLink()">Générer le script</button>
-        </div>
+        <input class="form-check-input" type="checkbox" id="nocookyn">
+        <label class="form-check-label" for="nocookyn">
+            YouTube No-Cookie
+        </label><br>
+        <button class="btn btngrow" onclick="transformLink()">Générer le script</button>
         <div style="padding: 10px auto;">
             <textarea id="leChamp" placeholder="Résultat..." class="form-control neuChamp" type="text"
                 style="max-width: 500px; margin: 20px auto;" rows="12"></textarea>
         </div>
         <div id="divTest" class="text-center" style="display: none; padding: 20px; margin: auto;">
-            
+
         </div>
     </div>
 
 
     <script>
-        let integString = '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Autorisez le dépôt de cookies pour accéder au contenu YouTube : </p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#la--Video\'); vid.src = \'https://www.youtube.com/embed/*%*!!!*%*\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="la--Video" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        let integString =
+            '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Cette vidéo YouTube est désactivée. <br>Autorisez le dépôt de cookies pour accéder au contenu.</p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#la--Video\'); vid.src = \'https://www.youtube.com/embed/*%*!!!*%*\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="la--Video" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 
         const transformLink = () => {
             let lien = document.querySelector("#leLien").value
             let champScript = document.querySelector("#leChamp")
-            lien = lien.replace("https://www.youtube.com/watch?v=","").replace("https://youtu.be/","").replace("https://www.youtube.com/embed/","")
+
+            lien = lien.replace("-nocookie", "").replace("https://www.youtube.com/watch?v=", "").replace(
+                "https://youtu.be/", "").replace("https://www.youtube.com/embed/", "").replace(
+                "https://www.youtube.com/embed/", "")
+            if (document.querySelector("#nocookyn").checked == true) {
+                console.log("qnoiefi")
+                integString = integString.replace("youtube.com", "youtube-nocookie.com");
+            }
             champScript.value = integString.replace("*%*!!!*%*", lien)
             document.querySelector("#divTest").style.display = '';
             document.querySelector("#divTest").innerHTML = integString.replace("*%*!!!*%*", lien)
@@ -68,7 +77,8 @@
             font-weight: bold;
             margin: 20px 0px;
         }
-        .btngrow:hover{
+
+        .btngrow:hover {
             transform: scale(1.05);
         }
     </style>
