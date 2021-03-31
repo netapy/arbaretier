@@ -34,10 +34,14 @@
 
 
     <script>
-        let integString =
-            '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Cette vidéo YouTube est désactivée. <br>Autorisez le dépôt de cookies pour accéder au contenu.</p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#la--Video\'); vid.src = \'https://www.youtube.com/embed/*%*!!!*%*\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="la--Video" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        };
 
         const transformLink = () => {
+            let integString =
+            '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Cette vidéo YouTube est désactivée. <br>Autorisez le dépôt de cookies pour accéder au contenu.</p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#la--Video^^!!!^^\'); vid.src = \'https://www.youtube.com/embed/*%*!!!*%*\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="la--Video^^!!!^^" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
             let lien = document.querySelector("#leLien").value
             let champScript = document.querySelector("#leChamp")
 
@@ -48,7 +52,8 @@
                 console.log("qnoiefi")
                 integString = integString.replace("youtube.com", "youtube-nocookie.com");
             }
-            champScript.value = integString.replace("*%*!!!*%*", lien)
+            integString = integString.replace("*%*!!!*%*", lien).replaceAll("^^!!!^^", getRandomInt(999))
+            champScript.value = integString
             document.querySelector("#divTest").style.display = '';
             document.querySelector("#divTest").innerHTML = integString.replace("*%*!!!*%*", lien)
         }
