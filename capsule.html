@@ -49,7 +49,7 @@
             if (lien.includes("dailymotion.com") || lien.includes("dai.ly")) {
                 console.log("c'est dailymotion")
                 lien = lien.replace("https://", "").replace("www.dailymotion.com/video/", "").replace("dai.ly/", "")
-                    .replace("www.dailymotion.com/embed/video/", "").replace("?autoplay=1", "");
+                    .replace("www.dailymotion.com/embed/video/", "").replace("?autoplay=1", "").split("?playlist")[0];
                 integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
                     .replace("[[[LIEN-EMBED]]]", "https://www.dailymotion.com/embed/video/")
                 champScript.value = integString
