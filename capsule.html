@@ -63,7 +63,7 @@
                         "youtu.be/", "").replace("www.youtube.com/embed/", "").replace(
                         "www.youtube.com/embed/", "")
                 integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
-                    .replace("[[[LIEN-EMBED]]]", "https://www.youtube.com/embed/").replace("[[PLATEFORME]]","Dailymotion")
+                    .replace("[[[LIEN-EMBED]]]", "https://www.youtube.com/embed/").replace("[[PLATEFORME]]","YouTube")
                 if (document.querySelector("#nocookyn").checked == true) {
                     console.log("qnoiefi")
                     integString = integString.replace("youtube.com", "youtube-nocookie.com");
