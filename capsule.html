@@ -40,7 +40,7 @@
 
         const transformLink = () => {
             let integString =
-                '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Cette vidéo YouTube est désactivée. <br>Autorisez le dépôt de cookies pour accéder au contenu.</p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#intVideo^^!!!^^\'); vid.src = \'[[[LIEN-EMBED]]][[CODE-VIDEO]]\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="intVideo^^!!!^^" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Cette vidéo [[PLATEFORME]] est désactivée. <br>Autorisez le dépôt de cookies pour accéder au contenu.</p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#intVideo^^!!!^^\'); vid.src = \'[[[LIEN-EMBED]]][[CODE-VIDEO]]\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="intVideo^^!!!^^" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
             let lien = document.querySelector("#leLien").value
             let champScript = document.querySelector("#leChamp")
@@ -51,7 +51,7 @@
                 lien = lien.replace("https://", "").replace("www.dailymotion.com/video/", "").replace("dai.ly/", "")
                     .replace("www.dailymotion.com/embed/video/", "").replace("?autoplay=1", "").split("?playlist")[0];
                 integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
-                    .replace("[[[LIEN-EMBED]]]", "https://www.dailymotion.com/embed/video/")
+                    .replace("[[[LIEN-EMBED]]]", "https://www.dailymotion.com/embed/video/").replace("[[PLATEFORME]]","Dailymotion")
                 champScript.value = integString
                 document.querySelector("#divTest").style.display = '';
                 document.querySelector("#divTest").innerHTML = integString;
@@ -63,7 +63,7 @@
                         "youtu.be/", "").replace("www.youtube.com/embed/", "").replace(
                         "www.youtube.com/embed/", "")
                 integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
-                    .replace("[[[LIEN-EMBED]]]", "https://www.youtube.com/embed/")
+                    .replace("[[[LIEN-EMBED]]]", "https://www.youtube.com/embed/").replace("[[PLATEFORME]]","Dailymotion")
                 if (document.querySelector("#nocookyn").checked == true) {
                     console.log("qnoiefi")
                     integString = integString.replace("youtube.com", "youtube-nocookie.com");
