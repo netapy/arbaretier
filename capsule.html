@@ -15,8 +15,8 @@
     <div class="w-100 text-center" style="padding: 50px 0px;">
         <h1 style="margin-bottom: 40px;">Intégrateur vidéos.</h1>
         <div style="padding: 10px auto;">
-            <input id="leLien" placeholder="Lien YouTube à intégrer..." class="form-control neuChamp" type="text"
-                style="max-width: 300px; margin: 20px auto;  padding: 15px;">
+            <input id="leLien" placeholder="Lien YouTube/Dailymotion à intégrer..." class="form-control neuChamp" type="text"
+                style="max-width: 400px; margin: 20px auto;  padding: 15px;" onchange="if (this.value.includes('dailymotion')){document.querySelector('#nocookyn').disabled = true}else{document.querySelector('#nocookyn').disabled = false};">
         </div>
         <input class="form-check-input" type="checkbox" id="nocookyn">
         <label class="form-check-label" for="nocookyn">
@@ -40,22 +40,38 @@
 
         const transformLink = () => {
             let integString =
-            '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Cette vidéo YouTube est désactivée. <br>Autorisez le dépôt de cookies pour accéder au contenu.</p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#la--Video^^!!!^^\'); vid.src = \'https://www.youtube.com/embed/*%*!!!*%*\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="la--Video^^!!!^^" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Cette vidéo YouTube est désactivée. <br>Autorisez le dépôt de cookies pour accéder au contenu.</p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#intVideo^^!!!^^\'); vid.src = \'[[[LIEN-EMBED]]][[CODE-VIDEO]]\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="intVideo^^!!!^^" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
             let lien = document.querySelector("#leLien").value
             let champScript = document.querySelector("#leChamp")
+            let idUnique = new Date();
 
-            lien = lien.replace("-nocookie", "").replace("https://www.youtube.com/watch?v=", "").replace(
-                "https://youtu.be/", "").replace("https://www.youtube.com/embed/", "").replace(
-                "https://www.youtube.com/embed/", "")
-            if (document.querySelector("#nocookyn").checked == true) {
-                console.log("qnoiefi")
-                integString = integString.replace("youtube.com", "youtube-nocookie.com");
+            if (lien.includes("dailymotion.com") || lien.includes("dai.ly")) {
+                console.log("c'est dailymotion")
+                lien = lien.replace("https://", "").replace("www.dailymotion.com/video/", "").replace("dai.ly/", "")
+                    .replace("www.dailymotion.com/embed/video/", "").replace("?autoplay=1", "");
+                integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
+                    .replace("[[[LIEN-EMBED]]]", "https://www.dailymotion.com/embed/video/")
+                champScript.value = integString
+                document.querySelector("#divTest").style.display = '';
+                document.querySelector("#divTest").innerHTML = integString;
+
+            } else if (lien.includes("youtube.com") || lien.includes("youtu.be")) {
+                console.log("c'est youtube")
+                lien = lien.replace("-nocookie", "").replace("https://", "").replace("www.youtube.com/watch?v=", "")
+                    .replace(
+                        "youtu.be/", "").replace("www.youtube.com/embed/", "").replace(
+                        "www.youtube.com/embed/", "")
+                integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
+                    .replace("[[[LIEN-EMBED]]]", "https://www.youtube.com/embed/")
+                if (document.querySelector("#nocookyn").checked == true) {
+                    console.log("qnoiefi")
+                    integString = integString.replace("youtube.com", "youtube-nocookie.com");
+                }
+                champScript.value = integString
+                document.querySelector("#divTest").style.display = '';
+                document.querySelector("#divTest").innerHTML = integString
             }
-            integString = integString.replace("*%*!!!*%*", lien).replaceAll("^^!!!^^", getRandomInt(999))
-            champScript.value = integString
-            document.querySelector("#divTest").style.display = '';
-            document.querySelector("#divTest").innerHTML = integString.replace("*%*!!!*%*", lien)
         }
     </script>
     <style>
