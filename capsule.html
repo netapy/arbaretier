@@ -15,8 +15,9 @@
     <div class="w-100 text-center" style="padding: 50px 0px;">
         <h1 style="margin-bottom: 40px;">Intégrateur vidéos.</h1>
         <div style="padding: 10px auto;">
-            <input id="leLien" placeholder="Lien YouTube/Dailymotion à intégrer..." class="form-control neuChamp" type="text"
-                style="max-width: 400px; margin: 20px auto;  padding: 15px;" onchange="if (this.value.includes('dailymotion')){document.querySelector('#nocookyn').disabled = true}else{document.querySelector('#nocookyn').disabled = false};">
+            <input id="leLien" placeholder="Lien YouTube/Dailymotion/Vimeo à intégrer..." class="form-control neuChamp"
+                type="text" style="max-width: 400px; margin: 20px auto;  padding: 15px;"
+                onchange="if (this.value.includes('dailymotion')){document.querySelector('#nocookyn').disabled = true}else{document.querySelector('#nocookyn').disabled = false};">
         </div>
         <input class="form-check-input" type="checkbox" id="nocookyn">
         <label class="form-check-label" for="nocookyn">
@@ -49,9 +50,11 @@
             if (lien.includes("dailymotion.com") || lien.includes("dai.ly")) {
                 console.log("c'est dailymotion")
                 lien = lien.replace("https://", "").replace("www.dailymotion.com/video/", "").replace("dai.ly/", "")
-                    .replace("www.dailymotion.com/embed/video/", "").replace("?autoplay=1", "").split("?playlist")[0];
+                    .replace("www.dailymotion.com/embed/video/", "").replace("?autoplay=1", "").split("?playlist")[
+                        0];
                 integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
-                    .replace("[[[LIEN-EMBED]]]", "https://www.dailymotion.com/embed/video/").replace("[[PLATEFORME]]","Dailymotion")
+                    .replace("[[[LIEN-EMBED]]]", "https://www.dailymotion.com/embed/video/").replace(
+                        "[[PLATEFORME]]", "Dailymotion")
                 champScript.value = integString
                 document.querySelector("#divTest").style.display = '';
                 document.querySelector("#divTest").innerHTML = integString;
@@ -63,11 +66,20 @@
                         "youtu.be/", "").replace("www.youtube.com/embed/", "").replace(
                         "www.youtube.com/embed/", "")
                 integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
-                    .replace("[[[LIEN-EMBED]]]", "https://www.youtube.com/embed/").replace("[[PLATEFORME]]","YouTube")
+                    .replace("[[[LIEN-EMBED]]]", "https://www.youtube.com/embed/").replace("[[PLATEFORME]]",
+                        "YouTube")
                 if (document.querySelector("#nocookyn").checked == true) {
-                    console.log("qnoiefi")
                     integString = integString.replace("youtube.com", "youtube-nocookie.com");
                 }
+                champScript.value = integString
+                document.querySelector("#divTest").style.display = '';
+                document.querySelector("#divTest").innerHTML = integString
+            } else if (lien.includes("vimeo")) {
+                console.log("c'est Vimeo")
+                lien = lien.replace("https://vimeo.com/", "").replace("https://player.vimeo.com/video/", "").replace("vimeo.com/video/", "")
+                integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
+                    .replace("[[[LIEN-EMBED]]]", "https://player.vimeo.com/video/").replace("[[PLATEFORME]]",
+                        "Vimeo")
                 champScript.value = integString
                 document.querySelector("#divTest").style.display = '';
                 document.querySelector("#divTest").innerHTML = integString
