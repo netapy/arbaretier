@@ -19,11 +19,18 @@
     "jeu": "ZRIZNRIZNRI afeaga",
     "save": false
   },
-   {
+  {
     "couleur": "0xFF2196F3",
-    "createur": "BaudTerreur",
-    "imgCrea": "assets/images/panda.jpg",
+    "createur": "BaudTerreur22",
+    "imgCrea": "assets/images/giraffe.jpg",
     "jeu": "un 4eme jeu",
     "save": true
+  },
+  {
+    "couleur": "0xFFE91E63",
+    "createur": "Inconnu263",
+    "imgCrea": "assets/images/panda.jpg",
+    "jeu": "jeu inconnu",
+    "save": false
   }
 ]
