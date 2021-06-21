@@ -40,16 +40,35 @@
         font-size: 3.5rem;
       }
     }
+
+    .textFieldCnaf {
+      padding: 5px;
+      border-width: 0px;
+      border-bottom-width: 3px;
+      border-color: #8091af;
+    }
+
+    .rectTextCnaf {
+      color: white;
+      background-color: #8091af;
+      padding: 8px 10px;
+    }
+
+    th {
+      font-weight: normal !important;
+      vertical-align: top !important;
+      font-size: 16px !important;
+    }
   </style>
 </head>
 
 <body class="d-flex flex-column h-100">
   <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Espace de modération Monenfant.fr</a>
-      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Déconnexion</button>
-      <a class="navbar-brand" style="margin-left: 10px; font-size: 14px;">n.dupont4</a>
+    <nav class="navbar navbar-expand-md" style=" background-color: #f1f0f0;">
+      <img src="https://upload.wikimedia.org/wikipedia/fr/c/cb/Caisse_d_allocations_familiales_france_logo.svg"
+        style="width: 100px; padding:20px">
+      <a class="navbar-brand" style="color:black" href="#">Moderateur</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -67,185 +86,185 @@
 
   <!-- Begin page content -->
 
-  <main role="main" class="flex-shrink-0" style="padding:100px 0px">
-    <div class="container">
-      <h4>Filtrer par : </h4>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="quelle_recherche"
-          placeholder="Nom">
-        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="quelle_recherche"
-          placeholder="Code Postal">
+  <main role="main" class="flex-shrink-0" style="padding:30px 0px; background-color: #f1f0f0;">
+    <div class="container" style="background-color: white; padding:30px 5px;">
+      <div class="container">
+        <h4 style="margin-bottom: 60px;">Modérateur des inscriptions des assistants maternels</h4>
+        <h5 style="margin-bottom: 30px;">Filtrer par : </h5>
+        <hr>
+        <div class="row" style="margin-bottom: 30px;">
+          <div class="col-6 text-center">
+            <span class="rectTextCnaf">Nom</span>
+            <input id="valueFiltreNom" type="text" class="textFieldCnaf" placeholder="" style="width: 80%;">
+          </div>
+          <div class="col-6 text-center">
+            <span class="rectTextCnaf">Code postal</span>
+            <input type="text" id="valueFiltreCp" class="textFieldCnaf" placeholder="" style="width: 60%;">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 text-center">
+            <span>Type de demande : </span>
+            <select id="valueFiltreTypeDem" class="textFieldCnaf" style="padding-right: 20px;">
+              <option selected>Tout</option>
+              <option>Inscription</option>
+              <option>Renouvellement</option>
+            </select>
+          </div>
+          <div class="col-6 text-center">
+            <span>Statut de la demande : </span>
+            <select id="valueFiltreStatDem" class="textFieldCnaf">
+              <option selected>Tout</option>
+              <option>Rejeté</option>
+              <option>En attente de nouveaux éléments</option>
+              <option>En attente de traitement</option>
+              <option>En cours de traitement</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-12 text-center">
+          <button class="btn btn-primary"
+            style="padding: 6px 20px; font-size: 16px; background-color: #5b84f7; margin-top: 20px;"
+            onclick="filtreTableau();">Filtrer</button>
+        </div>
       </div>
-      <div class="input-group mb-3">
-        <select id="filtre" class='custom-select'>
-          <option selected disabled>Type de demande</option>
-          <option>Tout</option>
-          <option>Inscription</option>
-          <option>Renouvellement</option>
-        </select>
-        <select id="statutselec" class='custom-select'>
-          <option selected disabled>Statut de demande</option>
-          <option>Tout</option>
-          <option>Rejeté</option>
-          <option>En attente de nouveaux éléments</option>
-          <option>En attente de traitement</option>
-          <option>En cours de traitement</option>
-        </select>
-      </div>
-      <div class="col-md-12 text-center">
-        <button class="btn btn-primary" style="padding: 6px 40px; font-size: 18px;"
-          onclick="filtragemaisontype();filtragemaison();">Filtrer</button>
-      </div>
-    </div>
-    <br> <br>
+      <br> <br>
 
 
-    <div class="container">
-      <table class="table" id="tableau">
-        <thead class="thead-light">
-          <tr>
-            <th> N° de demande <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-            <th>Prénom <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-            <th>Nom <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-            <th>Code postal <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-            <th>Date de demande <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-            <th>Date de dernier changement de statut <span
-                style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-            <th>Type <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-            <th>Statut <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-            <th>Demande traitée par <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
-            </th>
-            <th>Demande traitée le <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
-            </th>
-            <th>Traitement <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0004</td>
-            <td>Elodie</td>
-            <td>Leclerq</td>
-            <td>750000</td>
-            <td>22/03/2020</td>
-            <td>22/03/2020</td>
-            <td>Inscription</td>
-            <td>En attente de traitement</td>
-            <td>--</td>
-            <td>--</td>
-            <td><a href="./testttt.html">Accéder à la demande</a></td>
-          </tr>
-          <tr>
-            <td>0005</td>
-            <td>Morgane</td>
-            <td>Sevigne</td>
-            <td>750000</td>
-            <td>22/03/2020</td>
-            <td>22/03/2020</td>
-            <td>Inscription</td>
-            <td>En attente de nouveaux éléments</td>
-            <td>--</td>
-            <td>--</td>
-            <td><a href="./incomplet_oui.html">Accéder à la demande</a></td>
-          </tr>
-          <tr>
-            <td>0006</td>
-            <td>Nicolas</td>
-            <td>Aspi</td>
-            <td>750000</td>
-            <td>22/03/2020</td>
-            <td>22/03/2020</td>
-            <td>Renouvellement</td>
-            <td>En cours de traitement</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>0015</td>
-            <td>Eleonore</td>
-            <td>Cravinsky</td>
-            <td>750000</td>
-            <td>22/03/2020</td>
-            <td>22/03/2020</td>
-            <td>Inscription</td>
-            <td>En attente de nouveaux éléments</td>
-            <td>--</td>
-            <td>--</td>
-            <td><a href="./incomplet_non.html">Accéder à la demande</a></td>
-          </tr>
-          <tr>
-            <td>0008</td>
-            <td>Louise</td>
-            <td>Lelieu</td>
-            <td>750000</td>
-            <td>22/03/2020</td>
-            <td>22/03/2020</td>
-            <td>Renouvellement</td>
-            <td>Rejeté</td>
-            <td>b.paire7</td>
-            <td>25/07/2020</td>
-            <td><i>Document falsifié</i></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="container">
+        <table id="tableau" class="table table-bordered" style="font-size: 14px;">
+          <thead>
+            <tr>
+              <th> N° de demande <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
+              </th>
+              <th>Prénom <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
+              <th>Nom <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
+              <th>Code postal <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
+              <th>Date de demande <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
+              </th>
+              <th>Date de dernier changement de statut <span
+                  style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
+              <th>Type <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
+              <th>Statut <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
+              <th>Demande traitée par <span
+                  style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
+              </th>
+              <th>Demande traitée le <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
+              </th>
+              <th>Traitement <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="CorpsTableauDemandes">
+
+          </tbody>
+        </table>
+      </div>
     </div>
+
 
     <script>
-      var tableaucomp = document.getElementById('tableau')
+      let dataTableau = [{
+        "num": "001",
+        "prenom": "Louise",
+        "nom": "Lelieu",
+        "cp": "75016",
+        "ddmd": "22/03/2020",
+        "dcs": "22/03/2020",
+        "type": "Renouvellement",
+        "statut": "Rejeté",
+        "traitpar": "b.paire7",
+        "traitle": "25/07/2020",
+        "action": "Document falsifié",
+      }, {
+        "num": "002",
+        "prenom": "Armand",
+        "nom": "Dupont",
+        "cp": "75015",
+        "ddmd": "10/05/2020",
+        "dcs": "22/06/2020",
+        "type": "Inscription",
+        "statut": "En attente de nouveaux éléments",
+        "traitpar": "",
+        "traitle": "",
+        "action": "<a href='./incomplet_oui.html'>Accéder à la demande</a>",
+      }, {
+        "num": "003",
+        "prenom": "Armand",
+        "nom": "Tadam",
+        "cp": "75015",
+        "ddmd": "10/05/2020",
+        "dcs": "22/06/2020",
+        "type": "Inscription",
+        "statut": "En attente de nouveaux éléments",
+        "traitpar": "",
+        "traitle": "",
+        "action": "<a href='./incomplet_non.html'>Accéder à la demande</a>",
+      }, {
+        "num": "004",
+        "prenom": "Armand",
+        "nom": "Vingt",
+        "cp": "75015",
+        "ddmd": "10/05/2020",
+        "dcs": "22/06/2020",
+        "type": "Inscription",
+        "statut": "En attente de traitement",
+        "traitpar": "",
+        "traitle": "",
+        "action": "<a href='./testttt.html'>Accéder à la demande</a>",
+      }];
 
-      function filtragemaison() {
-        console.log(tableaucomp.rows[4].cells[7].innerHTML)
-        console.log(tableaucomp.rows.length)
-        console.log(document.getElementById("statutselec").value)
-        for (let i = 1; i < tableaucomp.rows.length; i++) {
-          if (document.getElementById("statutselec").value == tableaucomp.rows[i].cells[7].innerHTML ||
-            document.getElementById("statutselec").value == undefined ||
-            document.getElementById("statutselec").value == "Tout") {
-            tableaucomp.rows[i].style.display = ""
-          } else {
-            tableaucomp.rows[i].style.display = "none"
-          }
-        }
+      let tableau = document.querySelector("#CorpsTableauDemandes")
+      let dataTableauHTML = "<tr>";
+      for (ii in dataTableau) {
+        for (iii in dataTableau[ii]) {
+          dataTableauHTML += "<td>" + dataTableau[ii][iii] + "</td>"
+        };
+        dataTableauHTML += "</tr>"
+        tableau.insertAdjacentHTML("beforeend", dataTableauHTML);
+        dataTableauHTML = "<tr>";
       }
 
-      function filtragemaisontype() {
-        console.log(tableaucomp.rows[4].cells[7].innerHTML)
-        console.log(tableaucomp.rows.length)
-        console.log(document.getElementById("filtre").value)
-        for (let i = 1; i < tableaucomp.rows.length; i++) {
-          if (document.getElementById("filtre").value == tableaucomp.rows[i].cells[6].innerHTML ||
-            document.getElementById("filtre").value == undefined ||
-            document.getElementById("filtre").value == "Tout") {
-            tableaucomp.rows[i].style.display = ""
-          } else {
-            tableaucomp.rows[i].style.display = "none"
+      const filtreTableau = () => {
+        let filterNom = document.querySelector("#valueFiltreNom").value.toUpperCase();
+        let filterCp = document.querySelector("#valueFiltreCp").value;
+        let filterTypeDem = document.querySelector("#valueFiltreTypeDem").value.toUpperCase();
+        let filterStatDem = document.querySelector("#valueFiltreStatDem").value.toUpperCase();
+        let table = document.getElementById("tableau");
+        console.log(filterStatDem)
+        let tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          tr[i].style.display = "none";
+          td = tr[i].getElementsByTagName("td");
+          let jusquaQuatre = 0;
+          //nom
+          if (td[1].innerHTML.toUpperCase().indexOf(filterNom) > -1 || td[2].innerHTML.toUpperCase().indexOf(
+              filterNom) > -1 || filterNom == "") {
+            jusquaQuatre += 1;
           }
-        }
-      }
+          //CP
+          if (td[3].innerHTML.toUpperCase().indexOf(filterCp) > -1 || filterCp == "") {
+            jusquaQuatre += 1;
+          }
+          //typeDem
+          if (td[6].innerHTML.toUpperCase().indexOf(filterTypeDem) > -1 || filterTypeDem == "TOUT") {
+            jusquaQuatre += 1;
+            console.log("type true ! ")
+          }
+          //StatutDem
+          console.log(td[7].innerHTML.toUpperCase())
+          if (td[7].innerHTML.toUpperCase().indexOf(filterStatDem) > -1 || filterStatDem == "TOUT") {
+            jusquaQuatre += 1;
+            console.log("stat true ! ")
+          }
+          if (jusquaQuatre == 4) {
+            tr[i].style.display = "";
+            console.log("goooo")
+          }
 
-      function filtragemaisonDeux() {
-        console.log(tableaucomp.rows[4].cells[4].innerHTML)
-        console.log(tableaucomp.rows.length)
-        console.log(document.getElementById("quel_filtre").value)
-        for (let i = 1; i < tableaucomp.rows.length; i++) {
-          if (document.getElementById("quel_filtre").value == tableaucomp.rows[i].cells[4].innerHTML ||
-            document.getElementById("quel_filtre").value == undefined ||
-            document.getElementById("quel_filtre").value == "") {
-            tableaucomp.rows[i].style.display = ""
-          } else {
-            tableaucomp.rows[i].style.display = "none"
-          }
         }
-      }
+      };
     </script>
-
-    <!--
-    <div class="container">
-      <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-      <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>main &gt; .container</code>.</p>
-      <p>Back to <a href="/docs/4.4/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
-    </div>
-    -->
 
   </main>
 
