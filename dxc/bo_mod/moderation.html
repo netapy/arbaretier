@@ -109,7 +109,7 @@
           <div class="col">
             <p>Les informations fournies vous permettent-elles de traiter la demande ? *</p>
             <select class="textFieldCnaf tagBlock" style="width: 80%;"
-              onchange="if(this.value=='Oui'){document.getElementById('doc_conforme').style.display='';document.getElementById('doc_non_conforme').style.display='none';document.getElementById('validation').className='btn btn-success'}else{document.getElementById('doc_non_conforme').style.display='';document.getElementById('doc_conforme').style.display='none';document.getElementById('validation').className='btn btn-secondary'}">
+              onchange="if(this.value=='Oui'){document.getElementById('doc_conforme').style.display='';document.getElementById('doc_non_conforme').style.display='none';document.getElementById('validation').className='btn btn-success'; for (ii in document.getElementsByClassName(' touncheck')){document.getElementsByClassName(' touncheck')[ii].checked = false;}}else{document.getElementById('doc_non_conforme').style.display='';document.getElementById('doc_conforme').style.display='none';document.getElementById('validation').className='btn btn-secondary'}">
               <option>Oui</option>
               <option selected>Non</option>
             </select><br><br>
@@ -118,16 +118,19 @@
               style="padding: 20px 10px; background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);">
               <div id="doc_non_conforme">
                 <strong>Séléctionnez le motif de non-conformité :</strong><br>
-                <input class="tagBlock" id="illisible" type="radio" name="conformite" onclick="funCalled(this);"><label
-                  for="illisible" style="padding-left:10px">Illisilité du document</label><br>
-                <input class="tagBlock" id="manquante" type="radio" name="conformite" onclick="funCalled(this)"><label
-                  for="manquante" style="padding-left:10px">Pages manquantes</label><br>
-                <input class="tagBlock" id="mauvais" type="radio" name="conformite" onclick="funCalled(this)"><label
-                  for="mauvais" style="padding-left:10px">Mauvais document</label><br>
-                <input class="tagBlock" id="agrexp" type="radio" name="conformite" onclick="funCalled(this)"><label
-                  for="agrexp" style="padding-left:10px">Agrément expiré</label><br>
-                <span style="white-space: nowrap;"><input class="tagBlock" id="anograve" type="radio" name="conformite"
-                    onclick="funCalled(this)"><label for="anograve" style="padding-left:10px">A</span>nomalie grave
+                <input class="tagBlock touncheck" id="illisible" type="radio" name="conformite"
+                  onclick="funCalled(this);"><label for="illisible" style="padding-left:10px">Illisilité du
+                  document</label><br>
+                <input class="tagBlock touncheck" id="manquante" type="radio" name="conformite"
+                  onclick="funCalled(this)"><label for="manquante" style="padding-left:10px">Pages
+                  manquantes</label><br>
+                <input class="tagBlock touncheck" id="mauvais" type="radio" name="conformite"
+                  onclick="funCalled(this)"><label for="mauvais" style="padding-left:10px">Mauvais document</label><br>
+                <input class="tagBlock touncheck" id="agrexp" type="radio" name="conformite"
+                  onclick="funCalled(this)"><label for="agrexp" style="padding-left:10px">Agrément expiré</label><br>
+                <span style="white-space: nowrap;"><input class="tagBlock touncheck" id="anograve" type="radio"
+                    name="conformite" onclick="funCalled(this)"><label for="anograve"
+                    style="padding-left:10px">A</span>nomalie grave
                 (document illicite, document falsifié ou ASM radiée)</label><br>
 
                 <script>
