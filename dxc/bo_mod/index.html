@@ -59,6 +59,12 @@
       vertical-align: top !important;
       font-size: 16px !important;
     }
+
+    .modLink {
+      color: #007bff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -68,7 +74,7 @@
     <nav class="navbar navbar-expand-md" style=" background-color: #f1f0f0;">
       <img src="https://upload.wikimedia.org/wikipedia/fr/c/cb/Caisse_d_allocations_familiales_france_logo.svg"
         style="width: 100px; padding:20px">
-      <a class="navbar-brand" style="color:black" href="#">Moderateur</a>
+      <a class="navbar-brand" style="color:black" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -86,185 +92,17 @@
 
   <!-- Begin page content -->
 
-  <main role="main" class="flex-shrink-0" style="padding:30px 0px; background-color: #f1f0f0;">
-    <div class="container" style="background-color: white; padding:30px 5px;">
-      <div class="container">
-        <h4 style="margin-bottom: 60px;">Modérateur des inscriptions des assistants maternels</h4>
-        <h5 style="margin-bottom: 30px;">Filtrer par : </h5>
-        <hr>
-        <div class="row" style="margin-bottom: 30px;">
-          <div class="col-6 text-center">
-            <span class="rectTextCnaf">Nom</span>
-            <input id="valueFiltreNom" type="text" class="textFieldCnaf" placeholder="" style="width: 80%;">
-          </div>
-          <div class="col-6 text-center">
-            <span class="rectTextCnaf">Code postal</span>
-            <input type="text" id="valueFiltreCp" class="textFieldCnaf" placeholder="" style="width: 60%;">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 text-center">
-            <span>Type de demande : </span>
-            <select id="valueFiltreTypeDem" class="textFieldCnaf" style="padding-right: 20px;">
-              <option selected>Tout</option>
-              <option>Inscription</option>
-              <option>Renouvellement</option>
-            </select>
-          </div>
-          <div class="col-6 text-center">
-            <span>Statut de la demande : </span>
-            <select id="valueFiltreStatDem" class="textFieldCnaf">
-              <option selected>Tout</option>
-              <option>Rejeté</option>
-              <option>En attente de nouveaux éléments</option>
-              <option>En attente de traitement</option>
-              <option>En cours de traitement</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-12 text-center">
-          <button class="btn btn-primary"
-            style="padding: 6px 20px; font-size: 16px; background-color: #5b84f7; margin-top: 20px;"
-            onclick="filtreTableau();">Filtrer</button>
-        </div>
-      </div>
-      <br> <br>
-
-
-      <div class="container">
-        <table id="tableau" class="table table-bordered" style="font-size: 14px;">
-          <thead>
-            <tr>
-              <th> N° de demande <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
-              </th>
-              <th>Prénom <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-              <th>Nom <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-              <th>Code postal <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-              <th>Date de demande <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
-              </th>
-              <th>Date de dernier changement de statut <span
-                  style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-              <th>Type <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-              <th>Statut <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span></th>
-              <th>Demande traitée par <span
-                  style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
-              </th>
-              <th>Demande traitée le <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
-              </th>
-              <th>Traitement <span style="cursor: pointer; font-size: 10px; white-space: nowrap;">&#8693;</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody id="CorpsTableauDemandes">
-
-          </tbody>
-        </table>
-      </div>
+  <main role="main" class="flex-shrink-0" style="padding:30px 0px; background-color: #f1f0f0; height: 100vh;">
+    <div class="container" style="padding:30px 5px;">
+      <h2>Démonstration de l'interface du modérateur sur Monenfant.fr</h2>
+      <p>Cette maquette reproduit l'expérience de modération des inscriptions & renouvellements des assistants maternels
+        sur Monenfant.fr.</p>
+      <button class="btn btn-primary" onclick="window.location.href = 'index2.html'">Démarrer</button>
     </div>
 
+    <script src="data.js"></script>
+    <script>resetData();</script>
 
-    <script>
-      let dataTableau = [{
-        "num": "001",
-        "prenom": "Louise",
-        "nom": "Lelieu",
-        "cp": "75016",
-        "ddmd": "22/03/2020",
-        "dcs": "22/03/2020",
-        "type": "Renouvellement",
-        "statut": "Rejeté",
-        "traitpar": "b.paire7",
-        "traitle": "25/07/2020",
-        "action": "Document falsifié",
-      }, {
-        "num": "002",
-        "prenom": "Armand",
-        "nom": "Dupont",
-        "cp": "75015",
-        "ddmd": "10/05/2020",
-        "dcs": "22/06/2020",
-        "type": "Inscription",
-        "statut": "En attente de nouveaux éléments",
-        "traitpar": "",
-        "traitle": "",
-        "action": "<a href='./incomplet_oui.html'>Accéder à la demande</a>",
-      }, {
-        "num": "003",
-        "prenom": "Armand",
-        "nom": "Tadam",
-        "cp": "75015",
-        "ddmd": "10/05/2020",
-        "dcs": "22/06/2020",
-        "type": "Inscription",
-        "statut": "En attente de nouveaux éléments",
-        "traitpar": "",
-        "traitle": "",
-        "action": "<a href='./incomplet_non.html'>Accéder à la demande</a>",
-      }, {
-        "num": "004",
-        "prenom": "Armand",
-        "nom": "Vingt",
-        "cp": "75015",
-        "ddmd": "10/05/2020",
-        "dcs": "22/06/2020",
-        "type": "Inscription",
-        "statut": "En attente de traitement",
-        "traitpar": "",
-        "traitle": "",
-        "action": "<a href='./testttt.html'>Accéder à la demande</a>",
-      }];
-
-      let tableau = document.querySelector("#CorpsTableauDemandes")
-      let dataTableauHTML = "<tr>";
-      for (ii in dataTableau) {
-        for (iii in dataTableau[ii]) {
-          dataTableauHTML += "<td>" + dataTableau[ii][iii] + "</td>"
-        };
-        dataTableauHTML += "</tr>"
-        tableau.insertAdjacentHTML("beforeend", dataTableauHTML);
-        dataTableauHTML = "<tr>";
-      }
-
-      const filtreTableau = () => {
-        let filterNom = document.querySelector("#valueFiltreNom").value.toUpperCase();
-        let filterCp = document.querySelector("#valueFiltreCp").value;
-        let filterTypeDem = document.querySelector("#valueFiltreTypeDem").value.toUpperCase();
-        let filterStatDem = document.querySelector("#valueFiltreStatDem").value.toUpperCase();
-        let table = document.getElementById("tableau");
-        console.log(filterStatDem)
-        let tr = table.getElementsByTagName("tr");
-        for (i = 1; i < tr.length; i++) {
-          tr[i].style.display = "none";
-          td = tr[i].getElementsByTagName("td");
-          let jusquaQuatre = 0;
-          //nom
-          if (td[1].innerHTML.toUpperCase().indexOf(filterNom) > -1 || td[2].innerHTML.toUpperCase().indexOf(
-              filterNom) > -1 || filterNom == "") {
-            jusquaQuatre += 1;
-          }
-          //CP
-          if (td[3].innerHTML.toUpperCase().indexOf(filterCp) > -1 || filterCp == "") {
-            jusquaQuatre += 1;
-          }
-          //typeDem
-          if (td[6].innerHTML.toUpperCase().indexOf(filterTypeDem) > -1 || filterTypeDem == "TOUT") {
-            jusquaQuatre += 1;
-            console.log("type true ! ")
-          }
-          //StatutDem
-          console.log(td[7].innerHTML.toUpperCase())
-          if (td[7].innerHTML.toUpperCase().indexOf(filterStatDem) > -1 || filterStatDem == "TOUT") {
-            jusquaQuatre += 1;
-            console.log("stat true ! ")
-          }
-          if (jusquaQuatre == 4) {
-            tr[i].style.display = "";
-            console.log("goooo")
-          }
-
-        }
-      };
-    </script>
 
   </main>
 
