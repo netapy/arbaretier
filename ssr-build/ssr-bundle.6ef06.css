@@ -1,0 +1,329 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #FAFAFA;
+	font-family: 'Helvetica Neue', arial, sans-serif;
+	font-weight: 400;
+	color: #444;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#app {
+	height: 100%;
+}
+
+:root {
+  --darkest-color: #0a0908;
+}
+
+.App {
+  text-align: center;
+  font-family: Manrope;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: ManropeBold;
+}
+
+.App-header {
+  background-color: #22333b;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+@font-face {
+  font-family: "ManropeBold";
+  src: local("ManropeBold"), url(/4424ea2d1eff17a2231c2d359759a0f6.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: local("Manrop"), url(/e1b209d3e7bfe38f37aba695dbcd7abc.woff2) format("woff2");
+}
+
+.TitleBContainer {
+  text-align: right;
+}
+
+.TitleB {
+  font-size: clamp(25px, 2rem, 4rem);
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.navMenuList {
+  font-size: 1.3rem;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: left;
+      justify-content: left;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.navMenuList ul {
+  padding-left: 10px;
+}
+
+.navMenuList li {
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  max-width: 100%;
+}
+
+.navMenuList li:hover {
+  cursor: pointer;
+  -webkit-transform: translateX(5px);
+      -ms-transform: translateX(5px);
+          transform: translateX(5px);
+  -webkit-transform: scale(0.998);
+      -ms-transform: scale(0.998);
+          transform: scale(0.998);
+  color: #c6ac8f;
+}
+
+.mainScreen {
+  background-color: #5e503f;
+  border-color: #5e503f;
+  border-radius: 30px;
+  border-width: 15px;
+  border-style: solid;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  height: clamp(200px, 80vh, 1000px);
+  width: clamp(320px, 90vw, 1000px);
+  margin: auto;
+}
+
+.projName {
+  font-family: ManropeBold;
+  font-size: clamp(2rem, 2.6rem, 4rem);
+  margin: 0px 5px;
+  white-space: normal;
+  transition: all 0.2s ease-in-out;
+}
+
+projName:after {
+  content: " - ";
+}
+
+@media screen and (max-width: 600px) {
+  .projName {
+    font-size: clamp(10px, 1.5rem, 2rem);
+  }
+}
+
+.projName:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
+  color: #eae0d5;
+}
+
+.projsZone {
+  background-color: #5e503f;
+  border-radius: 20px;
+  padding-top: 20px;
+  text-align: center;
+  width: clamp(50%, 90%, 100%);
+  margin: auto;
+}
+
+.projSel {
+  color: #eae0d5;
+  text-decoration: underline;
+}
+
+.projectTile {
+  background-color: #eae0d5;
+  border-radius: 20px;
+  color: var(--darkest-color);
+  -ms-flex-align: center;
+      align-items: center;
+  font-size: clamp(10px, 1.5em, 1rem);
+  text-align: left;
+  padding: 10px 20px;
+  height: clamp(50%, 80%, 90%);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  overflow-y: auto;
+}
+
+.projectTile h1 {
+  font-size: clamp(2rem, 3rem, 6rem);
+  margin: 5px;
+}
+
+.projectHeader {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 100%;
+  border-bottom: 2.5px solid #5e503f;
+}
+
+@media screen and (max-width: 600px) {
+  .projectHeader {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: start;
+        align-items: flex-start;
+  }
+}
+
+.projectDescription {
+  width: 100%;
+  display: grid;
+  --auto-grid-min-size: 16rem;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
+  max-width: 760px;
+  margin: auto;
+  font-size: clamp(8px, 1rem, 2rem);
+}
+
+.projectDescription p {
+  padding: 5px;
+}
+
+.projLink {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  text-align: right;
+  padding: 2rem 3rem;
+  background-color: #C6AC8F;
+  border-radius: 100px;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  display: block;
+  margin: 0;
+  width: 100%;
+  background: transparent;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  color: transparent;
+  background: #c6ac8f;
+  border-radius: 999px;
+  border: none;
+}
+input[type="range"]::-moz-range-track {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  color: transparent;
+  background: #c6ac8f;
+  border-radius: 999px;
+  border: none;
+}
+input[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  color: transparent;
+  background: #c6ac8f;
+  border-radius: 999px;
+  border: none;
+}
+input[type="range"]::-ms-fill-lower {
+  display: none;
+}
+input[type="range"]::-ms-fill-upper {
+  display: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+  background: #22333b;
+}
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+  background: #22333b;
+}
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+  background: #22333b;
+}
+.ticks {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 10px 20px;
+}
+.tick {
+  font-size: 1rem;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 1px;
+  background: gray;
+  height: 10px;
+  margin-bottom: 20px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/*# sourceMappingURL=ssr-bundle.6ef06.css.map*/
