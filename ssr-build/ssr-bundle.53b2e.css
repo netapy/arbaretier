@@ -38,7 +38,7 @@ h5 {
 }
 
 .App-header {
-  background-color: #22333b;
+  background: radial-gradient(circle, rgba(53,77,88,1) 0%, rgba(34,51,59,1) 81%);
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -65,7 +65,7 @@ h5 {
 }
 
 .TitleB {
-  font-size: clamp(25px, 2rem, 4rem);
+  font-size: clamp(25px, 1.5rem, 2rem);
   margin-right: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -81,6 +81,9 @@ h5 {
   -ms-flex-pack: left;
       justify-content: left;
   height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 0px;
   margin: 0px;
 }
@@ -118,7 +121,7 @@ h5 {
       flex-direction: column;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  height: clamp(200px, 80vh, 1000px);
+  height: clamp(200px, 85vh, 1000px);
   width: clamp(320px, 90vw, 1000px);
   margin: auto;
 }
@@ -209,6 +212,17 @@ projName:after {
   }
 }
 
+.presentationCont{
+  width: 100%;
+  display: grid;
+  --auto-grid-min-size: 16rem;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
+  max-width: 760px;
+  margin: auto;
+  font-size: clamp(8px, 1rem, 2rem);
+}
+
 .projectDescription {
   width: 100%;
   display: grid;
@@ -222,6 +236,8 @@ projName:after {
 
 .projectDescription p {
   padding: 5px;
+  margin: 5px 0px;
+  white-space: pre-wrap;
 }
 
 .projLink {
@@ -240,6 +256,10 @@ projName:after {
   color: white;
 }
 
+.titreLigne{
+  font-family: ManropeBold;
+  opacity: .4;
+}
 input[type="range"] {
   -webkit-appearance: none;
   display: block;
@@ -309,6 +329,7 @@ input[type="range"]::-ms-thumb {
   padding: 10px 20px;
 }
 .tick {
+  font-family: ManropeBold;
   font-size: 1rem;
   position: relative;
   display: -ms-flexbox;
@@ -326,4 +347,4 @@ input[type="range"]::-ms-thumb {
 }
 
 
-/*# sourceMappingURL=ssr-bundle.6ef06.css.map*/
+/*# sourceMappingURL=ssr-bundle.53b2e.css.map*/
