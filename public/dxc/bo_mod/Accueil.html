@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(244,245,247);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-11 mt-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item active" aria-current="page">CAF751</li>
+                      <li class="breadcrumb-item active" aria-current="page">Accueil</li>
+                    </ol>
+                  </nav>
+                <!-- Container avec tous les liens-->
+                <div class="jumbotron jumbotron-fluid" style="background-color: white;">
+                    <div class="container">
+                        <div class="row">
+                                <div class="col-6">
+                                    <!-- Accueil -->
+                                    <div class="row mt-2" style="color: black">
+                                        <a href="Accueil.html" style="color: black">
+                                            <i class="fas fa-chevron-right" style="color: #FF5A5F">&nbsp;</i><b>Accueil</b>
+                                        </a>
+                                    </div>
+                                    <!-- Accueil -->
+                                    <div class="row mt-2" style="color: black">
+                                        <a href="Accueil.html" style="color: black">
+                                            <i class="fas fa-chevron-right" style="color: #FF5A5F">&nbsp;</i><b>Export de données</b>
+                                        </a>
+                                    </div>
+                                    <!-- Gestion des demandes d'inscription -->
+                                    <div class="row mt-2">
+                                        <!-- Mettre ici lien vers le tableau admin -->
+                                        <a href="index.html"  style="color: black">
+                                            <i class="fas fa-chevron-right" style="color: #FF5A5F">&nbsp;</i><b>Gestion des demandes d'inscription des asm</b>
+                                        </a>
+                                    </div>
+                                    <!-- Gestion des structures -->
+                                    <div class="row mt-2">
+                                        <a class="" data-toggle="collapse" href="#collapseGestionStructure" role="button" aria-expanded="false" aria-controls="collapseExample"  style="color: black">
+                                            <i class="fas fa-chevron-right" style="color: #FF5A5F">&nbsp;</i><b>Gestion des structures</b> 
+                                        </a>
+                                    </div>
+                                </div>
+
+                            
+                            
+                                <div class="col-6">
+                                    <!-- Gestion des habilitations des structures -->
+                                    <div class="row mt-2" style="color: black">
+                                        <a href=""  style="color: black">
+                                            <i class="fas fa-chevron-right" style="color: #FF5A5F">&nbsp;</i><b>Gestion des habilitations des structures</b>
+                                        </a>
+                                    </div>
+                                    <!-- Gestion des organismes -->
+                                    <div class="row mt-2" style="color: black">
+                                        <a href=""  style="color: black">
+                                            <i class="fas fa-chevron-right" style="color: #FF5A5F">&nbsp;</i><b>Gestion des organismes</b>
+                                        </a>
+                                    </div>
+                                    <!-- Gestion des demandes d'information sur les modes d'accueil -->
+                                        <div class="row mt-2" style="color: black">
+                                            <a href="" style="color: black">
+                                                <i class="fas fa-chevron-right" style="color: #FF5A5F">&nbsp;</i><b>Gestion des demandes d'information sur les modes d'accueil</b>
+                                            </a>
+                                        </div>
+                                        <!-- Guide utilisateur -->
+                                        <div class="row mt-2" style="color: black">
+                                            <a href="" style="color: black">
+                                                <i class="fas fa-chevron-right" style="color: #FF5A5F">&nbsp;</i><b>Guide utilisateur</b>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>   
+                        </div>
+                    </div>
+
+                    <!-- Liste lors du clique sur gestion des structures -->
+                    <div class="collapse" id="collapseGestionStructure">
+                        <div class="card card-body">
+                            Filtres: <br><br>
+                            <form>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Nom</span>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Code postal</span>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Type de structure</span>                                    
+                                                <select class="custom-select mr-sm-2 col-12" id="inlineFormCustomSelect">
+                                                    <option selected>Toutes</option>
+                                                    <option value="1">ASM - Assistant Maternel</option>
+                                                    <option value="2">EAJE - Crèche</option>
+                                                    <option value="3">MAM - Maison d'assistants maternels</option>
+                                                    <option value="4">ALSH - Accueil de loisirs</option>
+                                                    <option value="5">RAM - Relais d'assistants maternels</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="col-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Etat de la structure</span>
+                                                <select class="custom-select mr-sm-2 col-12" id="inlineFormCustomSelect">
+                                                    <option selected>Tous</option>
+                                                    <option value="1">Validé</option>
+                                                    <option value="2">Rejeté</option>
+                                                    <option value="3">Suspendu</option>
+                                                    <option value="4">Radié</option>
+                                                    <option value="5">Désactivé</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="Maquette_BO_Cnaf.html"><input type="button" value="Filtrer" class="btn btn-primary mb-2 mt-3" style="background-color:#FF5A5F; border:none"></a>   
+                            </form>
+                        </div>     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>   
+</body>
+</html><html><head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"><meta name="Robots" content="NOINDEX " /></head><body></body>
+                <script type="text/javascript">
+                 var gearPage = document.getElementById('GearPage');
+                 if(null != gearPage)
+                 {
+                     gearPage.parentNode.removeChild(gearPage);
+                     document.title = "Error";
+                 }
+                 </script>
+                 </html>

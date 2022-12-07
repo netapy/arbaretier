@@ -1,0 +1,138 @@
+{
+  "basics": {
+    "name": "Baudouin Arbarétier",
+    "label": "Creative Programmer",
+    "email": "b.arbaretier@outlook.fr",
+    "phone": "+33 7 70 45 58 45",
+    "url": "b.arbaretier.com",
+    "summary": "Graduated from ESSCA, Baudouin is a self-taught creator of numerous data science, machine learning, web and mobile application projects.\nWith experience as an IS & Strategy Consultant for the public sector, Baudouin has a perfect command of Javascript, React, Svelte, HTML, CSS and Flutter for front-end development, as well as Python for back-end programming and data science.",
+    "location": {
+      "address": "75015, Paris"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "@b_arbaretier",
+        "url": "https://twitter.com/b_arbaretier"
+      },
+      {
+        "network": "Github",
+        "username": "netapy",
+        "url": "https://github.com/netapy"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "DXC Technology",
+      "position": "Consultant",
+      "url": "",
+      "startDate": "2020-01-05T16:43:49.000Z",
+      "endDate": "2022-01-27T16:44:01.000Z",
+      "summary": "Management of the whole acceptance phase of a website service redesign, and coordination of the different actors  \n-Facilitation of workshops and trainings : collection of user feedback and definition of the needs  \n-Programming of scripts to automate file processing and communications between the client and its departmental relays (Python)  \n-Complete creation of an interactive model (HTML & Javascript) to optimize the process of making, arbitration and user testing.",
+      "highlights": ["Python", "Javascript", "Agile"]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University",
+      "url": "https://institution.com/",
+      "area": "Software Development",
+      "studyType": "Bachelor",
+      "startDate": "2011-01-01",
+      "endDate": "2013-01-01",
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": ["HTML", "CSS", "JavaScript"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Olivier de FONTENAY",
+      "relationship": "Co-founder of Eres-group",
+      "reference": "We were lucky enough to have Baudouin as an intern for 6 months in the marketing team. He fully fulfilled his mission by carrying out a quantitative study on employee shareholding of great quality with precision, involvement and rigor. Moreover, he went beyond by making many original and high value-added proposals, for example to create a page in JavaScript to present the results of the study in a lively and very professional way. Finally, he came up with a lot of concrete solutions, for example to improve our blog or SEO reports. Baudouin has great qualities to analyze a situation and find an optimization solution. He will make an excellent consultant and I highly recommend him!"
+    },
+    {
+      "name": "Mirela STOEVA",
+      "relationship": "Offer Director at Eres-group",
+      "reference": "Baudouin has been an extremely efficient intern. \nThanks to his maturity and intellectual curiosity, he went beyond the basic missions and was able to work on the improvement of our SEO natural referencing, on the optimization of the data analysis by creating dedicated custom tools. He evolved the presentation format of our studies by creating a dynamic web page in JavaScripts, a language he learned on occasion. He even wrote some posts for our blog.\n\nVery autonomous and always looking for solutions/tools to optimize his work, Baudouin quickly gained my trust and was a real teammate."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Banquise App",
+      "position": "Co-founder & CEO",
+      "url": "https://play.banquise.app/",
+      "startDate": "2022+-01-23T16:51:28.000Z",
+      "endDate": "",
+      "summary": "The first game social network — users can create unlimited interactive content without a single line of code, and scroll through all the content made by the community, instantly.",
+      "highlights": ["Flutter", "Python", "Node JS"]
+    },
+    {
+      "name": "Retine.io",
+      "position": "Co-founder & CTO",
+      "url": "https://retine.io/",
+      "startDate": "2021-01-23T16:51:28.000Z",
+      "endDate": "",
+      "summary": "Next generation forms — a free innovative tool for collecting ",
+      "highlights": ["Python Django", "Svelte", "Javascript"]
+    },
+    {
+      "name": "Je te vois ",
+      "position": "Co-founder & CTO",
+      "url": "https://jetevois.fr/",
+      "startDate": "2020-01-23T16:51:28.000Z",
+      "endDate": "",
+      "summary": "Start-up specialized in Big Data — creation of data mining tools, dashboards and expertise in online emotion analysis.",
+      "highlights": ["Svelte", "Javascript"]
+    },
+    {
+      "name": "Ecoute App",
+      "image": "/images/ecoute.png",
+      "position": "Co-founder & CTO",
+      "url": "https://ecoute.app/",
+      "startDate": "2019-01-23T16:51:28.000Z",
+      "endDate": "",
+      "summary": "Start-up specialized in Big Data — creation of data mining tools, dashboards and expertise in online emotion analysis.",
+      "highlights": ["Svelte", "Javascript"]
+    },
+    {
+      "name": "Kataku App",
+      "position": "Co-founder & CTO",
+      "url": "https://kataku.app/",
+      "startDate": "2018-01-23T16:51:28.000Z",
+      "endDate": "",
+      "summary": "Start-up specialized in Big Data — creation of data mining tools, dashboards and expertise in online emotion analysis.",
+      "highlights": ["Svelte", "Javascript"]
+    }
+  ]
+}

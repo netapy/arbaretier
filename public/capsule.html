@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Integrateur Vidéos</title>
+    <meta name="description" content="Integrateur Vidéos">
+    <meta name="author" content="dxc">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body style="background-color:#e6e6e6;">
+
+    <div class="w-100 text-center" style="padding: 50px 0px;">
+        <h1 style="margin-bottom: 40px;">Intégrateur vidéos.</h1>
+        <div style="padding: 10px auto;">
+            <input id="leLien" placeholder="Lien YouTube/Dailymotion/Vimeo à intégrer..." class="form-control neuChamp"
+                type="text" style="max-width: 400px; margin: 20px auto;  padding: 15px;"
+                onchange="if (this.value.includes('dailymotion')){document.querySelector('#nocookyn').disabled = true}else{document.querySelector('#nocookyn').disabled = false};">
+        </div>
+        <input class="form-check-input" type="checkbox" id="nocookyn">
+        <label class="form-check-label" for="nocookyn">
+            YouTube No-Cookie
+        </label><br>
+        <button class="btn btngrow" onclick="transformLink()">Générer le script</button>
+        <div style="padding: 10px auto;">
+            <textarea id="leChamp" placeholder="Résultat..." class="form-control neuChamp" type="text"
+                style="max-width: 500px; margin: 20px auto;" rows="12"></textarea>
+        </div>
+        <div id="divTest" class="text-center" style="display: none; padding: 20px; margin: auto;">
+
+        </div>
+    </div>
+
+
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        };
+
+        const transformLink = () => {
+            let integString =
+                '<div style="background-color: rgb(221, 221, 221); width: 560px; height: 315px; display: flex; justify-content: center; align-items: center; flex-direction: column; margin:auto;"><p>Cette vidéo [[PLATEFORME]] est désactivée. <br>Autorisez le dépôt de cookies pour accéder au contenu.</p> <button style="border-radius: 7px; font-weight: bold;" onclick="let vid = document.querySelector(\'#intVideo^^!!!^^\'); vid.src = \'[[[LIEN-EMBED]]][[CODE-VIDEO]]\'; vid.style.display=\'\'; this.parentElement.style.display = \'none\'">Autoriser</button></div><iframe style="display: none;" id="intVideo^^!!!^^" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+            let lien = document.querySelector("#leLien").value
+            let champScript = document.querySelector("#leChamp")
+            let idUnique = new Date();
+
+            if (lien.includes("dailymotion.com") || lien.includes("dai.ly")) {
+                console.log("c'est dailymotion")
+                lien = lien.replace("https://", "").replace("www.dailymotion.com/video/", "").replace("dai.ly/", "")
+                    .replace("www.dailymotion.com/embed/video/", "").replace("?autoplay=1", "").split("?playlist")[
+                        0];
+                integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
+                    .replace("[[[LIEN-EMBED]]]", "https://www.dailymotion.com/embed/video/").replace(
+                        "[[PLATEFORME]]", "Dailymotion")
+                champScript.value = integString
+                document.querySelector("#divTest").style.display = '';
+                document.querySelector("#divTest").innerHTML = integString;
+
+            } else if (lien.includes("youtube.com") || lien.includes("youtu.be")) {
+                console.log("c'est youtube")
+                lien = lien.replace("-nocookie", "").replace("https://", "").replace("www.youtube.com/watch?v=", "")
+                    .replace(
+                        "youtu.be/", "").replace("www.youtube.com/embed/", "").replace(
+                        "www.youtube.com/embed/", "")
+                integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
+                    .replace("[[[LIEN-EMBED]]]", "https://www.youtube.com/embed/").replace("[[PLATEFORME]]",
+                        "YouTube")
+                if (document.querySelector("#nocookyn").checked == true) {
+                    integString = integString.replace("youtube.com", "youtube-nocookie.com");
+                }
+                champScript.value = integString
+                document.querySelector("#divTest").style.display = '';
+                document.querySelector("#divTest").innerHTML = integString
+            } else if (lien.includes("vimeo")) {
+                console.log("c'est Vimeo")
+                lien = lien.replace("https://vimeo.com/", "").replace("https://player.vimeo.com/video/", "").replace("vimeo.com/video/", "")
+                integString = integString.replace("[[CODE-VIDEO]]", lien).replaceAll("^^!!!^^", idUnique.getTime())
+                    .replace("[[[LIEN-EMBED]]]", "https://player.vimeo.com/video/").replace("[[PLATEFORME]]",
+                        "Vimeo")
+                champScript.value = integString
+                document.querySelector("#divTest").style.display = '';
+                document.querySelector("#divTest").innerHTML = integString
+            }
+        }
+    </script>
+    <style>
+        .neuChamp {
+            border-radius: 8px;
+            background: #e6e6e6;
+            box-shadow: inset 8px 8px 10px #dddddd,
+                inset -8px -8px 10px #efefef;
+            border-width: 0px;
+            padding: 10px;
+        }
+
+        .btngrow {
+            border-radius: 14px;
+            background: #e6e6e6;
+            box-shadow: 8px 8px 10px #c1c1c1,
+                -8px -8px 10px #ffffff;
+            background-color: #00C5AD;
+            border-width: 0px;
+            font-size: 20px;
+            padding: 10px 15px;
+            transition: all .2s ease-in-out;
+            color: whitesmoke;
+            font-weight: bold;
+            margin: 20px 0px;
+        }
+
+        .btngrow:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</body>
+
+</html>
