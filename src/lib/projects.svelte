@@ -18,13 +18,13 @@
     .then((json) => (experiences = json));
 </script>
 
-<div class="py-2 d-flex h-100 justify-content-between flex-column me-xl-5">
+<div class="py-2 d-flex h-100 justify-content-between flex-column">
   {#if Object.keys(experiences).length > 0}
     {#each experiences.projects as fact, i}
       <div class="py-1">
         <a target="_blank" rel="noopener noreferrer" href={fact.url}>
           <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <div class="projectBubble hvr-grow" in:fly={{ y: -5, delay: i * 20 + 600, duration: 1600 }} on:click={() => selectFunction(fact)}>
+          <div class="projectBubble ms-auto hvr-grow" in:fly={{ y: -5, delay: i * 200 + 480, duration: 1600 }} on:click={() => selectFunction(fact)}>
             <div>{fact.name.toUpperCase()}</div>
             <div>
               {fact.startDate.split("-")[0].toUpperCase()}
@@ -47,14 +47,6 @@
     cursor: pointer;
     font-size: 2rem;
     width: 100%;
-    max-width: 800px;
-  }
-  .contentDisplay {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 14px;
-  }
-
-  .summary {
-    font-size: 2.2rem;
+    max-width: 700px;
   }
 </style>

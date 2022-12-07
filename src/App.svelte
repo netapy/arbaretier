@@ -18,28 +18,27 @@
   </div>
 
   <!--Displaying content of project-->
-  <!-- {#if Object.keys(selectedProj).length > 0}
+  {#if Object.keys(selectedProj).length > 0 && false}
     <div
-      in:fly={{ x: 200, duration: 200 }}
-      out:fly={{ x: -200, duration: 200 }}
-      class="contentDisplay p-3 my-5 mx-auto d-flex align-items-center justify-content-center"
+      in:fly={{ x: 10, duration: 200 }}
+      out:fly={{ x: -10, duration: 200 }}
+      class="contentDisplay p-3  my-4 my-xl-auto mx-auto d-flex align-items-center justify-content-center"
     >
-      <div class="summary h-100 d-flex align-items-center justify-content-center flex-column flex-xl-row">
+      <div class="summary h-100 d-flex  justify-content-center flex-column flex-xl-row">
         <div class="opacity-50 text-xl-end me-xl-4" style="min-width: 250px;">{selectedProj.name}</div> 
         <div>
-          <div class="opacity-50">{selectedProj.name}</div>
           {selectedProj.summary}
         </div>
-        <div class="ps-xl-4 w-100">
+        <!-- <div class="ps-xl-4 w-100">
           <img class="w-100" style="border-radius:20px;" src={selectedProj.image} alt={selectedProj.name} />
-        </div>
+        </div> -->
       </div>
     </div>
-  {/if} -->
+  {/if} 
 
   <!-- Footer -->
-  <div class="container-fluid mt-auto" in:fade={{ duration: 700, delay: 1200 }}>
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-5">
+  <div class="container-fluid p-0 mx-0 mt-auto" in:fade={{ duration: 700, delay: 1200 }}>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center p-3 mt-2" style="background-color: rgba(0, 0, 0, 0.05);">
       <div class="col-md-4 d-flex align-items-center">
         <span class="mb-md-0 text-muted">&copy; 2022 Baudouin Arbarétier</span>
       </div>
@@ -74,5 +73,12 @@
 </main>
 
 <style>
+.contentDisplay {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 14px;
+  }
 
+  .summary {
+    font-size: 2.2rem;
+  }
 </style>
