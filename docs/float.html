@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Camera</title>
+</head>
+
+<body>
+    <h1>Mirror</h1>
+    <div id="preview"></div>
+
+</body>
+
+</html>
+
+<script>
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+            var video = document.createElement("video");
+            video.srcObject = stream;
+            video.setAttribute("playsinline", true);
+            video.play();
+            document.getElementById("preview").appendChild(video);
+            if (video.webkitSupportsPresentationMode && typeof video.webkitSetPresentationMode === "function") {
+                video.webkitSetPresentationMode("picture-in-picture");
+            }
+        })
+        .catch(function (err) {
+            console.log("An error occurred: " + err);
+        });
+
+
+</script>
