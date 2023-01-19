@@ -11,7 +11,9 @@
 <body>
     <h1>Mirror</h1>
     <div id="preview"></div>
-
+    <div id="controls">
+        <button id="pipButton">PiP</button>
+    </div>
 </body>
 
 </html>
@@ -26,6 +28,15 @@
             document.getElementById("preview").appendChild(video);
             if (video.webkitSupportsPresentationMode && typeof video.webkitSetPresentationMode === "function") {
                 video.webkitSetPresentationMode("picture-in-picture");
+            }
+
+            var PiP = document.getElementById('pipButton');
+            if (video.webkitSupportsPresentationMode && typeof video.webkitSetPresentationMode === "function") {
+                PiP.addEventListener("click", function (event) {
+                    video.webkitSetPresentationMode(video.webkitPresentationMode === "picture-in-picture" ? "inline" : "picture-in-picture");
+                });
+            } else {
+                PiP.disabled = true;
             }
         })
         .catch(function (err) {
