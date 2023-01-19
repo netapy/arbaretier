@@ -34,6 +34,11 @@
             if (video.webkitSupportsPresentationMode && typeof video.webkitSetPresentationMode === "function") {
                 PiP.addEventListener("click", function (event) {
                     video.webkitSetPresentationMode(video.webkitPresentationMode === "picture-in-picture" ? "inline" : "picture-in-picture");
+                    if (document.pictureInPictureElement) {
+                        document.exitPictureInPicture();
+                    } else if (document.pictureInPictureEnabled) {
+                        video.requestPictureInPicture();
+                    }
                 });
             } else {
                 PiP.disabled = true;
