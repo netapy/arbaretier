@@ -6,7 +6,7 @@
 </script>
 
 <main class="d-flex flex-column" style="min-height:100vh;">
-  <div class="p-3 d-flex align-items-start justify-content-between flex-column flex-xl-row">
+  <div class="p-3 d-flex align-items-start justify-content-between flex-column flex-lg-row">
     <div>
       <h1 in:fly={{ y: -5, duration: 1200, delay: 100 }}>ARBARETIER<br />BAUDOUIN</h1>
       <h1 in:fly={{ y: -5, duration: 1200, delay: 300 }}><span class="opacity-50">CREATIVE <br />DEVELOPER</span></h1>
@@ -40,7 +40,7 @@
   <div class="container-fluid p-0 mx-0 mt-auto" in:fade={{ duration: 700, delay: 1200 }}>
     <footer class="d-flex flex-wrap justify-content-between align-items-center p-3 mt-2" style="background-color: rgba(0, 0, 0, 0.05);">
       <div class="col-md-4 d-flex align-items-center">
-        <span class="mb-md-0 text-muted">&copy; 2022 Baudouin Arbarétier</span>
+        <span class="mb-md-0 text-muted">&copy; 2023 Baudouin Arbarétier</span>
       </div>
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

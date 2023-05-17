@@ -89,6 +89,15 @@
   ],
   "projects": [
     {
+      "name": "Ordalie",
+      "position": "Co-founder & CEO",
+      "url": "https://ordalie.tech",
+      "startDate": "2022+-11-06T16:51:28.000Z",
+      "endDate": "",
+      "summary": "The first game social network — users can create unlimited interactive content without a single line of code, and scroll through all the content made by the community, instantly.",
+      "highlights": ["Flutter", "Python", "Node JS"]
+    },
+    {
       "name": "Banquise App",
       "position": "Co-founder & CEO",
       "url": "https://play.banquise.app/",

@@ -21,17 +21,15 @@
 <div class="py-2 d-flex h-100 justify-content-between flex-column">
   {#if Object.keys(experiences).length > 0}
     {#each experiences.projects as fact, i}
-      <div class="py-1">
         <a target="_blank" rel="noopener noreferrer" href={fact.url}>
           <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <div class="projectBubble ms-auto hvr-grow" in:fly={{ y: -5, delay: i * 200 + 480, duration: 1600 }} on:click={() => selectFunction(fact)}>
+          <div class="projectBubble ms-auto hvr-grow my-1 my-lg-0" in:fly={{ y: -5, delay: i * 200 + 480, duration: 1600 }} on:click={() => selectFunction(fact)}>
             <div>{fact.name.toUpperCase()}</div>
             <div>
               {fact.startDate.split("-")[0].toUpperCase()}
             </div>
           </div>
         </a>
-      </div>
     {/each}
   {/if}
 </div>
@@ -47,6 +45,6 @@
     cursor: pointer;
     font-size: 2rem;
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
   }
 </style>
